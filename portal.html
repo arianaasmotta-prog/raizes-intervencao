@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#1F2B22">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="description" content="Portal da participante da Raízes da Intervenção: oficina presencial de intervenção psicopedagógica com Ariana Motta. 18 de outubro, Porto Velho.">
+<title>Raízes da Intervenção · Ariana Motta</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --verde-profundo:#1F2B22;
+  --verde-musgo:#3E5843;
+  --verde-claro:#6E8B72;
+  --creme:#F7F3EA;
+  --creme-escuro:#EDE5D6;
+  --terracota:#B0714A;
+  --dourado:#C9A227;
+  --texto:#28322B;
+  --texto-suave:#5E6B61;
+  --borda:rgba(62,88,67,.18);
+  --sombra:0 1px 2px rgba(31,43,34,.04),0 8px 24px rgba(31,43,34,.06);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--creme);color:var(--texto);
+  font-family:'Inter',system-ui,-apple-system,sans-serif;font-size:16px;line-height:1.65;
+  -webkit-font-smoothing:antialiased}
+h1,h2,h3,.serif{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;line-height:1.15;letter-spacing:-.01em}
+a{color:inherit}
+img{max-width:100%}
+.wrap{width:100%;max-width:940px;margin:0 auto;padding-inline:20px}
+
+/* ---------- NAV ---------- */
+nav{position:sticky;top:0;z-index:50;background:rgba(247,243,234,.92);
+  backdrop-filter:saturate(180%) blur(12px);border-bottom:1px solid var(--borda)}
+.nav-in{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding:10px 20px}
+.nav-in::-webkit-scrollbar{display:none}
+.nav-in a{flex:0 0 auto;text-decoration:none;font-size:13px;font-weight:500;letter-spacing:.02em;
+  color:var(--texto-suave);padding:7px 13px;border-radius:999px;white-space:nowrap;transition:.18s}
+.nav-in a:hover,.nav-in a.on{background:var(--verde-musgo);color:#fff}
+
+/* ---------- HERO ---------- */
+header{background:var(--verde-profundo);color:var(--creme);position:relative;overflow:hidden}
+header::after{content:"";position:absolute;inset:0;
+  background:radial-gradient(ellipse at 20% 0%,rgba(201,162,39,.16),transparent 55%),
+             radial-gradient(ellipse at 90% 100%,rgba(176,113,74,.18),transparent 55%);
+  pointer-events:none}
+.hero{position:relative;z-index:1;padding-block:72px 64px;text-align:center}
+.eyebrow{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--dourado);
+  font-weight:500;margin:0 0 20px}
+.hero h1{font-size:clamp(2.9rem,11vw,5rem);margin:0;color:#fff}
+.hero h1 em{font-style:italic;color:var(--dourado);font-weight:500}
+.hero .lead{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;
+  font-size:clamp(1.2rem,4.5vw,1.55rem);color:rgba(247,243,234,.82);margin:16px 0 0}
+.hero .sub{max-width:540px;margin:24px auto 0;font-size:15px;color:rgba(247,243,234,.7)}
+.factos{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:32px}
+.facto{border:1px solid rgba(247,243,234,.22);border-radius:999px;padding:8px 16px;
+  font-size:13px;letter-spacing:.02em;color:rgba(247,243,234,.9)}
+.facto b{color:var(--dourado);font-weight:600}
+
+/* ---------- SECTIONS ---------- */
+section{padding-block:64px;scroll-margin-top:64px}
+section+section{border-top:1px solid var(--borda)}
+.sec-head{margin-bottom:36px}
+.sec-num{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--terracota);
+  font-weight:600;display:block;margin-bottom:10px}
+.sec-head h2{font-size:clamp(1.9rem,6.5vw,2.7rem);margin:0}
+.sec-head p{margin:12px 0 0;color:var(--texto-suave);font-size:15px;max-width:620px}
+
+/* ---------- CRONOGRAMA ---------- */
+.crono{border-left:2px solid var(--borda);padding-left:0;margin:0;list-style:none}
+.bloco{display:grid;grid-template-columns:96px 1fr;gap:18px;padding:16px 0 16px 20px;position:relative}
+.bloco+.bloco{border-top:1px solid var(--borda)}
+.bloco::before{content:"";position:absolute;left:-5px;top:26px;width:8px;height:8px;
+  border-radius:50%;background:var(--verde-claro)}
+.bloco.chave::before{background:var(--dourado);box-shadow:0 0 0 4px rgba(201,162,39,.18)}
+.hora{font-size:13px;font-weight:600;color:var(--verde-musgo);letter-spacing:.02em;padding-top:2px}
+.bloco h3{margin:0;font-size:1.3rem}
+.bloco p{margin:5px 0 0;font-size:14px;color:var(--texto-suave)}
+.tag{display:inline-block;font-size:10px;letter-spacing:.16em;text-transform:uppercase;
+  font-weight:600;padding:3px 9px;border-radius:4px;margin-bottom:7px}
+.t-teoria{background:rgba(62,88,67,.1);color:var(--verde-musgo)}
+.t-pratica{background:rgba(176,113,74,.13);color:var(--terracota)}
+.t-pausa{background:rgba(94,107,97,.1);color:var(--texto-suave)}
+
+/* ---------- ETAPAS ---------- */
+.etapas{display:grid;gap:14px}
+.etapa{background:#fff;border:1px solid var(--borda);border-radius:14px;box-shadow:var(--sombra);
+  overflow:hidden}
+.etapa summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:44px 1fr 20px;
+  gap:14px;align-items:center;padding:18px 20px}
+.etapa summary::-webkit-details-marker{display:none}
+.passo{width:44px;height:44px;border-radius:50%;background:var(--verde-profundo);color:var(--dourado);
+  display:grid;place-items:center;font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:600}
+.etapa summary h3{margin:0;font-size:1.22rem}
+.etapa summary span.res{display:block;font-size:13px;color:var(--texto-suave);
+  font-family:'Inter',sans-serif;font-weight:400;margin-top:2px}
+.chev{width:20px;height:20px;position:relative}
+.chev::before{content:"";position:absolute;left:4px;top:6px;width:8px;height:8px;
+  border-right:1.5px solid var(--verde-claro);border-bottom:1.5px solid var(--verde-claro);
+  transform:rotate(45deg);transition:.2s}
+.etapa[open] .chev::before{transform:rotate(-135deg);top:9px}
+.etapa-corpo{padding:0 20px 22px 78px}
+.etapa-corpo p{margin:0 0 12px;font-size:14.5px;color:var(--texto-suave)}
+.etapa-corpo ul{margin:0;padding-left:18px;font-size:14.5px;color:var(--texto-suave)}
+.etapa-corpo li{margin-bottom:6px}
+.entrega{margin-top:14px;padding:11px 14px;background:var(--creme-escuro);border-radius:9px;
+  font-size:13px;color:var(--verde-musgo)}
+.entrega b{color:var(--texto)}
+@media(max-width:560px){.etapa-corpo{padding-left:20px}}
+
+/* ---------- MATERIAIS ---------- */
+.mats{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+.mat{background:#fff;border:1px solid var(--borda);border-radius:12px;padding:18px;
+  box-shadow:var(--sombra);display:flex;flex-direction:column;gap:6px}
+.mat .kind{font-size:10px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:var(--terracota)}
+.mat h3{margin:0;font-size:1.12rem}
+.mat p{margin:0;font-size:13.5px;color:var(--texto-suave)}
+.mat .em-breve{margin-top:8px;font-size:12px;color:var(--verde-claro);font-weight:500}
+
+/* ---------- INFO ---------- */
+.info{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.info-card{background:var(--verde-profundo);color:var(--creme);border-radius:14px;padding:22px}
+.info-card .rot{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--dourado);
+  font-weight:600;margin-bottom:8px}
+.info-card .val{font-family:'Cormorant Garamond',serif;font-size:1.55rem;line-height:1.25}
+.info-card small{display:block;margin-top:7px;font-size:13px;color:rgba(247,243,234,.7)}
+
+/* ---------- LISTA CHECK ---------- */
+.leve{display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));
+  list-style:none;padding:0;margin:0}
+.leve li{display:flex;gap:10px;align-items:flex-start;font-size:14.5px;color:var(--texto-suave)}
+.leve li::before{content:"✓";color:var(--terracota);font-weight:700;flex:0 0 auto}
+
+/* ---------- CTA / BOTÕES ---------- */
+.btn{display:inline-flex;align-items:center;gap:9px;background:var(--terracota);color:#fff;
+  text-decoration:none;font-weight:600;font-size:14.5px;letter-spacing:.01em;
+  padding:14px 26px;border-radius:999px;transition:.18s;border:none;cursor:pointer;
+  font-family:'Inter',sans-serif}
+.btn:hover{background:#9A6040;transform:translateY(-1px)}
+.btn.ghost{background:transparent;color:var(--verde-musgo);border:1.5px solid var(--borda)}
+.btn.ghost:hover{background:var(--verde-musgo);color:#fff;border-color:var(--verde-musgo)}
+.cta-box{background:var(--verde-profundo);color:var(--creme);border-radius:18px;padding:36px 26px;
+  text-align:center}
+.cta-box h2{margin:0 0 10px;font-size:clamp(1.7rem,6vw,2.3rem);color:#fff}
+.cta-box p{margin:0 0 24px;color:rgba(247,243,234,.75);font-size:15px}
+
+/* ---------- FORM ---------- */
+.campo{display:block;margin-bottom:14px}
+.campo span{display:block;font-size:13px;font-weight:500;color:var(--verde-musgo);margin-bottom:6px}
+.campo textarea,.campo input,.campo select{width:100%;font-family:'Inter',sans-serif;font-size:15px;
+  color:var(--texto);background:#fff;border:1px solid var(--borda);border-radius:10px;padding:12px 14px;
+  resize:vertical}
+.campo textarea:focus,.campo input:focus,.campo select:focus{outline:2px solid var(--verde-claro);outline-offset:1px}
+.estrelas{display:flex;gap:6px;margin-bottom:4px}
+.estrelas button{background:none;border:none;font-size:30px;line-height:1;cursor:pointer;padding:0;
+  color:var(--creme-escuro);transition:.15s}
+.estrelas button.on{color:var(--dourado)}
+.painel{background:#fff;border:1px solid var(--borda);border-radius:14px;padding:22px;box-shadow:var(--sombra)}
+
+/* ---------- FOOTER ---------- */
+footer{background:var(--verde-profundo);color:rgba(247,243,234,.72);padding-block:44px;text-align:center}
+footer .nome{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:#fff;margin:0 0 4px}
+footer .papel{font-size:13px;margin:0 0 20px}
+footer .links{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+footer .links a{text-decoration:none;font-size:13px;padding:8px 16px;border-radius:999px;
+  border:1px solid rgba(247,243,234,.2);color:rgba(247,243,234,.9);transition:.18s}
+footer .links a:hover{background:rgba(247,243,234,.1)}
+footer .cr{font-size:12px;color:rgba(247,243,234,.45)}
+.aviso{font-size:12px;color:var(--texto-suave);margin-top:14px;font-style:italic}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-in">
+    <a href="#cronograma">Cronograma</a>
+    <a href="#etapas">Etapas da intervenção</a>
+    <a href="#materiais">Materiais de apoio</a>
+    <a href="#informacoes">Informações</a>
+    <a href="#onde-comer">Onde comer</a>
+    <a href="#feedback">Feedback</a>
+    <a href="#perguntas">Perguntas</a>
+  </div>
+</nav>
+
+<header>
+  <div class="wrap hero">
+    <p class="eyebrow">Oficina presencial · Continuação de Raízes da Avaliação</p>
+    <h1>Raízes da <em>Intervenção</em></h1>
+    <p class="lead">Onde o raciocínio clínico vira plano</p>
+    <p class="sub">O laudo não encerra o processo. Ele abre o próximo. Um dia inteiro para transformar
+    resultados de avaliação em um plano interventivo defensável, monitorável e replicável na sua clínica.</p>
+    <div class="factos">
+      <span class="facto"><b>18</b> de outubro · domingo</span>
+      <span class="facto"><b>08h</b> às <b>16h</b></span>
+      <span class="facto">Porto Velho · RO</span>
+    </div>
+  </div>
+</header>
+
+<!-- CRONOGRAMA -->
+<section id="cronograma">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">01 · O dia</span>
+      <h2>Cronograma</h2>
+      <p>Blocos teóricos curtos e prática longa. Cada bloco entrega uma peça do plano interventivo.
+      Ao fim do dia, você sai com um PDI construído por você, do início ao fim.</p>
+    </div>
+    <ul class="crono">
+      <li class="bloco">
+        <div class="hora">08:00 às 08:20</div>
+        <div>
+          <span class="tag t-teoria">Abertura</span>
+          <h3>Acolhimento e alinhamento</h3>
+          <p>Credenciamento, entrega do kit e contrato de aprendizagem do dia.</p>
+        </div>
+      </li>
+      <li class="bloco chave">
+        <div class="hora">08:20 às 09:50</div>
+        <div>
+          <span class="tag t-teoria">Teoria</span>
+          <h3>Da avaliação à hipótese funcional</h3>
+          <p>Etapas 1 e 2: ler o laudo como mapa clínico e converter achados em objetivos operacionais.</p>
+        </div>
+      </li>
+      <li class="bloco">
+        <div class="hora">09:50 às 10:10</div>
+        <div>
+          <span class="tag t-pausa">Pausa</span>
+          <h3>Coffee break</h3>
+          <p>Café, frutas e conversa entre colegas.</p>
+        </div>
+      </li>
+      <li class="bloco chave">
+        <div class="hora">10:10 às 11:40</div>
+        <div>
+          <span class="tag t-teoria">Teoria</span>
+          <h3>Construção do PDI e escolha de estratégias</h3>
+          <p>Etapas 3 e 4: arquitetura do plano e seleção de estratégias com sustentação científica.</p>
+        </div>
+      </li>
+      <li class="bloco">
+        <div class="hora">11:40 às 13:00</div>
+        <div>
+          <span class="tag t-pausa">Intervalo</span>
+          <h3>Almoço livre</h3>
+          <p>Sugestões de restaurantes próximos na seção <a href="#onde-comer">Onde comer</a>.</p>
+        </div>
+      </li>
+      <li class="bloco chave">
+        <div class="hora">13:00 às 14:30</div>
+        <div>
+          <span class="tag t-pratica">Prática</span>
+          <h3>Caso real: do laudo ao plano</h3>
+          <p>Etapa 3 na mão: em duplas, você recebe um laudo completo e constrói o PDI do caso.</p>
+        </div>
+      </li>
+      <li class="bloco">
+        <div class="hora">14:30 às 14:45</div>
+        <div>
+          <span class="tag t-pausa">Pausa</span>
+          <h3>Coffee break</h3>
+          <p>Segundo intervalo do dia.</p>
+        </div>
+      </li>
+      <li class="bloco chave">
+        <div class="hora">14:45 às 15:30</div>
+        <div>
+          <span class="tag t-pratica">Prática</span>
+          <h3>Sessão interventiva na prática</h3>
+          <p>Etapas 5 e 6: estrutura da sessão, materiais reais do consultório e registro de progresso.</p>
+        </div>
+      </li>
+      <li class="bloco">
+        <div class="hora">15:30 às 16:00</div>
+        <div>
+          <span class="tag t-pratica">Encerramento</span>
+          <h3>Hotseat, reavaliação e certificados</h3>
+          <p>Etapa 7: quando manter, ajustar ou encerrar a intervenção. Dúvidas abertas e entrega dos certificados.</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ETAPAS -->
+<section id="etapas">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">02 · O método</span>
+      <h2>As 7 etapas do processo interventivo</h2>
+      <p>Intervenção não começa na atividade. Começa na decisão clínica. Esta é a sequência que
+      sustenta um plano que você consegue defender diante da família, da escola e de si mesma.</p>
+    </div>
+    <div class="etapas">
+
+      <details class="etapa" open>
+        <summary>
+          <div class="passo">1</div>
+          <div><h3>Leitura clínica do laudo</h3>
+            <span class="res">Transformar resultados em hipóteses funcionais</span></div>
+          <div class="chev"></div>
+        </summary>
+        <div class="etapa-corpo">
+          <p>O laudo descreve o que a criança faz. A leitura clínica explica por que ela faz assim.
+          Antes de qualquer plano, é preciso separar sintoma de causa funcional.</p>
+          <ul>
+            <li>Releitura dos instrumentos aplicados e do que cada pontuação representa em termos de processo cognitivo</li>
+            <li>Cruzamento entre desempenho nos testes, observação clínica, anamnese e relato escolar</li>
+            <li>Identificação da habilidade-base comprometida, não apenas da queixa manifesta</li>
+            <li>Distinção entre déficit de habilidade, déficit de desempenho e barreira ambiental</li>
+          </ul>
+          <div class="entrega"><b>Você sai com:</b> um roteiro de leitura de laudo aplicável a qualquer caso que chegar ao seu consultório.</div>
+        </div>
+      </details>
+
+      <details class="etapa">
+        <summary>
+          <div class="passo">2</div>
+          <div><h3>Definição de objetivos terapêuticos</h3>
+            <span class="res">Metas observáveis, mensuráveis e hierarquizadas</span></div>
+          <div class="chev"></div>
+        </summary>
+        <div class="etapa-corpo">
+          <p>"Melhorar a leitura" não é objetivo. É desejo. Objetivo terapêutico é comportamento
+          observável, com critério de domínio e prazo definido.</p>
+          <ul>
+            <li>Conversão de hipótese funcional em objetivo operacional (condição, comportamento, critério)</li>
+            <li>Hierarquização: o que é pré-requisito de quê e por que a ordem muda o resultado</li>
+            <li>Objetivos de curto, médio e longo prazo e como comunicá-los à família sem prometer o que não se controla</li>
+            <li>Diferença entre objetivo psicopedagógico, objetivo escolar e objetivo de outras especialidades</li>
+          </ul>
+          <div class="entrega"><b>Você sai com:</b> banco de objetivos por área (leitura, escrita, matemática, funções executivas) pronto para adaptar.</div>
+        </div>
+      </details>
+
+      <details class="etapa">
+        <summary>
+          <div class="passo">3</div>
+          <div><h3>Construção do Plano de Desenvolvimento Interventivo</h3>
+            <span class="res">O documento que organiza e protege a sua conduta</span></div>
+          <div class="chev"></div>
+        </summary>
+        <div class="etapa-corpo">
+          <p>O PDI é a ponte entre a avaliação e a sessão. É também o registro que demonstra que
+          a sua conduta tem racional clínico, e não improviso.</p>
+          <ul>
+            <li>Estrutura completa do documento: identificação, síntese avaliativa, áreas, objetivos, estratégias, critérios e cronograma</li>
+            <li>Como escrever a síntese avaliativa sem repetir o laudo inteiro</li>
+            <li>Definição da frequência, duração e previsão de reavaliação</li>
+            <li>Articulação com escola e demais profissionais: o que compartilhar e o que preservar</li>
+          </ul>
+          <div class="entrega"><b>Você sai com:</b> modelo editável de PDI e um plano completo construído por você durante a oficina.</div>
+        </div>
+      </details>
+
+      <details class="etapa">
+        <summary>
+          <div class="passo">4</div>
+          <div><h3>Seleção de estratégias e recursos</h3>
+            <span class="res">Escolha com base em evidência, não em tendência</span></div>
+          <div class="chev"></div>
+        </summary>
+        <div class="etapa-corpo">
+          <p>Existe atividade bonita que não move nada. O critério de escolha não é o engajamento
+          imediato: é a correspondência entre a estratégia e o processo cognitivo que se quer desenvolver.</p>
+          <ul>
+            <li>Instrução explícita e sistemática: por que ela sustenta os maiores efeitos nas dificuldades de leitura e escrita</li>
+            <li>Consciência fonológica, decodificação, fluência, vocabulário e compreensão: o que priorizar em cada perfil</li>
+            <li>Intervenção em matemática: senso numérico, fatos básicos e resolução de problemas</li>
+            <li>Funções executivas: mediação, autorregulação e estratégias metacognitivas</li>
+            <li>Critérios para adaptar ou descartar um recurso, incluindo jogos e materiais digitais</li>
+          </ul>
+          <div class="entrega"><b>Você sai com:</b> matriz de estratégias por objetivo, com o racional científico de cada escolha.</div>
+        </div>
+      </details>
+
+      <details class="etapa">
+        <summary>
+          <div class="passo">5</div>
+          <div><h3>Condução da sessão interventiva</h3>
+            <span class="res">A hora em que o plano encontra a criança</span></div>
+          <div class="chev"></div>
+        </summary>
+        <div class="etapa-corpo">
+          <p>Uma sessão sem estrutura vira recreação assistida. A estrutura não engessa o vínculo:
+          é ela que libera a profissional para observar.</p>
+          <ul>
+            <li>Arquitetura da sessão: abertura, revisão, ensino explícito, prática guiada, prática independente e fechamento</li>
+            <li>Dosagem: quanto tempo por objetivo e quando mudar de atividade</li>
+            <li>Manejo de recusa, frustração e desregulação sem abandonar o objetivo do dia</li>
+            <li>Mediação: como intervir na dificuldade sem entregar a resposta</li>
+            <li>Vínculo terapêutico como condição de aprendizagem, não como finalidade da sessão</li>
+          </ul>
+          <div class="entrega"><b>Você sai com:</b> roteiro de sessão e checklist de condução para usar já na sessão seguinte.</div>
+        </div>
+      </details>
+
+      <details class="etapa">
+        <summary>
+          <div class="passo">6</div>
+          <div><h3>Registro e monitoramento de progresso</h3>
+            <span class="res">A evidência de que a intervenção está funcionando</span></div>
+          <div class="chev"></div>
+        </summary>
+        <div class="etapa-corpo">
+          <p>Sem dado de progresso, a decisão clínica vira impressão. O monitoramento contínuo é o
+          que permite corrigir a rota antes de perder seis meses de trabalho.</p>
+          <ul>
+            <li>Registro de sessão: o que anotar, o que descartar e como escrever para o prontuário</li>
+            <li>Medidas breves e repetidas de desempenho ao longo do tempo</li>
+            <li>Leitura da curva de progresso: linha de base, meta e taxa de crescimento esperada</li>
+            <li>Sinais de que o plano precisa de ajuste: intensidade, estratégia ou objetivo</li>
+            <li>Organização do prontuário e guarda de documentos</li>
+          </ul>
+          <div class="entrega"><b>Você sai com:</b> modelo de registro de sessão e roteiro de leitura da curva de progresso.</div>
+        </div>
+      </details>
+
+      <details class="etapa">
+        <summary>
+          <div class="passo">7</div>
+          <div><h3>Reavaliação e devolutiva de processo</h3>
+            <span class="res">Manter, ajustar ou encerrar, e como comunicar</span></div>
+          <div class="chev"></div>
+        </summary>
+        <div class="etapa-corpo">
+          <p>Toda intervenção precisa de um ponto de decisão previsto desde o início. Encerrar bem
+          é tão técnico quanto começar bem.</p>
+          <ul>
+            <li>Quando reavaliar e quais instrumentos repetir sem contaminar o resultado</li>
+            <li>Critérios objetivos para manter, intensificar, redirecionar ou encerrar o plano</li>
+            <li>Devolutiva de processo à família: mostrar evolução real sem inflar nem minimizar</li>
+            <li>Relatório de acompanhamento para a escola e para outros profissionais</li>
+            <li>Encaminhamento responsável quando o caso ultrapassa o escopo psicopedagógico</li>
+          </ul>
+          <div class="entrega"><b>Você sai com:</b> modelo de relatório de acompanhamento e roteiro de devolutiva de processo.</div>
+        </div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<!-- MATERIAIS -->
+<section id="materiais">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">03 · Apoio</span>
+      <h2>Materiais de apoio</h2>
+      <p>Tudo o que for usado no dia fica disponível aqui, organizado por etapa. Os links são liberados
+      progressivamente ao longo da oficina.</p>
+    </div>
+    <div class="mats">
+      <div class="mat"><span class="kind">Etapa 1</span><h3>Roteiro de leitura de laudo</h3>
+        <p>Guia passo a passo para extrair hipóteses funcionais de um relatório de avaliação.</p>
+        <span class="em-breve">Disponível no dia da oficina</span></div>
+      <div class="mat"><span class="kind">Etapa 2</span><h3>Banco de objetivos terapêuticos</h3>
+        <p>Objetivos operacionais por área de habilidade, com critério de domínio sugerido.</p>
+        <span class="em-breve">Disponível no dia da oficina</span></div>
+      <div class="mat"><span class="kind">Etapa 3</span><h3>Modelo editável de PDI</h3>
+        <p>Documento completo, formatado e pronto para personalizar com a sua identidade.</p>
+        <span class="em-breve">Disponível no dia da oficina</span></div>
+      <div class="mat"><span class="kind">Etapa 3</span><h3>Estudo de caso da oficina</h3>
+        <p>Laudo completo do caso trabalhado em dupla no bloco prático da tarde.</p>
+        <span class="em-breve">Disponível no dia da oficina</span></div>
+      <div class="mat"><span class="kind">Etapa 4</span><h3>Matriz de estratégias por objetivo</h3>
+        <p>Qual estratégia para qual processo cognitivo, com a referência científica de cada escolha.</p>
+        <span class="em-breve">Disponível no dia da oficina</span></div>
+      <div class="mat"><span class="kind">Etapa 5</span><h3>Roteiro de sessão interventiva</h3>
+        <p>Estrutura de sessão e checklist de condução para aplicar imediatamente.</p>
+        <span class="em-breve">Disponível no dia da oficina</span></div>
+      <div class="mat"><span class="kind">Etapa 6</span><h3>Modelo de registro de sessão</h3>
+        <p>Como registrar a sessão e ler a curva de progresso do caso ao longo do tempo.</p>
+        <span class="em-breve">Disponível no dia da oficina</span></div>
+      <div class="mat"><span class="kind">Etapa 7</span><h3>Relatório de acompanhamento</h3>
+        <p>Modelo de relatório de processo e roteiro de devolutiva para família e escola.</p>
+        <span class="em-breve">Disponível no dia da oficina</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- INFORMAÇÕES -->
+<section id="informacoes">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">04 · Logística</span>
+      <h2>Informações práticas</h2>
+    </div>
+    <div class="info">
+      <div class="info-card"><div class="rot">Data</div><div class="val">18 de outubro</div><small>Domingo</small></div>
+      <div class="info-card"><div class="rot">Horário</div><div class="val">08h às 16h</div><small>Credenciamento a partir das 07h45</small></div>
+      <div class="info-card"><div class="rot">Local</div><div class="val">Porto Velho · RO</div><small>Local e endereço confirmados em breve</small></div>
+    </div>
+
+    <div class="sec-head" style="margin-top:44px">
+      <h2 style="font-size:1.6rem">O que está incluído</h2>
+    </div>
+    <ul class="leve">
+      <li>Certificado de participação</li>
+      <li>Kit personalizado</li>
+      <li>Dois coffee breaks</li>
+      <li>Estudo de caso real completo</li>
+      <li>Modelos editáveis de PDI e relatórios</li>
+      <li>Materiais digitais de todas as etapas</li>
+      <li>Hotseat e networking entre profissionais</li>
+    </ul>
+
+    <div class="sec-head" style="margin-top:44px">
+      <h2 style="font-size:1.6rem">O que trazer</h2>
+    </div>
+    <ul class="leve">
+      <li>Caderno e caneta</li>
+      <li>Notebook ou tablet, se preferir os materiais em digital</li>
+      <li>Um caso da sua prática, se quiser levá-lo ao hotseat</li>
+      <li>Roupa confortável, porque o dia tem muita prática</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ONDE COMER -->
+<section id="onde-comer">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">05 · Almoço</span>
+      <h2>Onde comer</h2>
+      <p>O intervalo do almoço é de 1h20, das 11h40 às 13h. As sugestões abaixo serão atualizadas
+      assim que o local for confirmado, com distância e tempo de deslocamento a pé.</p>
+    </div>
+    <div class="painel">
+      <p style="margin:0;font-size:14.5px;color:var(--texto-suave)">
+        Estamos finalizando a seleção de restaurantes próximos ao local da oficina. Esta seção será
+        preenchida com opções por tipo de cozinha, distância, horário de funcionamento aos domingos e
+        link direto para o mapa. Volte a esta página na semana do evento.</p>
+      <p class="aviso">Atenção: muitos restaurantes de Porto Velho têm horário reduzido aos domingos. As sugestões listadas aqui serão apenas de casas com funcionamento confirmado no dia.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FEEDBACK -->
+<section id="feedback">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">06 · Sua voz</span>
+      <h2>Feedback da experiência</h2>
+      <p>Sua avaliação é o que sustenta a próxima edição. Leva menos de um minuto e vai direto para o
+      WhatsApp da Ariana.</p>
+    </div>
+    <div class="painel">
+      <label class="campo"><span>Como você avalia a oficina?</span>
+        <div class="estrelas" id="estrelas">
+          <button type="button" data-v="1" aria-label="1 estrela">★</button>
+          <button type="button" data-v="2" aria-label="2 estrelas">★</button>
+          <button type="button" data-v="3" aria-label="3 estrelas">★</button>
+          <button type="button" data-v="4" aria-label="4 estrelas">★</button>
+          <button type="button" data-v="5" aria-label="5 estrelas">★</button>
+        </div>
+      </label>
+      <label class="campo"><span>Seu nome</span>
+        <input type="text" id="fb-nome" placeholder="Como você gostaria de ser identificada"></label>
+      <label class="campo"><span>O que mais fez diferença para você?</span>
+        <textarea id="fb-bom" rows="3" placeholder="Conte o momento ou o conteúdo que mais mudou a sua forma de intervir"></textarea></label>
+      <label class="campo"><span>O que podemos melhorar?</span>
+        <textarea id="fb-melhora" rows="3" placeholder="Sinceridade ajuda mais do que gentileza"></textarea></label>
+      <button class="btn" onclick="enviarFeedback()">Enviar pelo WhatsApp</button>
+    </div>
+  </div>
+</section>
+
+<!-- PERGUNTAS -->
+<section id="perguntas">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">07 · Dúvidas</span>
+      <h2>Perguntas</h2>
+      <p>Ficou uma dúvida sobre alguma etapa? Envie antes, durante ou depois da oficina. As perguntas
+      mais recorrentes são respondidas no hotseat do encerramento.</p>
+    </div>
+    <div class="painel">
+      <label class="campo"><span>Sobre qual etapa é a sua dúvida?</span>
+        <select id="pg-tema">
+          <option>1 · Leitura clínica do laudo</option>
+          <option>2 · Definição de objetivos terapêuticos</option>
+          <option>3 · Construção do PDI</option>
+          <option>4 · Seleção de estratégias e recursos</option>
+          <option>5 · Condução da sessão interventiva</option>
+          <option>6 · Registro e monitoramento de progresso</option>
+          <option>7 · Reavaliação e devolutiva de processo</option>
+          <option>Organização do consultório e honorários</option>
+          <option>Outro assunto</option>
+        </select></label>
+      <label class="campo"><span>Sua pergunta</span>
+        <textarea id="pg-texto" rows="4" placeholder="Descreva a situação com o máximo de contexto possível"></textarea></label>
+      <button class="btn" onclick="enviarPergunta()">Enviar pelo WhatsApp</button>
+    </div>
+
+    <div class="cta-box" style="margin-top:40px">
+      <h2>Ainda não garantiu sua vaga?</h2>
+      <p>A turma é reduzida por decisão pedagógica e a oficina acontece uma única vez, em 18 de outubro. Não haverá segunda turma.</p>
+      <a class="btn" id="cta-vaga" href="#">Falar com a Ariana</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p class="nome">Ariana Motta</p>
+    <p class="papel">Psicopedagoga clínica · Mentora e supervisora de psicopedagogas</p>
+    <div class="links">
+      <a href="https://instagram.com/psicopedagogaariana" target="_blank" rel="noopener">Instagram</a>
+      <a id="link-wa" href="#" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="mailto:arianaasmotta@gmail.com">E-mail</a>
+    </div>
+    <p class="cr">© 2026 Ariana Motta · Raízes da Intervenção</p>
+  </div>
+</footer>
+
+<script>
+// Número de WhatsApp no formato internacional, apenas dígitos.
+var WHATS = "5569984064921";
+
+function wa(msg){ return "https://wa.me/" + WHATS + "?text=" + encodeURIComponent(msg); }
+
+document.getElementById('cta-vaga').href = wa("Olá, Ariana! Quero garantir minha vaga na oficina Raízes da Intervenção, dia 18 de outubro.");
+document.getElementById('link-wa').href = wa("Olá, Ariana!");
+
+var nota = 0;
+document.querySelectorAll('#estrelas button').forEach(function(b){
+  b.addEventListener('click', function(){
+    nota = +b.dataset.v;
+    document.querySelectorAll('#estrelas button').forEach(function(x){
+      x.classList.toggle('on', +x.dataset.v <= nota);
+    });
+  });
+});
+
+function enviarFeedback(){
+  var nome = document.getElementById('fb-nome').value.trim();
+  var bom = document.getElementById('fb-bom').value.trim();
+  var mel = document.getElementById('fb-melhora').value.trim();
+  var m = "*Feedback · Raízes da Intervenção*\n";
+  m += "Nome: " + (nome || "não informado") + "\n";
+  m += "Nota: " + (nota ? nota + "/5" : "não informada") + "\n";
+  m += "O que fez diferença: " + (bom || "não informado") + "\n";
+  m += "O que melhorar: " + (mel || "não informado");
+  window.open(wa(m), "_blank");
+}
+
+function enviarPergunta(){
+  var t = document.getElementById('pg-tema').value;
+  var q = document.getElementById('pg-texto').value.trim();
+  if(!q){ document.getElementById('pg-texto').focus(); return; }
+  window.open(wa("*Pergunta · Raízes da Intervenção*\nEtapa: " + t + "\n\n" + q), "_blank");
+}
+
+// Destaque do item de navegação conforme a rolagem
+var secoes = document.querySelectorAll('section[id]');
+var itens = document.querySelectorAll('.nav-in a');
+var obs = new IntersectionObserver(function(entradas){
+  entradas.forEach(function(e){
+    if(e.isIntersecting){
+      itens.forEach(function(a){
+        a.classList.toggle('on', a.getAttribute('href') === '#' + e.target.id);
+      });
+    }
+  });
+}, { rootMargin: '-20% 0px -70% 0px' });
+secoes.forEach(function(s){ obs.observe(s); });
+</script>
+</body>
+</html>

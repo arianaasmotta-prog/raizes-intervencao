@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#1F2B22">
+<meta name="description" content="Raízes da Intervenção, oficina presencial em Porto Velho, 18 de outubro. Do laudo ao plano interventivo: a continuação da Raízes da Avaliação, com Ariana Motta.">
+<meta property="og:title" content="Raízes da Intervenção · Ariana Motta">
+<meta property="og:description" content="18 de outubro, Porto Velho. Um dia inteiro para transformar o laudo em plano interventivo defensável, monitorável e replicável.">
+<title>Raízes da Intervenção · Oficina presencial com Ariana Motta</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --verde-profundo:#1F2B22;
+  --verde-noite:#16201A;
+  --verde-musgo:#3E5843;
+  --verde-claro:#6E8B72;
+  --creme:#F7F3EA;
+  --creme-escuro:#EDE5D6;
+  --terracota:#B0714A;
+  --terracota-esc:#965C39;
+  --dourado:#C9A227;
+  --texto:#28322B;
+  --texto-suave:#5E6B61;
+  --borda:rgba(62,88,67,.18);
+  --sombra:0 1px 2px rgba(31,43,34,.04),0 10px 30px rgba(31,43,34,.07);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--creme);color:var(--texto);
+  font-family:'Inter',system-ui,-apple-system,sans-serif;font-size:16.5px;line-height:1.7;
+  -webkit-font-smoothing:antialiased}
+h1,h2,h3,.serif{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;line-height:1.14;letter-spacing:-.012em;margin:0}
+p{margin:0 0 1em}
+a{color:inherit}
+.wrap{width:100%;max-width:900px;margin:0 auto;padding-inline:22px}
+.estreito{max-width:720px}
+section{padding-block:72px}
+.escuro{background:var(--verde-profundo);color:var(--creme)}
+.escuro h2,.escuro h3{color:#fff}
+.escuro p{color:rgba(247,243,234,.8)}
+.noite{background:var(--verde-noite);color:var(--creme)}
+
+.eyebrow{font-size:11px;letter-spacing:.28em;text-transform:uppercase;font-weight:600;
+  color:var(--terracota);margin:0 0 14px}
+.escuro .eyebrow,.noite .eyebrow{color:var(--dourado)}
+h2.tit{font-size:clamp(2rem,7vw,2.9rem);margin-bottom:18px}
+.sub{color:var(--texto-suave);font-size:16px;max-width:620px}
+
+/* HERO */
+header{background:var(--verde-profundo);color:var(--creme);position:relative;overflow:hidden}
+header::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(ellipse at 15% -10%,rgba(201,162,39,.18),transparent 55%),
+             radial-gradient(ellipse at 95% 105%,rgba(176,113,74,.2),transparent 55%)}
+.hero{position:relative;z-index:1;padding-block:78px 70px;text-align:center}
+.hero .selo{display:inline-block;font-size:11px;letter-spacing:.2em;text-transform:uppercase;
+  font-weight:600;color:var(--dourado);border:1px solid rgba(201,162,39,.45);
+  border-radius:999px;padding:7px 16px;margin-bottom:26px}
+.hero h1{font-size:clamp(3rem,12vw,5.4rem);color:#fff}
+.hero h1 em{font-style:italic;color:var(--dourado);font-weight:500}
+.hero .promessa{font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:clamp(1.25rem,5vw,1.7rem);color:rgba(247,243,234,.85);margin:16px 0 0}
+.hero .pitch{max-width:560px;margin:26px auto 0;font-size:16px;color:rgba(247,243,234,.72)}
+.factos{display:flex;flex-wrap:wrap;justify-content:center;gap:9px;margin:32px 0 34px}
+.facto{border:1px solid rgba(247,243,234,.22);border-radius:999px;padding:8px 16px;
+  font-size:13px;color:rgba(247,243,234,.9)}
+.facto b{color:var(--dourado);font-weight:600}
+.hero .micro{margin:16px 0 0;font-size:12.5px;color:rgba(247,243,234,.55)}
+
+/* BOTÕES */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  background:var(--terracota);color:#fff;text-decoration:none;font-weight:600;font-size:15.5px;
+  padding:16px 32px;border-radius:999px;transition:.18s;border:none;cursor:pointer;
+  font-family:'Inter',sans-serif;box-shadow:0 8px 22px rgba(176,113,74,.28)}
+.btn:hover{background:var(--terracota-esc);transform:translateY(-1px)}
+.btn.lg{font-size:16.5px;padding:18px 38px}
+.btn.linha{background:transparent;border:1.5px solid rgba(247,243,234,.35);color:#fff;box-shadow:none}
+.btn.linha:hover{background:rgba(247,243,234,.12)}
+
+/* DOR */
+.dor{display:grid;gap:12px;margin-top:26px}
+.dor li{list-style:none;background:#fff;border:1px solid var(--borda);border-left:3px solid var(--terracota);
+  border-radius:0 12px 12px 0;padding:16px 20px;font-size:15.5px;color:var(--texto-suave);
+  box-shadow:var(--sombra)}
+.dor li b{color:var(--texto);font-weight:600}
+.virada{margin-top:34px;padding:26px;background:var(--verde-profundo);color:var(--creme);
+  border-radius:16px;font-family:'Cormorant Garamond',serif;font-size:clamp(1.35rem,5vw,1.75rem);
+  line-height:1.35;text-align:center;font-style:italic}
+.virada b{color:var(--dourado);font-style:normal;font-weight:600}
+
+/* ETAPAS */
+.etapas{display:grid;gap:12px;margin-top:30px}
+.etapa{display:grid;grid-template-columns:48px 1fr;gap:16px;background:#fff;
+  border:1px solid var(--borda);border-radius:14px;padding:20px;box-shadow:var(--sombra)}
+.num{width:48px;height:48px;border-radius:50%;background:var(--verde-profundo);color:var(--dourado);
+  display:grid;place-items:center;font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600}
+.etapa h3{font-size:1.3rem;margin-bottom:5px}
+.etapa p{margin:0;font-size:14.5px;color:var(--texto-suave)}
+
+/* PARA QUEM */
+.duas{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin-top:28px}
+.col{background:#fff;border:1px solid var(--borda);border-radius:16px;padding:24px;box-shadow:var(--sombra)}
+.col.nao{background:var(--creme-escuro);box-shadow:none}
+.col h3{font-size:1.35rem;margin-bottom:14px}
+.col ul{margin:0;padding:0;list-style:none;display:grid;gap:10px}
+.col li{display:flex;gap:10px;font-size:14.8px;color:var(--texto-suave);align-items:flex-start}
+.col.sim li::before{content:"✓";color:var(--verde-musgo);font-weight:700;flex:0 0 auto}
+.col.nao li::before{content:"\2022";color:var(--texto-suave);font-weight:700;flex:0 0 auto}
+
+/* EXPERIÊNCIA */
+.exp{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin-top:28px}
+.exp-card{border:1px solid rgba(247,243,234,.18);border-radius:16px;padding:24px;
+  background:rgba(247,243,234,.04)}
+.exp-card h3{font-size:1.3rem;margin-bottom:8px}
+.exp-card p{font-size:14.5px;margin:0}
+
+/* CRONOGRAMA */
+.crono{margin:28px 0 0;padding:0;list-style:none;border-top:1px solid var(--borda)}
+.crono li{display:grid;grid-template-columns:110px 1fr;gap:16px;padding:15px 0;
+  border-bottom:1px solid var(--borda);align-items:baseline}
+.crono .h{font-size:13px;font-weight:600;color:var(--verde-musgo)}
+.crono .d{font-size:15px}
+.crono .d small{display:block;color:var(--texto-suave);font-size:13.5px;margin-top:2px}
+
+/* INCLUSO */
+.incluso{display:grid;gap:11px;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));
+  list-style:none;padding:0;margin:28px 0 0}
+.incluso li{display:flex;gap:10px;align-items:flex-start;font-size:15px;color:var(--texto-suave)}
+.incluso li::before{content:"✓";color:var(--terracota);font-weight:700;flex:0 0 auto}
+
+/* INVESTIMENTO */
+.planos{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));margin-top:30px;max-width:400px;margin-inline:auto}
+.plano{background:#fff;border:1px solid var(--borda);border-radius:18px;padding:28px;text-align:center;
+  box-shadow:var(--sombra);position:relative}
+.plano.destaque{border:2px solid var(--dourado)}
+.plano .fita{position:absolute;top:-12px;left:50%;transform:translateX(-50%);
+  background:var(--dourado);color:#1F2B22;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
+  font-weight:700;padding:5px 14px;border-radius:999px;white-space:nowrap}
+.plano h3{font-size:1.4rem;margin-bottom:6px}
+.plano .quem{font-size:13.5px;color:var(--texto-suave);margin-bottom:18px}
+.plano .valor{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:600;color:var(--verde-profundo);line-height:1}
+.plano .valor sup{font-size:1.1rem;vertical-align:super;margin-right:3px}
+.plano .cond{font-size:13.5px;color:var(--texto-suave);margin:8px 0 20px}
+.plano .de{font-size:14px;color:var(--texto-suave);margin-bottom:2px}
+.plano .de s{text-decoration:line-through;text-decoration-color:var(--terracota)}
+.plano .prazo{display:inline-block;margin:10px 0 0;font-size:12px;font-weight:600;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--terracota);background:rgba(176,113,74,.1);
+  padding:5px 12px;border-radius:999px}
+.plano .fita.suave{background:var(--verde-musgo);color:#fff}
+.aviso-lote{margin-top:22px;background:var(--verde-profundo);color:var(--creme);border-radius:14px;
+  padding:16px 20px;font-size:14.5px;text-align:center}
+.aviso-lote b{color:var(--dourado)}
+.alerta{display:block;max-width:560px;margin:26px auto 0;background:rgba(176,113,74,.16);
+  border:1px solid rgba(201,162,39,.5);border-radius:14px;padding:16px 20px;text-align:center}
+.alerta .t{display:block;font-family:'Cormorant Garamond',serif;font-size:clamp(1.2rem,4.6vw,1.5rem);
+  color:var(--dourado);line-height:1.25;margin-bottom:6px}
+.alerta .d{display:block;font-size:13.5px;color:rgba(247,243,234,.82);line-height:1.5}
+.alerta-claro{position:relative;background:var(--verde-profundo);border:2px solid var(--dourado);
+  border-radius:18px;padding:34px 26px 30px;text-align:center;margin-top:32px;overflow:hidden;
+  box-shadow:0 14px 36px rgba(31,43,34,.22)}
+.alerta-claro::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(ellipse at 50% 0%,rgba(201,162,39,.22),transparent 62%)}
+.alerta-claro .selo-a{position:relative;z-index:1;display:inline-block;background:var(--dourado);
+  color:#1F2B22;font-size:10.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+  padding:6px 16px;border-radius:999px;margin-bottom:16px}
+.alerta-claro .t{position:relative;z-index:1;display:block;font-family:'Cormorant Garamond',serif;
+  font-size:clamp(1.75rem,7vw,2.5rem);color:var(--dourado);line-height:1.15;margin-bottom:12px;
+  font-weight:600}
+.alerta-claro .d{position:relative;z-index:1;display:block;font-size:15px;
+  color:rgba(247,243,234,.88);line-height:1.6;max-width:520px;margin-inline:auto}
+.alerta-claro .d b{color:#fff;font-weight:600}
+.garantia{margin-top:30px;background:var(--creme-escuro);border-radius:16px;padding:24px;
+  display:flex;gap:16px;align-items:flex-start}
+.garantia .ic{font-size:28px;line-height:1}
+.garantia h3{font-size:1.25rem;margin-bottom:6px}
+.garantia p{margin:0;font-size:14.5px;color:var(--texto-suave)}
+
+/* SOBRE */
+.sobre-grid{display:grid;gap:26px;grid-template-columns:1fr;align-items:start}
+.assinatura{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.5rem;
+  color:var(--dourado);margin-top:20px}
+
+/* FAQ */
+.faq{margin-top:28px;display:grid;gap:10px}
+.faq details{background:#fff;border:1px solid var(--borda);border-radius:12px;box-shadow:var(--sombra)}
+.faq summary{cursor:pointer;list-style:none;padding:18px 20px;font-weight:600;font-size:15.5px;
+  display:flex;justify-content:space-between;gap:14px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-size:22px;color:var(--verde-claro);font-weight:400;line-height:1}
+.faq details[open] summary::after{content:"–"}
+.faq .r{padding:0 20px 20px;font-size:14.8px;color:var(--texto-suave)}
+
+/* CTA FINAL */
+.final{text-align:center}
+.final h2{font-size:clamp(2rem,7.5vw,3rem);margin-bottom:16px}
+.final p{max-width:520px;margin-inline:auto}
+.escassez{margin-top:22px;font-size:13px;color:rgba(247,243,234,.6)}
+
+/* BARRA FIXA MOBILE */
+.barra{position:fixed;left:0;right:0;bottom:0;z-index:60;background:rgba(31,43,34,.96);
+  backdrop-filter:blur(10px);border-top:1px solid rgba(247,243,234,.14);
+  padding:11px 16px calc(11px + env(safe-area-inset-bottom));display:none;
+  align-items:center;justify-content:space-between;gap:12px}
+.barra .txt{font-size:12.5px;color:rgba(247,243,234,.75);line-height:1.35}
+.barra .txt b{display:block;color:#fff;font-size:14px;font-family:'Cormorant Garamond',serif}
+.barra .btn{padding:12px 20px;font-size:14px;box-shadow:none}
+@media(max-width:760px){.barra{display:flex}body{padding-bottom:74px}}
+
+footer{background:var(--verde-noite);color:rgba(247,243,234,.6);padding-block:40px;text-align:center}
+footer .nome{font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:#fff;margin:0 0 4px}
+footer .links{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin:18px 0}
+footer .links a{text-decoration:none;font-size:13px;padding:8px 16px;border-radius:999px;
+  border:1px solid rgba(247,243,234,.2);color:rgba(247,243,234,.9)}
+footer .cr{font-size:12px;color:rgba(247,243,234,.4)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap hero">
+    <span class="selo">Continuação de Raízes da Avaliação</span>
+    <h1>Raízes da <em>Intervenção</em></h1>
+    <p class="promessa">Onde o raciocínio clínico vira plano</p>
+    <p class="pitch">Você aprendeu a avaliar. Agora é hora da pergunta que trava a maioria das
+    psicopedagogas na sessão seguinte: <strong style="color:#fff">e agora, o que eu faço com esse laudo?</strong></p>
+    <div class="factos">
+      <span class="facto"><b>18</b> de outubro · domingo</span>
+      <span class="facto"><b>08h</b> às <b>16h</b></span>
+      <span class="facto">Porto Velho · RO</span>
+      <span class="facto"><b>Turma única</b></span>
+    </div>
+    <a class="btn lg" id="cta1" href="#">Quero garantir minha vaga</a>
+    <span class="alerta">
+      <span class="t">Turma única, sem nova data</span>
+      <span class="d">São poucas vagas e não haverá segunda turma desta oficina. Quem ficar de fora
+      aguarda a próxima formação, sem previsão de abertura.</span>
+    </span>
+  </div>
+</header>
+
+<!-- DOR -->
+<section>
+  <div class="wrap estreito">
+    <p class="eyebrow">O ponto onde a maioria trava</p>
+    <h2 class="tit">O laudo fica pronto. E a intervenção começa no improviso.</h2>
+    <p class="sub">Não é falta de estudo. É falta de um processo que ligue o resultado da avaliação
+    às sessões de intervenção. Se você se reconhece em alguma destas frases, esta oficina foi
+    desenhada para você.</p>
+    <ul class="dor">
+      <li><b>Você entrega o laudo e sente um vazio.</b> A avaliação ficou impecável, mas o plano que vem depois nasce de intuição, não de método.</li>
+      <li><b>Você monta a sessão na véspera.</b> Escolhe a atividade pelo que tem disponível, não pelo objetivo que precisa alcançar.</li>
+      <li><b>Você não sabe dizer se está funcionando.</b> Passaram-se quatro meses e a resposta que você dá à família é "ele está evoluindo", sem dado que sustente.</li>
+      <li><b>Você acumula materiais e jogos</b> que não conversam com nenhum objetivo terapêutico definido.</li>
+      <li><b>Você não sabe quando encerrar.</b> O caso se estende porque não existe critério clínico de alta.</li>
+    </ul>
+    <div class="virada">Intervenção não começa na atividade.<br><b>Começa na decisão clínica.</b></div>
+  </div>
+</section>
+
+<!-- O MÉTODO -->
+<section class="escuro">
+  <div class="wrap">
+    <p class="eyebrow">O método · 7 etapas</p>
+    <h2 class="tit">Do laudo ao plano, etapa por etapa</h2>
+    <p class="sub" style="color:rgba(247,243,234,.75)">Uma sequência que você aplica em qualquer caso
+    que entrar no seu consultório, independentemente da queixa, da idade ou do diagnóstico.</p>
+    <div class="etapas" style="margin-top:30px">
+      <div class="etapa" style="background:rgba(247,243,234,.05);border-color:rgba(247,243,234,.16)">
+        <div class="num">1</div>
+        <div><h3 style="color:#fff">Leitura clínica do laudo</h3>
+        <p style="color:rgba(247,243,234,.72)">Separar sintoma de causa funcional. Identificar a habilidade-base comprometida, não apenas a queixa manifesta.</p></div>
+      </div>
+      <div class="etapa" style="background:rgba(247,243,234,.05);border-color:rgba(247,243,234,.16)">
+        <div class="num">2</div>
+        <div><h3 style="color:#fff">Definição de objetivos terapêuticos</h3>
+        <p style="color:rgba(247,243,234,.72)">"Melhorar a leitura" não é objetivo, é desejo. Aqui você aprende a escrever metas observáveis, com critério de domínio e prazo.</p></div>
+      </div>
+      <div class="etapa" style="background:rgba(247,243,234,.05);border-color:rgba(247,243,234,.16)">
+        <div class="num">3</div>
+        <div><h3 style="color:#fff">Construção do PDI</h3>
+        <p style="color:rgba(247,243,234,.72)">O Plano de Desenvolvimento Interventivo completo: o documento que organiza a sua conduta e demonstra que ela tem racional clínico.</p></div>
+      </div>
+      <div class="etapa" style="background:rgba(247,243,234,.05);border-color:rgba(247,243,234,.16)">
+        <div class="num">4</div>
+        <div><h3 style="color:#fff">Seleção de estratégias e recursos</h3>
+        <p style="color:rgba(247,243,234,.72)">Escolha por evidência, não por tendência. Qual estratégia corresponde a qual processo cognitivo, e como descartar o que não move nada.</p></div>
+      </div>
+      <div class="etapa" style="background:rgba(247,243,234,.05);border-color:rgba(247,243,234,.16)">
+        <div class="num">5</div>
+        <div><h3 style="color:#fff">Condução da sessão interventiva</h3>
+        <p style="color:rgba(247,243,234,.72)">Arquitetura da sessão, dosagem por objetivo, mediação e manejo de recusa sem abandonar a meta do dia.</p></div>
+      </div>
+      <div class="etapa" style="background:rgba(247,243,234,.05);border-color:rgba(247,243,234,.16)">
+        <div class="num">6</div>
+        <div><h3 style="color:#fff">Registro e monitoramento de progresso</h3>
+        <p style="color:rgba(247,243,234,.72)">Medidas breves e repetidas, leitura da curva de evolução e os sinais de que o plano precisa de ajuste antes de perder seis meses.</p></div>
+      </div>
+      <div class="etapa" style="background:rgba(247,243,234,.05);border-color:rgba(247,243,234,.16)">
+        <div class="num">7</div>
+        <div><h3 style="color:#fff">Reavaliação e devolutiva de processo</h3>
+        <p style="color:rgba(247,243,234,.72)">Critérios objetivos para manter, intensificar, redirecionar ou encerrar. E como comunicar isso à família sem inflar nem minimizar.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARA QUEM -->
+<section>
+  <div class="wrap">
+    <p class="eyebrow">Antes de decidir</p>
+    <h2 class="tit">Para quem esta oficina foi feita</h2>
+    <div class="duas">
+      <div class="col sim">
+        <h3>É para você se</h3>
+        <ul>
+          <li>Você é psicopedagoga ou neuropsicopedagoga, formada ou em formação</li>
+          <li>Você já avalia, mas trava na hora de montar o plano de intervenção</li>
+          <li>Você quer um processo replicável, não uma pasta de atividades</li>
+          <li>Você precisa sustentar tecnicamente suas escolhas diante da família e da escola</li>
+          <li>Você participou da Raízes da Avaliação e quer fechar o ciclo</li>
+          <li>Você aprende melhor fazendo, com caso real na mão</li>
+        </ul>
+      </div>
+      <div class="col nao">
+        <h3>Não é para você se</h3>
+        <ul>
+          <li>Você procura um pacote de atividades prontas para aplicar sem critério</li>
+          <li>Você quer receita fechada por diagnóstico</li>
+          <li>Você não pretende registrar nem monitorar o progresso dos seus casos</li>
+          <li>Você busca certificação rápida, sem prática</li>
+        </ul>
+      </div>
+    </div>
+    <p class="sub" style="margin-top:22px;font-size:15px"><strong>Não é pré-requisito ter participado
+    da Raízes da Avaliação.</strong> A oficina é autossuficiente: começa na leitura do laudo, que é
+    exatamente onde a avaliação termina.</p>
+  </div>
+</section>
+
+<!-- EXPERIÊNCIA -->
+<section class="noite">
+  <div class="wrap">
+    <p class="eyebrow">A experiência</p>
+    <h2 class="tit">Um dia de prática, não de slides</h2>
+    <p class="sub" style="color:rgba(247,243,234,.75)">Você não vem assistir a uma aula sobre intervenção.
+    Vem construir um plano interventivo do começo ao fim, com caso real na mão e acompanhamento direto.</p>
+    <div class="exp">
+      <div class="exp-card"><h3>Caso real, do início ao fim</h3>
+        <p>Você recebe um laudo completo e sai com o PDI daquele caso construído por você, em dupla, com acompanhamento direto.</p></div>
+      <div class="exp-card"><h3>Materiais que se usam de verdade</h3>
+        <p>Protocolos, jogos e recursos de intervenção disponíveis para manusear, testar e avaliar com critério.</p></div>
+      <div class="exp-card"><h3>Hotseat clínico</h3>
+        <p>Espaço para trazer um caso da sua prática e discutir a conduta com o grupo e comigo.</p></div>
+      <div class="exp-card"><h3>Turma reduzida</h3>
+        <p>Decisão pedagógica, não estratégia de escassez: prática individualizada exige espaço e tempo de olhar.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CRONOGRAMA -->
+<section>
+  <div class="wrap estreito">
+    <p class="eyebrow">O dia</p>
+    <h2 class="tit">Como o dia se organiza</h2>
+    <p class="sub">Teoria em blocos curtos, prática em blocos longos. Cada bloco entrega uma peça do plano.</p>
+    <ul class="crono">
+      <li><span class="h">08:00 às 08:20</span><span class="d">Acolhimento e entrega do kit</span></li>
+      <li><span class="h">08:20 às 09:50</span><span class="d">Da avaliação à hipótese funcional<small>Etapas 1 e 2</small></span></li>
+      <li><span class="h">09:50 às 10:10</span><span class="d">Coffee break</span></li>
+      <li><span class="h">10:10 às 11:40</span><span class="d">Construção do PDI e escolha de estratégias<small>Etapas 3 e 4</small></span></li>
+      <li><span class="h">11:40 às 13:00</span><span class="d">Almoço livre</span></li>
+      <li><span class="h">13:00 às 14:30</span><span class="d">Prática: do laudo ao plano, com caso real<small>Etapa 3 na mão</small></span></li>
+      <li><span class="h">14:30 às 14:45</span><span class="d">Coffee break</span></li>
+      <li><span class="h">14:45 às 15:30</span><span class="d">Prática: sessão interventiva e registro<small>Etapas 5 e 6</small></span></li>
+      <li><span class="h">15:30 às 16:00</span><span class="d">Hotseat, reavaliação e certificados<small>Etapa 7</small></span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- INCLUSO -->
+<section style="background:var(--creme-escuro)">
+  <div class="wrap">
+    <p class="eyebrow">O que você leva</p>
+    <h2 class="tit">Incluso na sua vaga</h2>
+    <ul class="incluso">
+      <li>Certificado de participação</li>
+      <li>Kit personalizado</li>
+      <li>Dois coffee breaks</li>
+      <li>Estudo de caso real completo</li>
+      <li>Modelo editável de PDI</li>
+      <li>Banco de objetivos terapêuticos por área</li>
+      <li>Matriz de estratégias por objetivo</li>
+      <li>Roteiro de sessão e checklist de condução</li>
+      <li>Modelo de relatório de acompanhamento</li>
+      <li>Roteiro de devolutiva de processo</li>
+      <li>Portal digital com todos os materiais</li>
+      <li>Hotseat e networking entre profissionais</li>
+    </ul>
+  </div>
+</section>
+
+<!-- INVESTIMENTO -->
+<section id="investimento">
+  <div class="wrap">
+    <p class="eyebrow">Investimento</p>
+    <h2 class="tit">Sua vaga</h2>
+    <p class="sub">Um dia inteiro de formação prática, materiais editáveis e acompanhamento direto,
+    por menos do que costuma custar uma única supervisão avulsa.</p>
+    <div class="planos">
+      <div class="plano destaque" id="card-ind">
+        <span class="fita" id="fita-ind">Lote de lançamento</span>
+        <h3>Vaga individual</h3>
+        <p class="quem">Para quem vem sozinha</p>
+        <p class="de" id="de-ind">de <s>R$ 247,00</s> por</p>
+        <div class="valor"><sup>R$</sup><span id="val-ind">167</span><span style="font-size:1.4rem">,00</span></div>
+        <p class="cond">À vista ou parcelado no cartão</p>
+        <p class="prazo" id="prazo-ind">Somente até 21 de setembro</p>
+        <div style="margin-top:18px"><a class="btn" id="cta-ind" href="#">Garantir minha vaga</a></div>
+      </div>
+    </div>
+    <div class="aviso-lote" id="aviso-lote">O lote de lançamento vale <b>até 21 de setembro</b>. Depois dessa data, a vaga passa a custar R$ 247,00.</div>
+    <div class="alerta-claro">
+      <span class="selo-a">Atenção</span>
+      <span class="t">Vagas limitadas,<br>turma única</span>
+      <span class="d">A oficina acontece <b>uma vez só, em 18 de outubro</b>. Não há segunda turma,
+      lista de espera com nova data nem gravação. As vagas são confirmadas por ordem de pagamento.</span>
+    </div>
+    <div class="garantia">
+      <div class="ic">🛡️</div>
+      <div>
+        <h3>Garantia de 7 dias</h3>
+        <p>Você tem 7 dias após a inscrição para desistir e receber o valor de volta, sem justificativa.
+        Após esse prazo, o valor não é reembolsável por não comparecimento, mas pode ser transferido
+        para outra profissional mediante aviso prévio.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section class="escuro">
+  <div class="wrap estreito">
+    <p class="eyebrow">Quem conduz</p>
+    <h2 class="tit">Ariana Motta</h2>
+    <div class="sobre-grid">
+      <div>
+        <p>Psicopedagoga clínica em Porto Velho, com mais de 16 anos de atuação em educação e
+        especialização em dificuldades de aprendizagem: TDAH, TEA e dislexia.</p>
+        <p>Formada em Pedagogia, com pós-graduações em Psicopedagogia, Educação Especial, TEA, TDAH e
+        Dislexia, e formação complementar em ABA, Transtornos do Neurodesenvolvimento, Educação Parental
+        e ADOS-2.</p>
+        <p>Hoje divide a rotina entre o consultório e a formação de outras profissionais: é mentora e
+        supervisora de psico e neuropsicopedagogas e fundadora do Clube Raiz.</p>
+        <p>A Raízes da Avaliação nasceu de uma inquietação: profissionais que sabiam aplicar testes,
+        mas não conseguiam construir raciocínio clínico. A Raízes da Intervenção nasce da inquietação
+        seguinte: profissionais que já sabem concluir, mas ainda não sabem o que fazer no dia seguinte.</p>
+        <p class="assinatura">Te espero por aqui.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section>
+  <div class="wrap estreito">
+    <p class="eyebrow">Antes de perguntar</p>
+    <h2 class="tit">Dúvidas frequentes</h2>
+    <div class="faq">
+      <details open><summary>Preciso ter feito a Raízes da Avaliação?</summary>
+        <div class="r">Não. A oficina começa exatamente onde a avaliação termina: na leitura do laudo.
+        Quem participou da primeira edição fecha o ciclo; quem não participou entra sem prejuízo de conteúdo.</div></details>
+      <details><summary>Sou estudante, ainda não me formei. Posso participar?</summary>
+        <div class="r">Sim. A oficina é aberta a psicopedagogas e neuropsicopedagogas formadas ou em
+        formação. A prática em dupla favorece quem ainda está construindo repertório clínico.</div></details>
+      <details><summary>É teórico ou prático?</summary>
+        <div class="r">Os dois, nessa ordem e nessa proporção: aproximadamente 40% de teoria em blocos
+        curtos e 60% de prática com caso real. Você sai com um PDI construído por você.</div></details>
+      <details><summary>Vou receber os materiais em digital?</summary>
+        <div class="r">Sim. Todos os modelos (PDI, banco de objetivos, matriz de estratégias, planilha
+        de monitoramento e relatórios) ficam disponíveis em um portal digital exclusivo das participantes.</div></details>
+      <details><summary>Serve para atendimento de adultos ou só de crianças?</summary>
+        <div class="r">A lógica das 7 etapas é a mesma para qualquer faixa etária. Os exemplos práticos
+        do dia são de casos infantojuvenis, que representam a maior parte da demanda clínica.</div></details>
+      <details><summary>Tem certificado?</summary>
+        <div class="r">Sim, entregue presencialmente no encerramento do dia.</div></details>
+      <details><summary>Como funciona o pagamento?</summary>
+        <div class="r">À vista por Pix ou parcelado no cartão. Basta chamar no WhatsApp que eu envio as
+        condições e reservo a sua vaga.</div></details>
+      <details><summary>Onde vai ser exatamente?</summary>
+        <div class="r">Em Porto Velho, Rondônia. O endereço completo é enviado às inscritas por WhatsApp
+        assim que o espaço é confirmado, com antecedência suficiente para organização de deslocamento.</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="noite final">
+  <div class="wrap estreito">
+    <p class="eyebrow">Último ponto</p>
+    <h2>Você já sabe avaliar.<br>Está pronta para intervir com método?</h2>
+    <p>18 de outubro, um domingo inteiro, em Porto Velho. Você chega com dúvida e sai com plano.</p>
+    <a class="btn lg" id="cta2" href="#" style="margin-top:12px">Quero minha vaga na Raízes da Intervenção</a>
+    <p class="escassez">Turma única e vagas limitadas · Confirmação por ordem de pagamento</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p class="nome">Ariana Motta</p>
+    <p style="font-size:13px;margin:0">Psicopedagoga clínica · Mentora e supervisora de psicopedagogas</p>
+    <div class="links">
+      <a href="https://instagram.com/psicopedagogaariana" target="_blank" rel="noopener">Instagram</a>
+      <a id="link-wa" href="#" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="mailto:arianaasmotta@gmail.com">E-mail</a>
+    </div>
+    <p class="cr">© 2026 Ariana Motta · Raízes da Intervenção</p>
+  </div>
+</footer>
+
+<div class="barra">
+  <div class="txt"><b>Raízes da Intervenção</b>18/10 · turma única, vagas limitadas</div>
+  <a class="btn" id="cta3" href="#">Quero minha vaga</a>
+</div>
+
+<script>
+// Número de WhatsApp no formato internacional, apenas dígitos.
+var WHATS = "5569984064921";
+function wa(m){ return "https://wa.me/" + WHATS + "?text=" + encodeURIComponent(m); }
+
+var padrao = "Olá, Ariana! Quero garantir minha vaga na oficina Raízes da Intervenção, dia 18 de outubro.";
+["cta1","cta2","cta3"].forEach(function(id){ document.getElementById(id).href = wa(padrao); });
+document.getElementById("cta-ind").href = wa("Olá, Ariana! Quero a vaga individual na Raízes da Intervenção, dia 18 de outubro, no valor de lançamento.");
+
+// Lote de lançamento: expira no fim do dia 21/09/2026 (horário de Rondônia, UTC-4)
+var FIM_LOTE = new Date("2026-09-22T03:59:59Z");
+if (new Date() > FIM_LOTE) {
+  document.getElementById("val-ind").textContent = "247";
+  document.getElementById("de-ind").hidden = true;
+  document.getElementById("fita-ind").hidden = true;
+  document.getElementById("prazo-ind").hidden = true;
+  document.getElementById("aviso-lote").hidden = true;
+  document.getElementById("card-ind").classList.remove("destaque");
+  document.getElementById("cta-ind").href = wa("Olá, Ariana! Quero a vaga individual na Raízes da Intervenção, dia 18 de outubro.");
+}
+document.getElementById("link-wa").href = wa("Olá, Ariana!");
+</script>
+</body>
+</html>
