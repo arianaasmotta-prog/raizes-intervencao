@@ -267,6 +267,33 @@ header::after{content:"";position:absolute;inset:0;pointer-events:none;
   font-weight:700;color:var(--terracota)}
 .depo-nota{margin-top:26px;text-align:center;font-size:13.5px;color:var(--texto-suave);font-style:italic}
 
+/* ---------- AÇÕES DE PAGAMENTO ---------- */
+.acoes{display:grid;gap:10px;margin-top:20px}
+.btn-pag{display:flex;align-items:center;justify-content:center;gap:9px;width:100%;
+  font-family:'Inter',sans-serif;font-weight:600;font-size:15px;letter-spacing:.01em;
+  padding:15px 18px;border-radius:12px;border:none;cursor:pointer;text-decoration:none;
+  transition:.18s;line-height:1.2}
+.btn-pag .ic{font-size:16px;line-height:1}
+.btn-pag.pix{background:var(--marrom-profundo);color:var(--dourado-claro)}
+.btn-pag.pix:hover{background:#3A2418}
+.btn-pag.cartao{background:var(--terracota);color:#fff;box-shadow:0 8px 20px rgba(169,106,66,.26)}
+.btn-pag.cartao:hover{background:var(--terracota-esc)}
+.btn-pag.saber{background:transparent;color:var(--marrom-medio);border:1.5px solid var(--borda)}
+.btn-pag.saber:hover{background:var(--creme-escuro)}
+.pix-box{display:none;margin-top:12px;background:var(--creme-escuro);border:1px solid var(--borda);
+  border-radius:12px;padding:16px;text-align:left}
+.pix-box.on{display:block}
+.pix-box .rot{display:block;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;
+  font-weight:700;color:var(--terracota);margin-bottom:7px}
+.pix-box code{display:block;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;
+  color:var(--texto);background:#fff;border:1px solid var(--borda);border-radius:8px;
+  padding:10px 12px;word-break:break-all;line-height:1.5}
+.pix-box .passo{display:block;margin-top:10px;font-size:13px;color:var(--texto-suave);line-height:1.55}
+.pix-box .mini{display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:13px;
+  font-weight:600;color:var(--marrom-medio);background:#fff;border:1px solid var(--borda);
+  border-radius:999px;padding:8px 14px;cursor:pointer;text-decoration:none}
+.pix-box .mini:hover{background:var(--creme)}
+
 footer{background:var(--marrom-noite);color:rgba(248,242,233,.6);padding-block:40px;text-align:center}
 footer .nome{font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:#fff;margin:0 0 4px}
 footer .links{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin:18px 0}
@@ -586,7 +613,19 @@ footer .cr{font-size:12px;color:rgba(248,242,233,.4)}
         <div class="valor"><sup>R$</sup><span id="val-ind">167</span><span style="font-size:1.4rem">,00</span></div>
         <p class="cond">À vista ou parcelado no cartão</p>
         <p class="prazo" id="prazo-ind">Somente até 21 de setembro</p>
-        <div style="margin-top:18px"><a class="btn" id="cta-ind" href="#">Garantir minha vaga</a></div>
+        <div class="acoes">
+          <a class="btn-pag cartao" id="btn-cartao" href="https://link.infinitepay.io/arianapsicopedagoga/Ri0x-YEtjLhhjG7-167,00" target="_blank" rel="noopener"><span class="ic">💳</span> Pagar com cartão</a>
+          <button class="btn-pag pix" id="btn-pix" type="button" aria-expanded="false" aria-controls="pix-box"><span class="ic">⚡</span> Pagar com Pix</button>
+          <a class="btn-pag saber" id="btn-saber" href="#"><span class="ic">💬</span> Quero saber mais</a>
+        </div>
+        <div class="pix-box" id="pix-box">
+          <span class="rot">Chave Pix aleatória</span>
+          <code id="pix-chave">c1e63483-d233-4fb0-8040-8c6dc2d79e66</code>
+          <span class="passo">Pague o valor da vaga na sua chave Pix e envie o comprovante no
+          WhatsApp para confirmar sua inscrição. A vaga é reservada na confirmação do pagamento.</span>
+          <button class="mini" id="btn-copiar" type="button">Copiar chave</button>
+          <a class="mini" id="btn-comprovante" href="#" target="_blank" rel="noopener">Enviar comprovante</a>
+        </div>
       </div>
     </div>
     <div class="aviso-lote" id="aviso-lote">O lote de lançamento vale <b>até 21 de setembro</b>. Depois dessa data, a vaga passa a custar R$ 247,00.</div>
@@ -704,9 +743,32 @@ footer .cr{font-size:12px;color:rgba(248,242,233,.4)}
 var WHATS = "5569984064921";
 function wa(m){ return "https://wa.me/" + WHATS + "?text=" + encodeURIComponent(m); }
 
-var padrao = "Olá, Ariana! Quero garantir minha vaga na oficina Raízes da Intervenção, dia 18 de outubro.";
-["cta1","cta2","cta3"].forEach(function(id){ document.getElementById(id).href = wa(padrao); });
-document.getElementById("cta-ind").href = wa("Olá, Ariana! Quero a vaga individual na Raízes da Intervenção, dia 18 de outubro, no valor de lançamento.");
+["cta1","cta2","cta3"].forEach(function(id){ document.getElementById(id).href = "#investimento"; });
+document.getElementById("btn-saber").href = wa("Olá, Ariana! Quero saber mais sobre a oficina Raízes da Intervenção, dia 18 de outubro.");
+document.getElementById("btn-comprovante").href = wa("Olá, Ariana! Fiz o pagamento da minha vaga na Raízes da Intervenção por Pix e estou enviando o comprovante.");
+
+var caixaPix = document.getElementById("pix-box");
+var botaoPix = document.getElementById("btn-pix");
+botaoPix.addEventListener("click", function(){
+  var aberta = caixaPix.classList.toggle("on");
+  botaoPix.setAttribute("aria-expanded", aberta ? "true" : "false");
+  if (aberta) caixaPix.scrollIntoView({behavior:"smooth", block:"nearest"});
+});
+
+document.getElementById("btn-copiar").addEventListener("click", function(){
+  var chave = document.getElementById("pix-chave").textContent.trim();
+  var botao = this;
+  function feito(){ botao.textContent = "Chave copiada"; setTimeout(function(){ botao.textContent = "Copiar chave"; }, 2500); }
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(chave).then(feito, selecionar);
+  } else { selecionar(); }
+  function selecionar(){
+    var faixa = document.createRange();
+    faixa.selectNodeContents(document.getElementById("pix-chave"));
+    var sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(faixa);
+    try { document.execCommand("copy"); feito(); } catch(e) { botao.textContent = "Selecione e copie"; }
+  }
+});
 
 // Lote de lançamento: expira no fim do dia 21/09/2026 (horário de Rondônia, UTC-4)
 var FIM_LOTE = new Date("2026-09-22T03:59:59Z");
@@ -717,7 +779,9 @@ if (new Date() > FIM_LOTE) {
   document.getElementById("prazo-ind").hidden = true;
   document.getElementById("aviso-lote").hidden = true;
   document.getElementById("card-ind").classList.remove("destaque");
-  document.getElementById("cta-ind").href = wa("Olá, Ariana! Quero a vaga individual na Raízes da Intervenção, dia 18 de outubro.");
+  var bc = document.getElementById("btn-cartao");
+  bc.href = wa("Olá, Ariana! Quero pagar minha vaga na Raízes da Intervenção com cartão. Pode me enviar o link?");
+  bc.removeAttribute("target");
 }
 document.getElementById("link-wa").href = wa("Olá, Ariana!");
 </script>
