@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#1F2B22">
+<meta name="theme-color" content="#2B1B12">
 <meta name="description" content="Raízes da Intervenção, oficina presencial em Porto Velho, 18 de outubro. Do laudo ao plano interventivo: a continuação da Raízes da Avaliação, com Ariana Motta.">
 <meta property="og:title" content="Raízes da Intervenção · Ariana Motta">
 <meta property="og:description" content="18 de outubro, Porto Velho. Um dia inteiro para transformar o laudo em plano interventivo defensável, monitorável e replicável.">
@@ -13,19 +13,20 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --verde-profundo:#1F2B22;
-  --verde-noite:#16201A;
-  --verde-musgo:#3E5843;
-  --verde-claro:#6E8B72;
-  --creme:#F7F3EA;
-  --creme-escuro:#EDE5D6;
-  --terracota:#B0714A;
-  --terracota-esc:#965C39;
-  --dourado:#C9A227;
-  --texto:#28322B;
-  --texto-suave:#5E6B61;
-  --borda:rgba(62,88,67,.18);
-  --sombra:0 1px 2px rgba(31,43,34,.04),0 10px 30px rgba(31,43,34,.07);
+  --marrom-profundo:#2B1B12;
+  --marrom-noite:#1D110A;
+  --marrom-medio:#6B4A35;
+  --marrom-claro:#A78468;
+  --creme:#F8F2E9;
+  --creme-escuro:#EFE3D4;
+  --terracota:#A96A42;
+  --terracota-esc:#8A5333;
+  --dourado:#C9A24A;
+  --dourado-claro:#E2C588;
+  --texto:#2E2119;
+  --texto-suave:#6E5B4C;
+  --borda:rgba(107,74,53,.2);
+  --sombra:0 1px 2px rgba(43,27,18,.05),0 10px 30px rgba(43,27,18,.09);
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -35,49 +36,50 @@ body{margin:0;background:var(--creme);color:var(--texto);
 h1,h2,h3,.serif{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;line-height:1.14;letter-spacing:-.012em;margin:0}
 p{margin:0 0 1em}
 a{color:inherit}
+img{max-width:100%;height:auto}
 .wrap{width:100%;max-width:900px;margin:0 auto;padding-inline:22px}
 .estreito{max-width:720px}
 section{padding-block:72px}
-.escuro{background:var(--verde-profundo);color:var(--creme)}
+.escuro{background:var(--marrom-profundo);color:var(--creme)}
 .escuro h2,.escuro h3{color:#fff}
-.escuro p{color:rgba(247,243,234,.8)}
-.noite{background:var(--verde-noite);color:var(--creme)}
+.escuro p{color:rgba(248,242,233,.8)}
+.noite{background:var(--marrom-noite);color:var(--creme)}
 
 .eyebrow{font-size:11px;letter-spacing:.28em;text-transform:uppercase;font-weight:600;
   color:var(--terracota);margin:0 0 14px}
-.escuro .eyebrow,.noite .eyebrow{color:var(--dourado)}
+.escuro .eyebrow,.noite .eyebrow{color:var(--dourado-claro)}
 h2.tit{font-size:clamp(2rem,7vw,2.9rem);margin-bottom:18px}
 .sub{color:var(--texto-suave);font-size:16px;max-width:620px}
 
 /* HERO */
-header{background:var(--verde-profundo);color:var(--creme);position:relative;overflow:hidden}
+header{background:var(--marrom-profundo);color:var(--creme);position:relative;overflow:hidden}
 header::after{content:"";position:absolute;inset:0;pointer-events:none;
-  background:radial-gradient(ellipse at 15% -10%,rgba(201,162,39,.18),transparent 55%),
-             radial-gradient(ellipse at 95% 105%,rgba(176,113,74,.2),transparent 55%)}
-.hero{position:relative;z-index:1;padding-block:78px 70px;text-align:center}
+  background:radial-gradient(ellipse at 15% -10%,rgba(201,162,74,.18),transparent 55%),
+             radial-gradient(ellipse at 95% 105%,rgba(169,106,66,.2),transparent 55%)}
+.hero{position:relative;z-index:1;padding-block:78px 46px;text-align:center}
 .hero .selo{display:inline-block;font-size:11px;letter-spacing:.2em;text-transform:uppercase;
-  font-weight:600;color:var(--dourado);border:1px solid rgba(201,162,39,.45);
+  font-weight:600;color:var(--dourado-claro);border:1px solid rgba(201,162,74,.45);
   border-radius:999px;padding:7px 16px;margin-bottom:26px}
 .hero h1{font-size:clamp(3rem,12vw,5.4rem);color:#fff}
-.hero h1 em{font-style:italic;color:var(--dourado);font-weight:500}
+.hero h1 em{font-style:italic;color:var(--dourado-claro);font-weight:500}
 .hero .promessa{font-family:'Cormorant Garamond',serif;font-style:italic;
-  font-size:clamp(1.25rem,5vw,1.7rem);color:rgba(247,243,234,.85);margin:16px 0 0}
-.hero .pitch{max-width:560px;margin:26px auto 0;font-size:16px;color:rgba(247,243,234,.72)}
+  font-size:clamp(1.25rem,5vw,1.7rem);color:rgba(248,242,233,.85);margin:16px 0 0}
+.hero .pitch{max-width:560px;margin:26px auto 0;font-size:16px;color:rgba(248,242,233,.72)}
 .factos{display:flex;flex-wrap:wrap;justify-content:center;gap:9px;margin:32px 0 34px}
-.facto{border:1px solid rgba(247,243,234,.22);border-radius:999px;padding:8px 16px;
-  font-size:13px;color:rgba(247,243,234,.9)}
-.facto b{color:var(--dourado);font-weight:600}
-.hero .micro{margin:16px 0 0;font-size:12.5px;color:rgba(247,243,234,.55)}
+.facto{border:1px solid rgba(248,242,233,.22);border-radius:999px;padding:8px 16px;
+  font-size:13px;color:rgba(248,242,233,.9)}
+.facto b{color:var(--dourado-claro);font-weight:600}
+.hero .micro{margin:16px 0 0;font-size:12.5px;color:rgba(248,242,233,.55)}
 
 /* BOTÕES */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;
   background:var(--terracota);color:#fff;text-decoration:none;font-weight:600;font-size:15.5px;
   padding:16px 32px;border-radius:999px;transition:.18s;border:none;cursor:pointer;
-  font-family:'Inter',sans-serif;box-shadow:0 8px 22px rgba(176,113,74,.28)}
+  font-family:'Inter',sans-serif;box-shadow:0 8px 22px rgba(169,106,66,.28)}
 .btn:hover{background:var(--terracota-esc);transform:translateY(-1px)}
 .btn.lg{font-size:16.5px;padding:18px 38px}
-.btn.linha{background:transparent;border:1.5px solid rgba(247,243,234,.35);color:#fff;box-shadow:none}
-.btn.linha:hover{background:rgba(247,243,234,.12)}
+.btn.linha{background:transparent;border:1.5px solid rgba(248,242,233,.35);color:#fff;box-shadow:none}
+.btn.linha:hover{background:rgba(248,242,233,.12)}
 
 /* DOR */
 .dor{display:grid;gap:12px;margin-top:26px}
@@ -85,16 +87,16 @@ header::after{content:"";position:absolute;inset:0;pointer-events:none;
   border-radius:0 12px 12px 0;padding:16px 20px;font-size:15.5px;color:var(--texto-suave);
   box-shadow:var(--sombra)}
 .dor li b{color:var(--texto);font-weight:600}
-.virada{margin-top:34px;padding:26px;background:var(--verde-profundo);color:var(--creme);
+.virada{margin-top:34px;padding:26px;background:var(--marrom-profundo);color:var(--creme);
   border-radius:16px;font-family:'Cormorant Garamond',serif;font-size:clamp(1.35rem,5vw,1.75rem);
   line-height:1.35;text-align:center;font-style:italic}
-.virada b{color:var(--dourado);font-style:normal;font-weight:600}
+.virada b{color:var(--dourado-claro);font-style:normal;font-weight:600}
 
 /* ETAPAS */
 .etapas{display:grid;gap:12px;margin-top:30px}
 .etapa{display:grid;grid-template-columns:48px 1fr;gap:16px;background:#fff;
   border:1px solid var(--borda);border-radius:14px;padding:20px;box-shadow:var(--sombra)}
-.num{width:48px;height:48px;border-radius:50%;background:var(--verde-profundo);color:var(--dourado);
+.num{width:48px;height:48px;border-radius:50%;background:var(--marrom-profundo);color:var(--dourado-claro);
   display:grid;place-items:center;font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600}
 .etapa h3{font-size:1.3rem;margin-bottom:5px}
 .etapa p{margin:0;font-size:14.5px;color:var(--texto-suave)}
@@ -106,13 +108,13 @@ header::after{content:"";position:absolute;inset:0;pointer-events:none;
 .col h3{font-size:1.35rem;margin-bottom:14px}
 .col ul{margin:0;padding:0;list-style:none;display:grid;gap:10px}
 .col li{display:flex;gap:10px;font-size:14.8px;color:var(--texto-suave);align-items:flex-start}
-.col.sim li::before{content:"✓";color:var(--verde-musgo);font-weight:700;flex:0 0 auto}
+.col.sim li::before{content:"✓";color:var(--marrom-medio);font-weight:700;flex:0 0 auto}
 .col.nao li::before{content:"\2022";color:var(--texto-suave);font-weight:700;flex:0 0 auto}
 
 /* EXPERIÊNCIA */
 .exp{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin-top:28px}
-.exp-card{border:1px solid rgba(247,243,234,.18);border-radius:16px;padding:24px;
-  background:rgba(247,243,234,.04)}
+.exp-card{border:1px solid rgba(248,242,233,.18);border-radius:16px;padding:24px;
+  background:rgba(248,242,233,.04)}
 .exp-card h3{font-size:1.3rem;margin-bottom:8px}
 .exp-card p{font-size:14.5px;margin:0}
 
@@ -120,7 +122,7 @@ header::after{content:"";position:absolute;inset:0;pointer-events:none;
 .crono{margin:28px 0 0;padding:0;list-style:none;border-top:1px solid var(--borda)}
 .crono li{display:grid;grid-template-columns:110px 1fr;gap:16px;padding:15px 0;
   border-bottom:1px solid var(--borda);align-items:baseline}
-.crono .h{font-size:13px;font-weight:600;color:var(--verde-musgo)}
+.crono .h{font-size:13px;font-weight:600;color:var(--marrom-medio)}
 .crono .d{font-size:15px}
 .crono .d small{display:block;color:var(--texto-suave);font-size:13.5px;margin-top:2px}
 
@@ -136,40 +138,40 @@ header::after{content:"";position:absolute;inset:0;pointer-events:none;
   box-shadow:var(--sombra);position:relative}
 .plano.destaque{border:2px solid var(--dourado)}
 .plano .fita{position:absolute;top:-12px;left:50%;transform:translateX(-50%);
-  background:var(--dourado);color:#1F2B22;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
+  background:var(--dourado);color:#2B1B12;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
   font-weight:700;padding:5px 14px;border-radius:999px;white-space:nowrap}
 .plano h3{font-size:1.4rem;margin-bottom:6px}
 .plano .quem{font-size:13.5px;color:var(--texto-suave);margin-bottom:18px}
-.plano .valor{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:600;color:var(--verde-profundo);line-height:1}
+.plano .valor{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:600;color:var(--marrom-profundo);line-height:1}
 .plano .valor sup{font-size:1.1rem;vertical-align:super;margin-right:3px}
 .plano .cond{font-size:13.5px;color:var(--texto-suave);margin:8px 0 20px}
 .plano .de{font-size:14px;color:var(--texto-suave);margin-bottom:2px}
 .plano .de s{text-decoration:line-through;text-decoration-color:var(--terracota)}
 .plano .prazo{display:inline-block;margin:10px 0 0;font-size:12px;font-weight:600;letter-spacing:.06em;
-  text-transform:uppercase;color:var(--terracota);background:rgba(176,113,74,.1);
+  text-transform:uppercase;color:var(--terracota);background:rgba(169,106,66,.1);
   padding:5px 12px;border-radius:999px}
-.plano .fita.suave{background:var(--verde-musgo);color:#fff}
-.aviso-lote{margin-top:22px;background:var(--verde-profundo);color:var(--creme);border-radius:14px;
+.plano .fita.suave{background:var(--marrom-medio);color:#fff}
+.aviso-lote{margin-top:22px;background:var(--marrom-profundo);color:var(--creme);border-radius:14px;
   padding:16px 20px;font-size:14.5px;text-align:center}
-.aviso-lote b{color:var(--dourado)}
-.alerta{display:block;max-width:560px;margin:26px auto 0;background:rgba(176,113,74,.16);
-  border:1px solid rgba(201,162,39,.5);border-radius:14px;padding:16px 20px;text-align:center}
+.aviso-lote b{color:var(--dourado-claro)}
+.alerta{display:block;max-width:560px;margin:26px auto 0;background:rgba(169,106,66,.16);
+  border:1px solid rgba(201,162,74,.5);border-radius:14px;padding:16px 20px;text-align:center}
 .alerta .t{display:block;font-family:'Cormorant Garamond',serif;font-size:clamp(1.2rem,4.6vw,1.5rem);
   color:var(--dourado);line-height:1.25;margin-bottom:6px}
-.alerta .d{display:block;font-size:13.5px;color:rgba(247,243,234,.82);line-height:1.5}
-.alerta-claro{position:relative;background:var(--verde-profundo);border:2px solid var(--dourado);
+.alerta .d{display:block;font-size:13.5px;color:rgba(248,242,233,.82);line-height:1.5}
+.alerta-claro{position:relative;background:var(--marrom-profundo);border:2px solid var(--dourado);
   border-radius:18px;padding:34px 26px 30px;text-align:center;margin-top:32px;overflow:hidden;
-  box-shadow:0 14px 36px rgba(31,43,34,.22)}
+  box-shadow:0 14px 36px rgba(43,27,18,.22)}
 .alerta-claro::after{content:"";position:absolute;inset:0;pointer-events:none;
-  background:radial-gradient(ellipse at 50% 0%,rgba(201,162,39,.22),transparent 62%)}
+  background:radial-gradient(ellipse at 50% 0%,rgba(201,162,74,.22),transparent 62%)}
 .alerta-claro .selo-a{position:relative;z-index:1;display:inline-block;background:var(--dourado);
-  color:#1F2B22;font-size:10.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+  color:#2B1B12;font-size:10.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
   padding:6px 16px;border-radius:999px;margin-bottom:16px}
 .alerta-claro .t{position:relative;z-index:1;display:block;font-family:'Cormorant Garamond',serif;
-  font-size:clamp(1.75rem,7vw,2.5rem);color:var(--dourado);line-height:1.15;margin-bottom:12px;
+  font-size:clamp(1.75rem,7vw,2.5rem);color:var(--dourado-claro);line-height:1.15;margin-bottom:12px;
   font-weight:600}
 .alerta-claro .d{position:relative;z-index:1;display:block;font-size:15px;
-  color:rgba(247,243,234,.88);line-height:1.6;max-width:520px;margin-inline:auto}
+  color:rgba(248,242,233,.88);line-height:1.6;max-width:520px;margin-inline:auto}
 .alerta-claro .d b{color:#fff;font-weight:600}
 .garantia{margin-top:30px;background:var(--creme-escuro);border-radius:16px;padding:24px;
   display:flex;gap:16px;align-items:flex-start}
@@ -180,7 +182,7 @@ header::after{content:"";position:absolute;inset:0;pointer-events:none;
 /* SOBRE */
 .sobre-grid{display:grid;gap:26px;grid-template-columns:1fr;align-items:start}
 .assinatura{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.5rem;
-  color:var(--dourado);margin-top:20px}
+  color:var(--dourado-claro);margin-top:20px}
 
 /* FAQ */
 .faq{margin-top:28px;display:grid;gap:10px}
@@ -188,7 +190,7 @@ header::after{content:"";position:absolute;inset:0;pointer-events:none;
 .faq summary{cursor:pointer;list-style:none;padding:18px 20px;font-weight:600;font-size:15.5px;
   display:flex;justify-content:space-between;gap:14px;align-items:center}
 .faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:"+";font-size:22px;color:var(--verde-claro);font-weight:400;line-height:1}
+.faq summary::after{content:"+";font-size:22px;color:var(--marrom-claro);font-weight:400;line-height:1}
 .faq details[open] summary::after{content:"–"}
 .faq .r{padding:0 20px 20px;font-size:14.8px;color:var(--texto-suave)}
 
@@ -196,24 +198,84 @@ header::after{content:"";position:absolute;inset:0;pointer-events:none;
 .final{text-align:center}
 .final h2{font-size:clamp(2rem,7.5vw,3rem);margin-bottom:16px}
 .final p{max-width:520px;margin-inline:auto}
-.escassez{margin-top:22px;font-size:13px;color:rgba(247,243,234,.6)}
+.escassez{margin-top:22px;font-size:13px;color:rgba(248,242,233,.6)}
+
+/* PROMESSA */
+.promessa-hero{max-width:600px;margin:24px auto 0;padding:20px 24px;
+  border:1px solid rgba(201,162,74,.4);border-radius:14px;background:rgba(201,162,74,.08)}
+.promessa-hero p{margin:0;font-size:16.5px;color:rgba(248,242,233,.92);line-height:1.6}
+.promessa-hero b{color:var(--dourado-claro);font-weight:600}
+.entrega-grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));margin-top:30px}
+.entrega-item{background:#fff;border:1px solid var(--borda);border-radius:14px;padding:22px;
+  box-shadow:var(--sombra)}
+.entrega-item .rot{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;
+  color:var(--terracota);display:block;margin-bottom:9px}
+.entrega-item h3{font-size:1.22rem;margin-bottom:6px}
+.entrega-item p{margin:0;font-size:14.5px;color:var(--texto-suave)}
+.promessa-frase{margin-top:30px;padding:30px 26px;background:var(--marrom-profundo);color:var(--creme);
+  border-radius:18px;text-align:center}
+.promessa-frase .t{display:block;font-family:'Cormorant Garamond',serif;
+  font-size:clamp(1.5rem,5.5vw,2rem);color:var(--dourado-claro);line-height:1.25;margin-bottom:10px}
+.promessa-frase .d{display:block;font-size:15px;color:rgba(248,242,233,.85);max-width:540px;
+  margin-inline:auto;line-height:1.6}
 
 /* BARRA FIXA MOBILE */
-.barra{position:fixed;left:0;right:0;bottom:0;z-index:60;background:rgba(31,43,34,.96);
-  backdrop-filter:blur(10px);border-top:1px solid rgba(247,243,234,.14);
+.barra{position:fixed;left:0;right:0;bottom:0;z-index:60;background:rgba(43,27,18,.96);
+  backdrop-filter:blur(10px);border-top:1px solid rgba(248,242,233,.14);
   padding:11px 16px calc(11px + env(safe-area-inset-bottom));display:none;
   align-items:center;justify-content:space-between;gap:12px}
-.barra .txt{font-size:12.5px;color:rgba(247,243,234,.75);line-height:1.35}
+.barra .txt{font-size:12.5px;color:rgba(248,242,233,.75);line-height:1.35}
 .barra .txt b{display:block;color:#fff;font-size:14px;font-family:'Cormorant Garamond',serif}
 .barra .btn{padding:12px 20px;font-size:14px;box-shadow:none}
 @media(max-width:760px){.barra{display:flex}body{padding-bottom:74px}}
 
-footer{background:var(--verde-noite);color:rgba(247,243,234,.6);padding-block:40px;text-align:center}
+
+/* ---------- FOTOS ---------- */
+.faixa{position:relative;width:100%;overflow:hidden;line-height:0;padding-block:10px}
+.faixa img{width:100%;height:clamp(230px,40vw,440px);object-fit:cover;display:block;
+  -webkit-mask-image:radial-gradient(ellipse 66% 72% at 50% 50%,rgba(0,0,0,1) 18%,rgba(0,0,0,.88) 44%,rgba(0,0,0,.45) 70%,rgba(0,0,0,0) 94%);
+  mask-image:radial-gradient(ellipse 66% 72% at 50% 50%,rgba(0,0,0,1) 18%,rgba(0,0,0,.88) 44%,rgba(0,0,0,.45) 70%,rgba(0,0,0,0) 94%)}
+.faixa.suave img{height:clamp(200px,34vw,380px)}
+
+.mosaico{display:grid;gap:4px;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));margin-top:34px;
+  line-height:0}
+.mosaico img{width:100%;aspect-ratio:3/4.1;object-fit:cover;display:block;
+  -webkit-mask-image:radial-gradient(ellipse 64% 68% at 50% 48%,rgba(0,0,0,1) 16%,rgba(0,0,0,.9) 44%,rgba(0,0,0,.42) 70%,rgba(0,0,0,0) 92%);
+  mask-image:radial-gradient(ellipse 64% 68% at 50% 48%,rgba(0,0,0,1) 16%,rgba(0,0,0,.9) 44%,rgba(0,0,0,.42) 70%,rgba(0,0,0,0) 92%)}
+.mosaico.trio{grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}
+.mosaico.dupla{grid-template-columns:repeat(auto-fit,minmax(230px,1fr));max-width:680px;margin-inline:auto}
+.mosaico.dupla img{aspect-ratio:4/5}
+
+.retrato-grid{display:grid;gap:30px;grid-template-columns:minmax(200px,300px) 1fr;align-items:center;
+  margin-top:8px}
+.retrato{line-height:0}
+.retrato img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block;
+  -webkit-mask-image:radial-gradient(ellipse 60% 64% at 50% 44%,rgba(0,0,0,1) 14%,rgba(0,0,0,.9) 42%,rgba(0,0,0,.4) 68%,rgba(0,0,0,0) 90%);
+  mask-image:radial-gradient(ellipse 60% 64% at 50% 44%,rgba(0,0,0,1) 14%,rgba(0,0,0,.9) 42%,rgba(0,0,0,.4) 68%,rgba(0,0,0,0) 90%)}
+@media(max-width:700px){.retrato-grid{grid-template-columns:1fr;gap:18px}
+  .retrato{max-width:280px;margin-inline:auto}}
+.legenda{text-align:center;font-size:12px;margin-top:2px;letter-spacing:.14em;text-transform:uppercase;
+  font-weight:600;color:var(--dourado-claro);margin:10px 0 0;line-height:1.5}
+.legenda.clara{color:var(--terracota)}
+
+/* ---------- DEPOIMENTOS ---------- */
+.depo-grid{columns:2;column-gap:16px;margin-top:32px}
+@media(max-width:720px){.depo-grid{columns:1}}
+.depo{break-inside:avoid;background:#fff;border:1px solid var(--borda);border-radius:16px;
+  padding:26px 24px 22px;margin-bottom:16px;box-shadow:var(--sombra);position:relative}
+.depo::before{content:"\201C";position:absolute;top:2px;left:18px;font-family:'Cormorant Garamond',serif;
+  font-size:4.2rem;line-height:1;color:rgba(201,162,74,.35)}
+.depo p{margin:0;font-size:15.5px;color:var(--texto);line-height:1.65;position:relative;z-index:1}
+.depo .quem{display:block;margin-top:14px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  font-weight:700;color:var(--terracota)}
+.depo-nota{margin-top:26px;text-align:center;font-size:13.5px;color:var(--texto-suave);font-style:italic}
+
+footer{background:var(--marrom-noite);color:rgba(248,242,233,.6);padding-block:40px;text-align:center}
 footer .nome{font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:#fff;margin:0 0 4px}
 footer .links{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin:18px 0}
 footer .links a{text-decoration:none;font-size:13px;padding:8px 16px;border-radius:999px;
-  border:1px solid rgba(247,243,234,.2);color:rgba(247,243,234,.9)}
-footer .cr{font-size:12px;color:rgba(247,243,234,.4)}
+  border:1px solid rgba(248,242,233,.2);color:rgba(248,242,233,.9)}
+footer .cr{font-size:12px;color:rgba(248,242,233,.4)}
 </style>
 </head>
 <body>
@@ -223,8 +285,13 @@ footer .cr{font-size:12px;color:rgba(247,243,234,.4)}
     <span class="selo">Continuação de Raízes da Avaliação</span>
     <h1>Raízes da <em>Intervenção</em></h1>
     <p class="promessa">Onde o raciocínio clínico vira plano</p>
-    <p class="pitch">Você aprendeu a avaliar. Agora é hora da pergunta que trava a maioria das
+    <p class="pitch">Você aprendeu a avaliar. Agora vem a pergunta que trava a maioria das
     psicopedagogas na sessão seguinte: <strong style="color:#fff">e agora, o que eu faço com esse laudo?</strong></p>
+    <div class="promessa-hero">
+      <p>Em um dia, você sai daqui com <b>o plano interventivo completo de um caso real construído
+      por você</b>: objetivos definidos, estratégias escolhidas com base em evidência, roteiro de sessão
+      pronto e um jeito objetivo de provar que a criança está evoluindo.</p>
+    </div>
     <div class="factos">
       <span class="facto"><b>18</b> de outubro · domingo</span>
       <span class="facto"><b>08h</b> às <b>16h</b></span>
@@ -238,6 +305,7 @@ footer .cr{font-size:12px;color:rgba(247,243,234,.4)}
       aguarda a próxima formação, sem previsão de abertura.</span>
     </span>
   </div>
+  <div class="faixa" style="padding-bottom:40px"><img src="f-sala.jpg" alt="Turma da oficina Raízes em ambiente clínico, durante aula prática" loading="lazy"></div>
 </header>
 
 <!-- DOR -->
@@ -259,48 +327,90 @@ footer .cr{font-size:12px;color:rgba(247,243,234,.4)}
   </div>
 </section>
 
+<!-- A PROMESSA -->
+<section id="promessa" style="background:var(--creme-escuro)">
+  <div class="wrap">
+    <p class="eyebrow">A promessa</p>
+    <h2 class="tit">O que você leva na bagagem de volta</h2>
+    <p class="sub">Não é inspiração nem uma pasta de atividades. São quatro entregas concretas,
+    construídas por você durante a oficina, que entram na sua rotina clínica já na semana seguinte.</p>
+    <div class="entrega-grid">
+      <div class="entrega-item">
+        <span class="rot">Entrega 1</span>
+        <h3>Um PDI completo, feito por você</h3>
+        <p>Você recebe um laudo real e sai com o Plano de Desenvolvimento Interventivo daquele caso
+        escrito do início ao fim, com acompanhamento direto durante a construção.</p>
+      </div>
+      <div class="entrega-item">
+        <span class="rot">Entrega 2</span>
+        <h3>Um método que serve para qualquer caso</h3>
+        <p>As sete etapas do processo interventivo, na ordem em que a decisão clínica acontece.
+        Você aplica a mesma sequência em qualquer queixa, idade ou diagnóstico.</p>
+      </div>
+      <div class="entrega-item">
+        <span class="rot">Entrega 3</span>
+        <h3>Sessões estruturadas, não improvisadas</h3>
+        <p>Roteiro de sessão, critério de dosagem por objetivo e checklist de condução. Você para de
+        montar a sessão na véspera e passa a conduzir com racional clínico.</p>
+      </div>
+      <div class="entrega-item">
+        <span class="rot">Entrega 4</span>
+        <h3>Evidência de que está funcionando</h3>
+        <p>Registro de sessão e leitura da curva de progresso. Quando a família perguntar se evoluiu,
+        você responde com dado, não com impressão.</p>
+      </div>
+    </div>
+    <div class="promessa-frase">
+      <span class="t">Você entra com uma dúvida.<br>Sai com um plano.</span>
+      <span class="d">Essa é a promessa da Raízes da Intervenção. O que ela não promete: resultado
+      garantido para todos os casos, porque intervenção séria depende da criança, da família e do
+      tempo. O que ela garante é que sua conduta deixa de ser intuição e passa a ter método.</span>
+    </div>
+  </div>
+</section>
+
 <!-- O MÉTODO -->
 <section class="escuro">
   <div class="wrap">
     <p class="eyebrow">O método · 7 etapas</p>
     <h2 class="tit">Do laudo ao plano, etapa por etapa</h2>
-    <p class="sub" style="color:rgba(247,243,234,.75)">Uma sequência que você aplica em qualquer caso
+    <p class="sub" style="color:rgba(248,242,233,.75)">Uma sequência que você aplica em qualquer caso
     que entrar no seu consultório, independentemente da queixa, da idade ou do diagnóstico.</p>
     <div class="etapas" style="margin-top:30px">
-      <div class="etapa" style="background:rgba(247,243,234,.05);border-color:rgba(247,243,234,.16)">
+      <div class="etapa" style="background:rgba(248,242,233,.05);border-color:rgba(248,242,233,.16)">
         <div class="num">1</div>
         <div><h3 style="color:#fff">Leitura clínica do laudo</h3>
-        <p style="color:rgba(247,243,234,.72)">Separar sintoma de causa funcional. Identificar a habilidade-base comprometida, não apenas a queixa manifesta.</p></div>
+        <p style="color:rgba(248,242,233,.72)">Separar sintoma de causa funcional. Identificar a habilidade-base comprometida, não apenas a queixa manifesta.</p></div>
       </div>
-      <div class="etapa" style="background:rgba(247,243,234,.05);border-color:rgba(247,243,234,.16)">
+      <div class="etapa" style="background:rgba(248,242,233,.05);border-color:rgba(248,242,233,.16)">
         <div class="num">2</div>
         <div><h3 style="color:#fff">Definição de objetivos terapêuticos</h3>
-        <p style="color:rgba(247,243,234,.72)">"Melhorar a leitura" não é objetivo, é desejo. Aqui você aprende a escrever metas observáveis, com critério de domínio e prazo.</p></div>
+        <p style="color:rgba(248,242,233,.72)">"Melhorar a leitura" não é objetivo, é desejo. Aqui você aprende a escrever metas observáveis, com critério de domínio e prazo.</p></div>
       </div>
-      <div class="etapa" style="background:rgba(247,243,234,.05);border-color:rgba(247,243,234,.16)">
+      <div class="etapa" style="background:rgba(248,242,233,.05);border-color:rgba(248,242,233,.16)">
         <div class="num">3</div>
         <div><h3 style="color:#fff">Construção do PDI</h3>
-        <p style="color:rgba(247,243,234,.72)">O Plano de Desenvolvimento Interventivo completo: o documento que organiza a sua conduta e demonstra que ela tem racional clínico.</p></div>
+        <p style="color:rgba(248,242,233,.72)">O Plano de Desenvolvimento Interventivo completo: o documento que organiza a sua conduta e demonstra que ela tem racional clínico.</p></div>
       </div>
-      <div class="etapa" style="background:rgba(247,243,234,.05);border-color:rgba(247,243,234,.16)">
+      <div class="etapa" style="background:rgba(248,242,233,.05);border-color:rgba(248,242,233,.16)">
         <div class="num">4</div>
         <div><h3 style="color:#fff">Seleção de estratégias e recursos</h3>
-        <p style="color:rgba(247,243,234,.72)">Escolha por evidência, não por tendência. Qual estratégia corresponde a qual processo cognitivo, e como descartar o que não move nada.</p></div>
+        <p style="color:rgba(248,242,233,.72)">Escolha por evidência, não por tendência. Qual estratégia corresponde a qual processo cognitivo, e como descartar o que não move nada.</p></div>
       </div>
-      <div class="etapa" style="background:rgba(247,243,234,.05);border-color:rgba(247,243,234,.16)">
+      <div class="etapa" style="background:rgba(248,242,233,.05);border-color:rgba(248,242,233,.16)">
         <div class="num">5</div>
         <div><h3 style="color:#fff">Condução da sessão interventiva</h3>
-        <p style="color:rgba(247,243,234,.72)">Arquitetura da sessão, dosagem por objetivo, mediação e manejo de recusa sem abandonar a meta do dia.</p></div>
+        <p style="color:rgba(248,242,233,.72)">Arquitetura da sessão, dosagem por objetivo, mediação e manejo de recusa sem abandonar a meta do dia.</p></div>
       </div>
-      <div class="etapa" style="background:rgba(247,243,234,.05);border-color:rgba(247,243,234,.16)">
+      <div class="etapa" style="background:rgba(248,242,233,.05);border-color:rgba(248,242,233,.16)">
         <div class="num">6</div>
         <div><h3 style="color:#fff">Registro e monitoramento de progresso</h3>
-        <p style="color:rgba(247,243,234,.72)">Medidas breves e repetidas, leitura da curva de evolução e os sinais de que o plano precisa de ajuste antes de perder seis meses.</p></div>
+        <p style="color:rgba(248,242,233,.72)">Medidas breves e repetidas, leitura da curva de evolução e os sinais de que o plano precisa de ajuste antes de perder seis meses.</p></div>
       </div>
-      <div class="etapa" style="background:rgba(247,243,234,.05);border-color:rgba(247,243,234,.16)">
+      <div class="etapa" style="background:rgba(248,242,233,.05);border-color:rgba(248,242,233,.16)">
         <div class="num">7</div>
         <div><h3 style="color:#fff">Reavaliação e devolutiva de processo</h3>
-        <p style="color:rgba(247,243,234,.72)">Critérios objetivos para manter, intensificar, redirecionar ou encerrar. E como comunicar isso à família sem inflar nem minimizar.</p></div>
+        <p style="color:rgba(248,242,233,.72)">Critérios objetivos para manter, intensificar, redirecionar ou encerrar. E como comunicar isso à família sem inflar nem minimizar.</p></div>
       </div>
     </div>
   </div>
@@ -336,6 +446,12 @@ footer .cr{font-size:12px;color:rgba(247,243,234,.4)}
     <p class="sub" style="margin-top:22px;font-size:15px"><strong>Não é pré-requisito ter participado
     da Raízes da Avaliação.</strong> A oficina é autossuficiente: começa na leitura do laudo, que é
     exatamente onde a avaliação termina.</p>
+    <div class="mosaico trio">
+      <img src="f-turma-1.jpg" alt="Participantes da edição anterior da oficina Raízes" loading="lazy">
+      <img src="f-pratica-2.jpg" alt="Profissional preenchendo o plano durante a prática" loading="lazy">
+      <img src="f-brinde.jpg" alt="Brinde de encerramento entre as participantes" loading="lazy">
+    </div>
+    <p class="legenda clara">Edições anteriores da Raízes</p>
   </div>
 </section>
 
@@ -344,7 +460,7 @@ footer .cr{font-size:12px;color:rgba(247,243,234,.4)}
   <div class="wrap">
     <p class="eyebrow">A experiência</p>
     <h2 class="tit">Um dia de prática, não de slides</h2>
-    <p class="sub" style="color:rgba(247,243,234,.75)">Você não vem assistir a uma aula sobre intervenção.
+    <p class="sub" style="color:rgba(248,242,233,.75)">Você não vem assistir a uma aula sobre intervenção.
     Vem construir um plano interventivo do começo ao fim, com caso real na mão e acompanhamento direto.</p>
     <div class="exp">
       <div class="exp-card"><h3>Caso real, do início ao fim</h3>
@@ -356,6 +472,13 @@ footer .cr{font-size:12px;color:rgba(247,243,234,.4)}
       <div class="exp-card"><h3>Turma reduzida</h3>
         <p>Decisão pedagógica, não estratégia de escassez: prática individualizada exige espaço e tempo de olhar.</p></div>
     </div>
+    <div class="mosaico">
+      <img src="f-pratica-1.jpg" alt="Construção do plano em dupla, com caso real" loading="lazy">
+      <img src="f-material-1.jpg" alt="Manuseio de recurso de avaliação e intervenção" loading="lazy">
+      <img src="f-material-2.jpg" alt="Participantes analisando protocolos e materiais" loading="lazy">
+      <img src="f-ariana-1.jpg" alt="Ariana Motta conduzindo a análise de um instrumento" loading="lazy">
+    </div>
+    <p class="legenda">Prática, materiais e condução direta</p>
   </div>
 </section>
 
@@ -398,6 +521,54 @@ footer .cr{font-size:12px;color:rgba(247,243,234,.4)}
       <li>Portal digital com todos os materiais</li>
       <li>Hotseat e networking entre profissionais</li>
     </ul>
+    <div class="mosaico dupla">
+      <img src="f-kit.jpg" alt="Kit personalizado entregue às participantes" loading="lazy">
+      <img src="f-instrumentos.jpg" alt="Protocolos e instrumentos disponíveis na oficina" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- DEPOIMENTOS -->
+<section id="depoimentos">
+  <div class="wrap">
+    <p class="eyebrow">Prova real</p>
+    <h2 class="tit">Quem já participou fala</h2>
+    <p class="sub">Avaliações escritas pelas participantes das edições anteriores da Raízes,
+    respondidas no formulário de feedback ao fim do dia.</p>
+    <div class="depo-grid">
+      <div class="depo">
+        <p>Minha experiência na oficina foi muito positiva. Foi um momento de aprendizado, troca de
+        experiências e interação, com atividades que contribuíram para ampliar meus conhecimentos de
+        forma leve e dinâmica. Gostei bastante da organização e da forma como os conteúdos foram
+        apresentados.</p>
+        <span class="quem">Participante · Raízes da Avaliação</span>
+      </div>
+      <div class="depo">
+        <p>Raízes tem um significado muito forte, pra mim é o começo de algo grande, é como uma
+        árvore: ela cresce e serve trazendo frutos e sombra.</p>
+        <span class="quem">Participante · Raízes da Avaliação</span>
+      </div>
+      <div class="depo">
+        <p>Foi tudo maravilhoso, cada troca, todo aprendizado. Entender de forma dinâmica como
+        funciona o nosso trabalho de psicopedagoga é incrível.</p>
+        <span class="quem">Participante · Raízes da Avaliação</span>
+      </div>
+      <div class="depo">
+        <p>Muito bom, aprendi bastante, principalmente por não saber que certos protocolos precisam
+        de licença. Superou minhas expectativas.</p>
+        <span class="quem">Participante · Raízes da Avaliação</span>
+      </div>
+      <div class="depo">
+        <p>Me senti muito acolhida, valeu muito ter vindo e ter vivido essa oficina.</p>
+        <span class="quem">Participante · Raízes da Avaliação</span>
+      </div>
+      <div class="depo">
+        <p>Um dia extraordinário de aprendizado!</p>
+        <span class="quem">Participante · Raízes da Avaliação</span>
+      </div>
+    </div>
+    <p class="depo-nota">Depoimentos espontâneos, reproduzidos na íntegra e sem identificação,
+    a pedido das participantes.</p>
   </div>
 </section>
 
@@ -444,7 +615,10 @@ footer .cr{font-size:12px;color:rgba(247,243,234,.4)}
   <div class="wrap estreito">
     <p class="eyebrow">Quem conduz</p>
     <h2 class="tit">Ariana Motta</h2>
-    <div class="sobre-grid">
+    <div class="retrato-grid">
+      <div class="retrato">
+        <img src="f-ariana-2.jpg" alt="Ariana Motta conduzindo a oficina" loading="lazy">
+      </div>
       <div>
         <p>Psicopedagoga clínica em Porto Velho, com mais de 16 anos de atuação em educação e
         especialização em dificuldades de aprendizagem: TDAH, TEA e dislexia.</p>
@@ -496,7 +670,10 @@ footer .cr{font-size:12px;color:rgba(247,243,234,.4)}
 </section>
 
 <!-- CTA FINAL -->
-<section class="noite final">
+<div style="background:var(--marrom-noite)">
+  <div class="faixa suave" style="padding-top:34px"><img src="f-turma-2.jpg" alt="Turma completa da edição anterior da Raízes" loading="lazy"></div>
+</div>
+<section class="noite final" style="padding-top:28px">
   <div class="wrap estreito">
     <p class="eyebrow">Último ponto</p>
     <h2>Você já sabe avaliar.<br>Está pronta para intervir com método?</h2>

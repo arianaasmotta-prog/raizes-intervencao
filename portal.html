@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#1F2B22">
+<meta name="theme-color" content="#2B1B12">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="description" content="Portal da participante da Raízes da Intervenção: oficina presencial de intervenção psicopedagógica com Ariana Motta. 18 de outubro, Porto Velho.">
@@ -13,17 +13,18 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --verde-profundo:#1F2B22;
-  --verde-musgo:#3E5843;
-  --verde-claro:#6E8B72;
-  --creme:#F7F3EA;
-  --creme-escuro:#EDE5D6;
-  --terracota:#B0714A;
-  --dourado:#C9A227;
-  --texto:#28322B;
-  --texto-suave:#5E6B61;
-  --borda:rgba(62,88,67,.18);
-  --sombra:0 1px 2px rgba(31,43,34,.04),0 8px 24px rgba(31,43,34,.06);
+  --marrom-profundo:#2B1B12;
+  --marrom-medio:#6B4A35;
+  --marrom-claro:#A78468;
+  --creme:#F8F2E9;
+  --creme-escuro:#EFE3D4;
+  --terracota:#A96A42;
+  --dourado:#C9A24A;
+  --dourado-claro:#E2C588;
+  --texto:#2E2119;
+  --texto-suave:#6E5B4C;
+  --borda:rgba(107,74,53,.2);
+  --sombra:0 1px 2px rgba(43,27,18,.05),0 8px 24px rgba(43,27,18,.08);
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -36,32 +37,36 @@ img{max-width:100%}
 .wrap{width:100%;max-width:940px;margin:0 auto;padding-inline:20px}
 
 /* ---------- NAV ---------- */
-nav{position:sticky;top:0;z-index:50;background:rgba(247,243,234,.92);
+nav{position:sticky;top:0;z-index:50;background:rgba(248,242,233,.92);
   backdrop-filter:saturate(180%) blur(12px);border-bottom:1px solid var(--borda)}
 .nav-in{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding:10px 20px}
 .nav-in::-webkit-scrollbar{display:none}
 .nav-in a{flex:0 0 auto;text-decoration:none;font-size:13px;font-weight:500;letter-spacing:.02em;
   color:var(--texto-suave);padding:7px 13px;border-radius:999px;white-space:nowrap;transition:.18s}
-.nav-in a:hover,.nav-in a.on{background:var(--verde-musgo);color:#fff}
+.nav-in a:hover,.nav-in a.on{background:var(--marrom-medio);color:#fff}
 
 /* ---------- HERO ---------- */
-header{background:var(--verde-profundo);color:var(--creme);position:relative;overflow:hidden}
+header{background:var(--marrom-profundo);color:var(--creme);position:relative;overflow:hidden}
 header::after{content:"";position:absolute;inset:0;
-  background:radial-gradient(ellipse at 20% 0%,rgba(201,162,39,.16),transparent 55%),
-             radial-gradient(ellipse at 90% 100%,rgba(176,113,74,.18),transparent 55%);
+  background:radial-gradient(ellipse at 20% 0%,rgba(201,162,74,.16),transparent 55%),
+             radial-gradient(ellipse at 90% 100%,rgba(169,106,66,.18),transparent 55%);
   pointer-events:none}
-.hero{position:relative;z-index:1;padding-block:72px 64px;text-align:center}
-.eyebrow{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--dourado);
+.hero{position:relative;z-index:1;padding-block:72px 44px;text-align:center}
+.faixa{position:relative;width:100%;overflow:hidden;line-height:0;padding-bottom:36px}
+.faixa img{width:100%;height:clamp(200px,34vw,380px);object-fit:cover;display:block;
+  -webkit-mask-image:radial-gradient(ellipse 66% 72% at 50% 50%,rgba(0,0,0,1) 18%,rgba(0,0,0,.88) 44%,rgba(0,0,0,.45) 70%,rgba(0,0,0,0) 94%);
+  mask-image:radial-gradient(ellipse 66% 72% at 50% 50%,rgba(0,0,0,1) 18%,rgba(0,0,0,.88) 44%,rgba(0,0,0,.45) 70%,rgba(0,0,0,0) 94%)}
+.eyebrow{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--dourado-claro);
   font-weight:500;margin:0 0 20px}
 .hero h1{font-size:clamp(2.9rem,11vw,5rem);margin:0;color:#fff}
-.hero h1 em{font-style:italic;color:var(--dourado);font-weight:500}
+.hero h1 em{font-style:italic;color:var(--dourado-claro);font-weight:500}
 .hero .lead{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;
-  font-size:clamp(1.2rem,4.5vw,1.55rem);color:rgba(247,243,234,.82);margin:16px 0 0}
-.hero .sub{max-width:540px;margin:24px auto 0;font-size:15px;color:rgba(247,243,234,.7)}
+  font-size:clamp(1.2rem,4.5vw,1.55rem);color:rgba(248,242,233,.82);margin:16px 0 0}
+.hero .sub{max-width:540px;margin:24px auto 0;font-size:15px;color:rgba(248,242,233,.7)}
 .factos{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:32px}
-.facto{border:1px solid rgba(247,243,234,.22);border-radius:999px;padding:8px 16px;
-  font-size:13px;letter-spacing:.02em;color:rgba(247,243,234,.9)}
-.facto b{color:var(--dourado);font-weight:600}
+.facto{border:1px solid rgba(248,242,233,.22);border-radius:999px;padding:8px 16px;
+  font-size:13px;letter-spacing:.02em;color:rgba(248,242,233,.9)}
+.facto b{color:var(--dourado-claro);font-weight:600}
 
 /* ---------- SECTIONS ---------- */
 section{padding-block:64px;scroll-margin-top:64px}
@@ -77,16 +82,16 @@ section+section{border-top:1px solid var(--borda)}
 .bloco{display:grid;grid-template-columns:96px 1fr;gap:18px;padding:16px 0 16px 20px;position:relative}
 .bloco+.bloco{border-top:1px solid var(--borda)}
 .bloco::before{content:"";position:absolute;left:-5px;top:26px;width:8px;height:8px;
-  border-radius:50%;background:var(--verde-claro)}
-.bloco.chave::before{background:var(--dourado);box-shadow:0 0 0 4px rgba(201,162,39,.18)}
-.hora{font-size:13px;font-weight:600;color:var(--verde-musgo);letter-spacing:.02em;padding-top:2px}
+  border-radius:50%;background:var(--marrom-claro)}
+.bloco.chave::before{background:var(--dourado-claro);box-shadow:0 0 0 4px rgba(201,162,74,.18)}
+.hora{font-size:13px;font-weight:600;color:var(--marrom-medio);letter-spacing:.02em;padding-top:2px}
 .bloco h3{margin:0;font-size:1.3rem}
 .bloco p{margin:5px 0 0;font-size:14px;color:var(--texto-suave)}
 .tag{display:inline-block;font-size:10px;letter-spacing:.16em;text-transform:uppercase;
   font-weight:600;padding:3px 9px;border-radius:4px;margin-bottom:7px}
-.t-teoria{background:rgba(62,88,67,.1);color:var(--verde-musgo)}
-.t-pratica{background:rgba(176,113,74,.13);color:var(--terracota)}
-.t-pausa{background:rgba(94,107,97,.1);color:var(--texto-suave)}
+.t-teoria{background:rgba(107,74,53,.1);color:var(--marrom-medio)}
+.t-pratica{background:rgba(169,106,66,.13);color:var(--terracota)}
+.t-pausa{background:rgba(110,91,76,.1);color:var(--texto-suave)}
 
 /* ---------- ETAPAS ---------- */
 .etapas{display:grid;gap:14px}
@@ -95,14 +100,14 @@ section+section{border-top:1px solid var(--borda)}
 .etapa summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:44px 1fr 20px;
   gap:14px;align-items:center;padding:18px 20px}
 .etapa summary::-webkit-details-marker{display:none}
-.passo{width:44px;height:44px;border-radius:50%;background:var(--verde-profundo);color:var(--dourado);
+.passo{width:44px;height:44px;border-radius:50%;background:var(--marrom-profundo);color:var(--dourado-claro);
   display:grid;place-items:center;font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:600}
 .etapa summary h3{margin:0;font-size:1.22rem}
 .etapa summary span.res{display:block;font-size:13px;color:var(--texto-suave);
   font-family:'Inter',sans-serif;font-weight:400;margin-top:2px}
 .chev{width:20px;height:20px;position:relative}
 .chev::before{content:"";position:absolute;left:4px;top:6px;width:8px;height:8px;
-  border-right:1.5px solid var(--verde-claro);border-bottom:1.5px solid var(--verde-claro);
+  border-right:1.5px solid var(--marrom-claro);border-bottom:1.5px solid var(--marrom-claro);
   transform:rotate(45deg);transition:.2s}
 .etapa[open] .chev::before{transform:rotate(-135deg);top:9px}
 .etapa-corpo{padding:0 20px 22px 78px}
@@ -110,7 +115,7 @@ section+section{border-top:1px solid var(--borda)}
 .etapa-corpo ul{margin:0;padding-left:18px;font-size:14.5px;color:var(--texto-suave)}
 .etapa-corpo li{margin-bottom:6px}
 .entrega{margin-top:14px;padding:11px 14px;background:var(--creme-escuro);border-radius:9px;
-  font-size:13px;color:var(--verde-musgo)}
+  font-size:13px;color:var(--marrom-medio)}
 .entrega b{color:var(--texto)}
 @media(max-width:560px){.etapa-corpo{padding-left:20px}}
 
@@ -121,15 +126,15 @@ section+section{border-top:1px solid var(--borda)}
 .mat .kind{font-size:10px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:var(--terracota)}
 .mat h3{margin:0;font-size:1.12rem}
 .mat p{margin:0;font-size:13.5px;color:var(--texto-suave)}
-.mat .em-breve{margin-top:8px;font-size:12px;color:var(--verde-claro);font-weight:500}
+.mat .em-breve{margin-top:8px;font-size:12px;color:var(--marrom-claro);font-weight:500}
 
 /* ---------- INFO ---------- */
 .info{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
-.info-card{background:var(--verde-profundo);color:var(--creme);border-radius:14px;padding:22px}
-.info-card .rot{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--dourado);
+.info-card{background:var(--marrom-profundo);color:var(--creme);border-radius:14px;padding:22px}
+.info-card .rot{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--dourado-claro);
   font-weight:600;margin-bottom:8px}
 .info-card .val{font-family:'Cormorant Garamond',serif;font-size:1.55rem;line-height:1.25}
-.info-card small{display:block;margin-top:7px;font-size:13px;color:rgba(247,243,234,.7)}
+.info-card small{display:block;margin-top:7px;font-size:13px;color:rgba(248,242,233,.7)}
 
 /* ---------- LISTA CHECK ---------- */
 .leve{display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));
@@ -143,20 +148,20 @@ section+section{border-top:1px solid var(--borda)}
   padding:14px 26px;border-radius:999px;transition:.18s;border:none;cursor:pointer;
   font-family:'Inter',sans-serif}
 .btn:hover{background:#9A6040;transform:translateY(-1px)}
-.btn.ghost{background:transparent;color:var(--verde-musgo);border:1.5px solid var(--borda)}
-.btn.ghost:hover{background:var(--verde-musgo);color:#fff;border-color:var(--verde-musgo)}
-.cta-box{background:var(--verde-profundo);color:var(--creme);border-radius:18px;padding:36px 26px;
+.btn.ghost{background:transparent;color:var(--marrom-medio);border:1.5px solid var(--borda)}
+.btn.ghost:hover{background:var(--marrom-medio);color:#fff;border-color:var(--marrom-medio)}
+.cta-box{background:var(--marrom-profundo);color:var(--creme);border-radius:18px;padding:36px 26px;
   text-align:center}
 .cta-box h2{margin:0 0 10px;font-size:clamp(1.7rem,6vw,2.3rem);color:#fff}
-.cta-box p{margin:0 0 24px;color:rgba(247,243,234,.75);font-size:15px}
+.cta-box p{margin:0 0 24px;color:rgba(248,242,233,.75);font-size:15px}
 
 /* ---------- FORM ---------- */
 .campo{display:block;margin-bottom:14px}
-.campo span{display:block;font-size:13px;font-weight:500;color:var(--verde-musgo);margin-bottom:6px}
+.campo span{display:block;font-size:13px;font-weight:500;color:var(--marrom-medio);margin-bottom:6px}
 .campo textarea,.campo input,.campo select{width:100%;font-family:'Inter',sans-serif;font-size:15px;
   color:var(--texto);background:#fff;border:1px solid var(--borda);border-radius:10px;padding:12px 14px;
   resize:vertical}
-.campo textarea:focus,.campo input:focus,.campo select:focus{outline:2px solid var(--verde-claro);outline-offset:1px}
+.campo textarea:focus,.campo input:focus,.campo select:focus{outline:2px solid var(--marrom-claro);outline-offset:1px}
 .estrelas{display:flex;gap:6px;margin-bottom:4px}
 .estrelas button{background:none;border:none;font-size:30px;line-height:1;cursor:pointer;padding:0;
   color:var(--creme-escuro);transition:.15s}
@@ -164,14 +169,14 @@ section+section{border-top:1px solid var(--borda)}
 .painel{background:#fff;border:1px solid var(--borda);border-radius:14px;padding:22px;box-shadow:var(--sombra)}
 
 /* ---------- FOOTER ---------- */
-footer{background:var(--verde-profundo);color:rgba(247,243,234,.72);padding-block:44px;text-align:center}
+footer{background:var(--marrom-profundo);color:rgba(248,242,233,.72);padding-block:44px;text-align:center}
 footer .nome{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:#fff;margin:0 0 4px}
 footer .papel{font-size:13px;margin:0 0 20px}
 footer .links{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-bottom:22px}
 footer .links a{text-decoration:none;font-size:13px;padding:8px 16px;border-radius:999px;
-  border:1px solid rgba(247,243,234,.2);color:rgba(247,243,234,.9);transition:.18s}
-footer .links a:hover{background:rgba(247,243,234,.1)}
-footer .cr{font-size:12px;color:rgba(247,243,234,.45)}
+  border:1px solid rgba(248,242,233,.2);color:rgba(248,242,233,.9);transition:.18s}
+footer .links a:hover{background:rgba(248,242,233,.1)}
+footer .cr{font-size:12px;color:rgba(248,242,233,.45)}
 .aviso{font-size:12px;color:var(--texto-suave);margin-top:14px;font-style:italic}
 </style>
 </head>
@@ -202,6 +207,7 @@ footer .cr{font-size:12px;color:rgba(247,243,234,.45)}
       <span class="facto">Porto Velho · RO</span>
     </div>
   </div>
+  <div class="faixa"><img src="f-sala.jpg" alt="Turma da oficina Raízes em ambiente clínico" loading="lazy"></div>
 </header>
 
 <!-- CRONOGRAMA -->
