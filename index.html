@@ -634,7 +634,7 @@ footer .cr{font-size:12px;color:rgba(248,242,233,.4)}
         <div class="valor"><sup>R$</sup><span id="val-ind">167</span><span style="font-size:1.4rem">,00</span></div>
         <p class="cond">À vista ou parcelado no cartão</p>
         <p class="cond" style="margin-top:-12px;color:var(--terracota);font-weight:600">+ bônus: sessão de fotos profissionais (5 fotos)</p>
-        <p class="prazo" id="prazo-ind">Somente até 21 de setembro</p>
+        <p class="prazo" id="prazo-ind">Somente até 20 de setembro</p>
         <div class="acoes">
           <a class="btn-pag cartao" id="btn-cartao" href="https://link.infinitepay.io/arianapsicopedagoga/Ri0x-YEtjLhhjG7-167,00" target="_blank" rel="noopener"><span class="ic">💳</span> Pagar com cartão</a>
           <button class="btn-pag pix" id="btn-pix" type="button" aria-expanded="false" aria-controls="pix-box"><span class="ic">⚡</span> Pagar com Pix</button>
@@ -650,7 +650,7 @@ footer .cr{font-size:12px;color:rgba(248,242,233,.4)}
         </div>
       </div>
     </div>
-    <div class="aviso-lote" id="aviso-lote">O lote de lançamento vale <b>até 21 de setembro</b>. Depois dessa data, a vaga passa a custar R$ 247,00.</div>
+    <div class="aviso-lote" id="aviso-lote">O lote de lançamento vale <b>até 20 de setembro</b>. De 21 a 30 de setembro a vaga custa R$ 197,00. A partir de 1º de outubro, R$ 247,00.</div>
     <div class="alerta-claro">
       <span class="selo-a">Atenção</span>
       <span class="t">Vagas limitadas,<br>turma única</span>
@@ -796,18 +796,43 @@ document.getElementById("btn-copiar").addEventListener("click", function(){
   }
 });
 
-// Lote de lançamento: expira no fim do dia 21/09/2026 (horário de Rondônia, UTC-4)
-var FIM_LOTE = new Date("2026-09-22T03:59:59Z");
-if (new Date() > FIM_LOTE) {
+// Tabela de valores (horário de Rondônia, UTC-4)
+// 1) até 20/09: R$ 167,00 (lote de lançamento)
+// 2) 21/09 a 30/09: R$ 197,00 (público geral)
+// 3) a partir de 01/10: R$ 247,00 (valor normal)
+var FIM_LOTE = new Date("2026-09-21T03:59:59Z");     // fim do dia 20/09
+var FIM_PUBLICO = new Date("2026-10-01T03:59:59Z");  // fim do dia 30/09
+
+// Links de cartão por valor. Deixe vazio para o botão abrir o WhatsApp.
+var LINK_CARTAO_197 = "";
+var LINK_CARTAO_247 = "";
+
+function ajustarCartao(valor, link){
+  var bc = document.getElementById("btn-cartao");
+  if (link) {
+    bc.href = link;
+    bc.setAttribute("target", "_blank");
+  } else {
+    bc.href = wa("Olá, Ariana! Quero pagar minha vaga na Raízes da Intervenção (R$ " + valor + ",00) com cartão. Pode me enviar o link?");
+    bc.removeAttribute("target");
+  }
+}
+
+var AGORA = new Date();
+if (AGORA > FIM_PUBLICO) {
   document.getElementById("val-ind").textContent = "247";
   document.getElementById("de-ind").hidden = true;
   document.getElementById("fita-ind").hidden = true;
   document.getElementById("prazo-ind").hidden = true;
   document.getElementById("aviso-lote").hidden = true;
   document.getElementById("card-ind").classList.remove("destaque");
-  var bc = document.getElementById("btn-cartao");
-  bc.href = wa("Olá, Ariana! Quero pagar minha vaga na Raízes da Intervenção com cartão. Pode me enviar o link?");
-  bc.removeAttribute("target");
+  ajustarCartao("247", LINK_CARTAO_247);
+} else if (AGORA > FIM_LOTE) {
+  document.getElementById("val-ind").textContent = "197";
+  document.getElementById("fita-ind").textContent = "Valor promocional";
+  document.getElementById("prazo-ind").textContent = "Somente até 30 de setembro";
+  document.getElementById("aviso-lote").innerHTML = "O valor de R$ 197,00 vale <b>até 30 de setembro</b>. A partir de 1º de outubro, a vaga passa a custar R$ 247,00.";
+  ajustarCartao("197", LINK_CARTAO_197);
 }
 document.getElementById("link-wa").href = wa("Olá, Ariana!");
 </script>
