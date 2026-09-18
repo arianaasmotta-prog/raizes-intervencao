@@ -173,6 +173,15 @@ header::after{content:"";position:absolute;inset:0;pointer-events:none;
 .alerta-claro .d{position:relative;z-index:1;display:block;font-size:15px;
   color:rgba(248,242,233,.88);line-height:1.6;max-width:520px;margin-inline:auto}
 .alerta-claro .d b{color:#fff;font-weight:600}
+.bonus{margin-top:30px;background:var(--marrom-profundo);color:var(--creme);border:2px solid var(--dourado);
+  border-radius:18px;padding:28px 26px;display:grid;gap:14px;grid-template-columns:auto 1fr;align-items:start}
+.bonus .ic{font-size:30px;line-height:1}
+.bonus .selo-b{display:inline-block;background:var(--dourado);color:var(--marrom-profundo);
+  font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;padding:5px 12px;border-radius:999px;margin-bottom:10px}
+.bonus h3{font-size:1.45rem;color:#fff;margin-bottom:8px;font-family:'Cormorant Garamond',serif}
+.bonus p{margin:0;font-size:15px;color:rgba(248,242,233,.85);line-height:1.6}
+.bonus p b{color:var(--dourado-claro);font-weight:600}
+@media(max-width:560px){.bonus{grid-template-columns:1fr}}
 .garantia{margin-top:30px;background:var(--creme-escuro);border-radius:16px;padding:24px;
   display:flex;gap:16px;align-items:flex-start}
 .garantia .ic{font-size:28px;line-height:1}
@@ -545,7 +554,19 @@ footer .cr{font-size:12px;color:rgba(248,242,233,.4)}
       <li>Roteiro de devolutiva de processo</li>
       <li>Portal digital com todos os materiais</li>
       <li>Hotseat e networking entre profissionais</li>
+      <li>Bônus: sessão individual de fotos profissionais (5 fotos)</li>
     </ul>
+    <div class="bonus">
+      <div class="ic">📸</div>
+      <div>
+        <span class="selo-b">Bônus exclusivo</span>
+        <h3>Sessão individual de fotos profissionais</h3>
+        <p>No dia da oficina você faz uma <b>sessão individual com fotógrafo profissional</b> e recebe
+        <b>5 fotos tratadas</b> para usar no seu Instagram, no seu perfil profissional e nos materiais
+        da sua clínica. Imagem profissional também é posicionamento: quem confia na sua imagem confia
+        no seu trabalho.</p>
+      </div>
+    </div>
     <div class="mosaico dupla">
       <img src="f-kit.jpg" alt="Kit personalizado entregue às participantes" loading="lazy">
       <img src="f-instrumentos.jpg" alt="Protocolos e instrumentos disponíveis na oficina" loading="lazy">
@@ -612,6 +633,7 @@ footer .cr{font-size:12px;color:rgba(248,242,233,.4)}
         <p class="de" id="de-ind">de <s>R$ 247,00</s> por</p>
         <div class="valor"><sup>R$</sup><span id="val-ind">167</span><span style="font-size:1.4rem">,00</span></div>
         <p class="cond">À vista ou parcelado no cartão</p>
+        <p class="cond" style="margin-top:-12px;color:var(--terracota);font-weight:600">+ bônus: sessão de fotos profissionais (5 fotos)</p>
         <p class="prazo" id="prazo-ind">Somente até 21 de setembro</p>
         <div class="acoes">
           <a class="btn-pag cartao" id="btn-cartao" href="https://link.infinitepay.io/arianapsicopedagoga/Ri0x-YEtjLhhjG7-167,00" target="_blank" rel="noopener"><span class="ic">💳</span> Pagar com cartão</a>
@@ -694,6 +716,10 @@ footer .cr{font-size:12px;color:rgba(248,242,233,.4)}
       <details><summary>Serve para atendimento de adultos ou só de crianças?</summary>
         <div class="r">A lógica das 7 etapas é a mesma para qualquer faixa etária. Os exemplos práticos
         do dia são de casos infantojuvenis, que representam a maior parte da demanda clínica.</div></details>
+      <details><summary>Como funciona o bônus da sessão de fotos?</summary>
+        <div class="r">No dia da oficina há um espaço montado com fotógrafo profissional. Cada participante
+        faz uma sessão individual rápida, nos intervalos, e recebe 5 fotos tratadas depois do evento. O bônus
+        está incluso na vaga, sem custo adicional.</div></details>
       <details><summary>Tem certificado?</summary>
         <div class="r">Sim, entregue presencialmente no encerramento do dia.</div></details>
       <details><summary>Como funciona o pagamento?</summary>
