@@ -634,25 +634,15 @@ footer .cr{font-size:12px;color:rgba(248,242,233,.4)}
     <div class="planos">
       <div class="plano destaque" id="card-ind">
         <span class="fita" id="fita-ind">Lote de lançamento</span>
-        <h3>Vaga individual</h3>
-        <p class="quem">Para quem vem sozinha</p>
+        <h3>Vaga individual / Vaga em dupla</h3>
+        <p class="quem">Para quem vem sozinha ou acompanhada</p>
         <p class="de" id="de-ind">de <s>R$ 247,00</s> por</p>
         <div class="valor"><sup>R$</sup><span id="val-ind">167</span><span style="font-size:1.4rem">,00</span></div>
         <p class="cond">À vista ou parcelado no cartão</p>
         <p class="cond" style="margin-top:-12px;color:var(--terracota);font-weight:600">+ bônus: sessão de fotos profissionais (5 fotos)</p>
         <p class="prazo" id="prazo-ind">Somente até 20 de setembro</p>
         <div class="acoes">
-          <a class="btn-pag cartao" id="btn-cartao" href="https://link.infinitepay.io/arianapsicopedagoga/Ri0x-YEtjLhhjG7-167,00" target="_blank" rel="noopener"><span class="ic">💳</span> Pagar com cartão</a>
-          <button class="btn-pag pix" id="btn-pix" type="button" aria-expanded="false" aria-controls="pix-box"><span class="ic">⚡</span> Pagar com Pix</button>
-          <a class="btn-pag saber" id="btn-saber" href="#"><span class="ic">💬</span> Quero saber mais</a>
-        </div>
-        <div class="pix-box" id="pix-box">
-          <span class="rot">Chave Pix aleatória</span>
-          <code id="pix-chave">c1e63483-d233-4fb0-8040-8c6dc2d79e66</code>
-          <span class="passo">Pague o valor da vaga na sua chave Pix e envie o comprovante no
-          WhatsApp para confirmar sua inscrição. A vaga é reservada na confirmação do pagamento.</span>
-          <button class="mini" id="btn-copiar" type="button">Copiar chave</button>
-          <a class="mini" id="btn-comprovante" href="#" target="_blank" rel="noopener">Enviar comprovante</a>
+          <a class="btn-pag cartao" id="btn-vaga" href="https://loja.infinitepay.io/arianapsicopedagoga/vai2747-raizes-da-intervencao-oficina-presencial" target="_blank" rel="noopener">Quero minha vaga</a>
         </div>
       </div>
     </div>
@@ -780,53 +770,12 @@ var WHATS = "5569984064921";
 function wa(m){ return "https://wa.me/" + WHATS + "?text=" + encodeURIComponent(m); }
 
 ["cta1","cta2","cta3"].forEach(function(id){ document.getElementById(id).href = "#investimento"; });
-document.getElementById("btn-saber").href = wa("Olá, Ariana! Quero saber mais sobre a oficina Raízes da Intervenção, dia 18 de outubro.");
-document.getElementById("btn-comprovante").href = wa("Olá, Ariana! Fiz o pagamento da minha vaga na Raízes da Intervenção por Pix e estou enviando o comprovante.");
-
-var caixaPix = document.getElementById("pix-box");
-var botaoPix = document.getElementById("btn-pix");
-botaoPix.addEventListener("click", function(){
-  var aberta = caixaPix.classList.toggle("on");
-  botaoPix.setAttribute("aria-expanded", aberta ? "true" : "false");
-  if (aberta) caixaPix.scrollIntoView({behavior:"smooth", block:"nearest"});
-});
-
-document.getElementById("btn-copiar").addEventListener("click", function(){
-  var chave = document.getElementById("pix-chave").textContent.trim();
-  var botao = this;
-  function feito(){ botao.textContent = "Chave copiada"; setTimeout(function(){ botao.textContent = "Copiar chave"; }, 2500); }
-  if (navigator.clipboard && navigator.clipboard.writeText) {
-    navigator.clipboard.writeText(chave).then(feito, selecionar);
-  } else { selecionar(); }
-  function selecionar(){
-    var faixa = document.createRange();
-    faixa.selectNodeContents(document.getElementById("pix-chave"));
-    var sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(faixa);
-    try { document.execCommand("copy"); feito(); } catch(e) { botao.textContent = "Selecione e copie"; }
-  }
-});
-
 // Tabela de valores (horário de Rondônia, UTC-4)
 // 1) até 20/09: R$ 167,00 (lote de lançamento)
 // 2) 21/09 a 05/10: R$ 197,00 (público geral)
 // 3) a partir de 06/10: R$ 247,00 (valor normal)
 var FIM_LOTE = new Date("2026-09-21T03:59:59Z");     // fim do dia 20/09
 var FIM_PUBLICO = new Date("2026-10-06T03:59:59Z");  // fim do dia 05/10
-
-// Links de cartão por valor. Deixe vazio para o botão abrir o WhatsApp.
-var LINK_CARTAO_197 = "";
-var LINK_CARTAO_247 = "";
-
-function ajustarCartao(valor, link){
-  var bc = document.getElementById("btn-cartao");
-  if (link) {
-    bc.href = link;
-    bc.setAttribute("target", "_blank");
-  } else {
-    bc.href = wa("Olá, Ariana! Quero pagar minha vaga na Raízes da Intervenção (R$ " + valor + ",00) com cartão. Pode me enviar o link?");
-    bc.removeAttribute("target");
-  }
-}
 
 var AGORA = new Date();
 if (AGORA > FIM_PUBLICO) {
@@ -836,13 +785,11 @@ if (AGORA > FIM_PUBLICO) {
   document.getElementById("prazo-ind").hidden = true;
   document.getElementById("aviso-lote").hidden = true;
   document.getElementById("card-ind").classList.remove("destaque");
-  ajustarCartao("247", LINK_CARTAO_247);
 } else if (AGORA > FIM_LOTE) {
   document.getElementById("val-ind").textContent = "197";
   document.getElementById("fita-ind").textContent = "Valor promocional";
   document.getElementById("prazo-ind").textContent = "Somente até 5 de outubro";
   document.getElementById("aviso-lote").innerHTML = "O valor de R$ 197,00 vale <b>até 5 de outubro</b>. A partir de 6 de outubro, a vaga passa a custar R$ 247,00.";
-  ajustarCartao("197", LINK_CARTAO_197);
 }
 document.getElementById("link-wa").href = wa("Olá, Ariana!");
 </script>
