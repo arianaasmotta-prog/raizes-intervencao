@@ -133,7 +133,10 @@ header::after{content:"";position:absolute;inset:0;pointer-events:none;
 .incluso li::before{content:"✓";color:var(--terracota);font-weight:700;flex:0 0 auto}
 
 /* INVESTIMENTO */
-.planos{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));margin-top:30px;max-width:400px;margin-inline:auto}
+.planos{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin-top:30px;max-width:820px;margin-inline:auto;align-items:stretch}
+.plano{display:flex;flex-direction:column}
+.plano .acoes{margin-top:auto}
+.plano .porpessoa{font-size:14.5px;color:var(--terracota);font-weight:600;margin:10px 0 14px}
 .plano{background:#fff;border:1px solid var(--borda);border-radius:18px;padding:28px;text-align:center;
   box-shadow:var(--sombra);position:relative}
 .plano.destaque{border:2px solid var(--dourado)}
@@ -636,19 +639,33 @@ footer .cr{font-size:12px;color:rgba(248,242,233,.4)}
     <div class="planos">
       <div class="plano destaque" id="card-ind">
         <span class="fita" id="fita-ind">Valor promocional</span>
-        <h3>Vaga individual / Vaga em dupla</h3>
-        <p class="quem">Para quem vem sozinha ou acompanhada</p>
+        <h3>Vaga individual</h3>
+        <p class="quem">Para quem vem sozinha</p>
         <p class="de" id="de-ind">de <s>R$ 247,00</s> por</p>
         <div class="valor"><sup>R$</sup><span id="val-ind">197</span><span style="font-size:1.4rem">,00</span></div>
-        <p class="cond">À vista ou parcelado no cartão</p>
+        <p class="cond">Pix ou cartão em até 12x</p>
         <p class="cond" style="margin-top:-12px;color:var(--terracota);font-weight:600">+ bônus: sessão de fotos profissionais (5 fotos)</p>
         <p class="prazo" id="prazo-ind">Somente até 5 de outubro</p>
         <div class="acoes">
-          <a class="btn-pag cartao" id="btn-vaga" href="https://loja.infinitepay.io/arianapsicopedagoga/vai2747-raizes-da-intervencao-oficina-presencial" target="_blank" rel="noopener">Quero minha vaga</a>
+          <a class="btn-pag cartao" href="https://loja.infinitepay.io/arianapsicopedagoga/vai2747-raizes-da-intervencao-oficina-presencial" target="_blank" rel="noopener">Quero minha vaga</a>
+        </div>
+      </div>
+      <div class="plano" id="card-dup">
+        <span class="fita suave" id="fita-dup">Menor valor por pessoa</span>
+        <h3>Vaga em dupla</h3>
+        <p class="quem">Para quem vem acompanhada</p>
+        <p class="de" id="de-dup">valor total das duas vagas</p>
+        <div class="valor"><sup>R$</sup><span id="val-dup">324</span><span style="font-size:1.4rem" id="cent-dup">,00</span></div>
+        <p class="porpessoa" id="pp-dup">R$ 162,00 por pessoa</p>
+        <p class="cond">Pix ou cartão em até 12x</p>
+        <p class="cond" style="margin-top:-12px;color:var(--terracota);font-weight:600">+ bônus: sessão de fotos para cada participante</p>
+        <p class="prazo" id="prazo-dup">Somente até 5 de outubro</p>
+        <div class="acoes">
+          <a class="btn-pag cartao" href="https://loja.infinitepay.io/arianapsicopedagoga/vai2747-raizes-da-intervencao-oficina-presencial" target="_blank" rel="noopener">Quero minha vaga</a>
         </div>
       </div>
     </div>
-    <div class="aviso-lote" id="aviso-lote">O valor de R$ 197,00 vale <b>até 5 de outubro, às 23h59</b>. A partir de 6 de outubro, a vaga passa a custar R$ 247,00.</div>
+    <div class="aviso-lote" id="aviso-lote">Os valores promocionais valem <b>até 5 de outubro, às 23h59</b>. A partir de 6 de outubro, a vaga individual passa a custar R$ 247,00.</div>
     <div class="alerta-claro">
       <span class="selo-a">Atenção</span>
       <span class="t">Vagas limitadas,<br>turma única</span>
@@ -773,9 +790,13 @@ function wa(m){ return "https://wa.me/" + WHATS + "?text=" + encodeURIComponent(
 
 ["cta1","cta2","cta3"].forEach(function(id){ document.getElementById(id).href = "#investimento"; });
 // Tabela de valores (horário de Rondônia, UTC-4)
-// 1) até 05/10, 23h59: R$ 197,00 (valor promocional, já no HTML)
-// 2) a partir de 06/10: R$ 247,00 (valor normal)
+// 1) até 05/10, 23h59: individual R$ 197,00 e dupla R$ 324,00 (já no HTML)
+// 2) a partir de 06/10: individual R$ 247,00; dupla definida em DUPLA_DEPOIS
 var FIM_PROMO = new Date("2026-10-06T03:59:59Z");  // fim do dia 05/10 em Rondônia
+
+// Valor total da dupla a partir de 06/10. Deixe "" enquanto não estiver definido.
+var DUPLA_DEPOIS = "";       // ex.: "424,00"
+var DUPLA_DEPOIS_PP = "";    // ex.: "212,00"
 
 if (new Date() > FIM_PROMO) {
   document.getElementById("val-ind").textContent = "247";
@@ -784,6 +805,18 @@ if (new Date() > FIM_PROMO) {
   document.getElementById("prazo-ind").hidden = true;
   document.getElementById("aviso-lote").hidden = true;
   document.getElementById("card-ind").classList.remove("destaque");
+
+  document.getElementById("de-dup").hidden = true;
+  document.getElementById("fita-dup").hidden = true;
+  document.getElementById("prazo-dup").hidden = true;
+  if (DUPLA_DEPOIS) {
+    var partes = DUPLA_DEPOIS.split(",");
+    document.getElementById("val-dup").textContent = partes[0];
+    document.getElementById("cent-dup").textContent = "," + (partes[1] || "00");
+    document.getElementById("pp-dup").textContent = DUPLA_DEPOIS_PP ? "R$ " + DUPLA_DEPOIS_PP + " por pessoa" : "";
+  } else {
+    document.getElementById("card-dup").hidden = true;
+  }
 }
 document.getElementById("link-wa").href = wa("Olá, Ariana!");
 </script>
