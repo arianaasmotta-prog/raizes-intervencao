@@ -265,10 +265,12 @@ header::after{content:"";position:absolute;inset:0;pointer-events:none;
 .legenda.clara{color:var(--terracota)}
 
 /* ---------- DEPOIMENTOS ---------- */
-.depo-grid{columns:2;column-gap:16px;margin-top:32px}
-@media(max-width:720px){.depo-grid{columns:1}}
-.depo{break-inside:avoid;background:#fff;border:1px solid var(--borda);border-radius:16px;
-  padding:26px 24px 22px;margin-bottom:16px;box-shadow:var(--sombra);position:relative}
+.depo-grid{columns:3;column-gap:16px;column-fill:balance;margin-top:32px}
+@media(max-width:860px){.depo-grid{columns:2}}
+@media(max-width:560px){.depo-grid{columns:1}}
+.depo{break-inside:avoid;-webkit-column-break-inside:avoid;page-break-inside:avoid;
+  display:inline-block;width:100%;background:#fff;border:1px solid var(--borda);border-radius:16px;
+  padding:26px 24px 22px;margin:0 0 16px;box-shadow:var(--sombra);position:relative}
 .depo::before{content:"\201C";position:absolute;top:2px;left:18px;font-family:'Cormorant Garamond',serif;
   font-size:4.2rem;line-height:1;color:rgba(201,162,74,.35)}
 .depo p{margin:0;font-size:15.5px;color:var(--texto);line-height:1.65;position:relative;z-index:1}
@@ -633,20 +635,20 @@ footer .cr{font-size:12px;color:rgba(248,242,233,.4)}
     por menos do que costuma custar uma única supervisão avulsa.</p>
     <div class="planos">
       <div class="plano destaque" id="card-ind">
-        <span class="fita" id="fita-ind">Lote de lançamento</span>
+        <span class="fita" id="fita-ind">Valor promocional</span>
         <h3>Vaga individual / Vaga em dupla</h3>
         <p class="quem">Para quem vem sozinha ou acompanhada</p>
         <p class="de" id="de-ind">de <s>R$ 247,00</s> por</p>
-        <div class="valor"><sup>R$</sup><span id="val-ind">167</span><span style="font-size:1.4rem">,00</span></div>
+        <div class="valor"><sup>R$</sup><span id="val-ind">197</span><span style="font-size:1.4rem">,00</span></div>
         <p class="cond">À vista ou parcelado no cartão</p>
         <p class="cond" style="margin-top:-12px;color:var(--terracota);font-weight:600">+ bônus: sessão de fotos profissionais (5 fotos)</p>
-        <p class="prazo" id="prazo-ind">Somente até 20 de setembro</p>
+        <p class="prazo" id="prazo-ind">Somente até 5 de outubro</p>
         <div class="acoes">
           <a class="btn-pag cartao" id="btn-vaga" href="https://loja.infinitepay.io/arianapsicopedagoga/vai2747-raizes-da-intervencao-oficina-presencial" target="_blank" rel="noopener">Quero minha vaga</a>
         </div>
       </div>
     </div>
-    <div class="aviso-lote" id="aviso-lote">O lote de lançamento vale <b>até 20 de setembro</b>. De 21 de setembro a 5 de outubro a vaga custa R$ 197,00. A partir de 6 de outubro, R$ 247,00.</div>
+    <div class="aviso-lote" id="aviso-lote">O valor de R$ 197,00 vale <b>até 5 de outubro, às 23h59</b>. A partir de 6 de outubro, a vaga passa a custar R$ 247,00.</div>
     <div class="alerta-claro">
       <span class="selo-a">Atenção</span>
       <span class="t">Vagas limitadas,<br>turma única</span>
@@ -771,25 +773,17 @@ function wa(m){ return "https://wa.me/" + WHATS + "?text=" + encodeURIComponent(
 
 ["cta1","cta2","cta3"].forEach(function(id){ document.getElementById(id).href = "#investimento"; });
 // Tabela de valores (horário de Rondônia, UTC-4)
-// 1) até 20/09: R$ 167,00 (lote de lançamento)
-// 2) 21/09 a 05/10: R$ 197,00 (público geral)
-// 3) a partir de 06/10: R$ 247,00 (valor normal)
-var FIM_LOTE = new Date("2026-09-21T03:59:59Z");     // fim do dia 20/09
-var FIM_PUBLICO = new Date("2026-10-06T03:59:59Z");  // fim do dia 05/10
+// 1) até 05/10, 23h59: R$ 197,00 (valor promocional, já no HTML)
+// 2) a partir de 06/10: R$ 247,00 (valor normal)
+var FIM_PROMO = new Date("2026-10-06T03:59:59Z");  // fim do dia 05/10 em Rondônia
 
-var AGORA = new Date();
-if (AGORA > FIM_PUBLICO) {
+if (new Date() > FIM_PROMO) {
   document.getElementById("val-ind").textContent = "247";
   document.getElementById("de-ind").hidden = true;
   document.getElementById("fita-ind").hidden = true;
   document.getElementById("prazo-ind").hidden = true;
   document.getElementById("aviso-lote").hidden = true;
   document.getElementById("card-ind").classList.remove("destaque");
-} else if (AGORA > FIM_LOTE) {
-  document.getElementById("val-ind").textContent = "197";
-  document.getElementById("fita-ind").textContent = "Valor promocional";
-  document.getElementById("prazo-ind").textContent = "Somente até 5 de outubro";
-  document.getElementById("aviso-lote").innerHTML = "O valor de R$ 197,00 vale <b>até 5 de outubro</b>. A partir de 6 de outubro, a vaga passa a custar R$ 247,00.";
 }
 document.getElementById("link-wa").href = wa("Olá, Ariana!");
 </script>
