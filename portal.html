@@ -185,6 +185,13 @@ footer .cr{font-size:12px;color:rgba(248,242,233,.45)}
 .bonus p b{color:var(--dourado-claro);font-weight:600}
 @media(max-width:560px){.bonus{grid-template-columns:1fr}}
 .aviso{font-size:12px;color:var(--texto-suave);margin-top:14px;font-style:italic}
+.comer-tit{font-size:1.05rem;margin:28px 0 10px}
+.comer{list-style:none;padding:0;margin:0}
+.comer li{display:flex;justify-content:space-between;align-items:center;gap:16px;border:1px solid rgba(0,0,0,.08);border-radius:12px;padding:14px 18px;margin-bottom:10px}
+.comer li b{display:block}
+.comer li small{display:block;opacity:.75;margin-top:3px;line-height:1.45}
+.comer li a{white-space:nowrap;font-weight:600;text-decoration:none;border-bottom:1px solid currentColor}
+@media(max-width:600px){.comer li{flex-direction:column;align-items:flex-start;gap:8px}}
 </style>
 </head>
 <body>
@@ -228,31 +235,23 @@ footer .cr{font-size:12px;color:rgba(248,242,233,.45)}
     </div>
     <ul class="crono">
       <li class="bloco">
-        <div class="hora">08:00 às 08:20</div>
+        <div class="hora">07:50 às 08:20</div>
         <div>
           <span class="tag t-teoria">Abertura</span>
-          <h3>Acolhimento e alinhamento</h3>
-          <p>Credenciamento, entrega do kit e contrato de aprendizagem do dia.</p>
+          <h3>Credenciamento e acolhimento</h3>
+          <p>Credenciamento, entrega do kit e assinatura da autorização de uso de imagem.</p>
         </div>
       </li>
       <li class="bloco chave">
-        <div class="hora">08:20 às 09:50</div>
+        <div class="hora">08:20 às 09:00</div>
         <div>
           <span class="tag t-teoria">Teoria</span>
-          <h3>Da avaliação à hipótese funcional</h3>
+          <h3>Leitura clínica do laudo</h3>
           <p>Ler o laudo como mapa clínico e converter achados em objetivos operacionais.</p>
         </div>
       </li>
-      <li class="bloco">
-        <div class="hora">09:50 às 10:10</div>
-        <div>
-          <span class="tag t-pausa">Pausa</span>
-          <h3>Coffee break</h3>
-          <p>Café, frutas e conversa entre colegas.</p>
-        </div>
-      </li>
       <li class="bloco chave">
-        <div class="hora">10:10 às 11:40</div>
+        <div class="hora">09:00 às 10:00</div>
         <div>
           <span class="tag t-teoria">Teoria</span>
           <h3>Construção do PDI e escolha de estratégias</h3>
@@ -260,31 +259,55 @@ footer .cr{font-size:12px;color:rgba(248,242,233,.45)}
         </div>
       </li>
       <li class="bloco">
-        <div class="hora">11:40 às 12:00</div>
+        <div class="hora">10:00 às 10:20</div>
         <div>
-          <span class="tag t-pausa">Momento especial</span>
-          <h3>Sorteio</h3>
-          <p>Sorteio entre as participantes presentes antes do intervalo do almoço.</p>
-        </div>
-      </li>
-      <li class="bloco">
-        <div class="hora">12:00 às 13:30</div>
-        <div>
-          <span class="tag t-pausa">Intervalo</span>
-          <h3>Almoço livre</h3>
-          <p>Sugestões de restaurantes próximos na seção <a href="#onde-comer">Onde comer</a>.</p>
+          <span class="tag t-pausa">Pausa</span>
+          <h3>Coffee break</h3>
+          <p>Café, frutas e conversa entre colegas.</p>
         </div>
       </li>
       <li class="bloco chave">
-        <div class="hora">13:30 às 14:30</div>
+        <div class="hora">10:20 às 10:50</div>
+        <div>
+          <span class="tag t-pratica">Materiais</span>
+          <h3>Apresentação e manuseio dos materiais</h3>
+          <p>Programas, jogos e protocolos de intervenção na mão, com critério de escolha por habilidade-alvo.</p>
+        </div>
+      </li>
+      <li class="bloco chave">
+        <div class="hora">10:50 às 11:30</div>
         <div>
           <span class="tag t-pratica">Prática</span>
           <h3>Caso real: do laudo ao plano</h3>
           <p>Em duplas, você recebe um laudo completo e um modelo estruturado de PDI, e decide objetivos, estratégias e critérios do caso.</p>
         </div>
       </li>
+      <li class="bloco">
+        <div class="hora">11:30 às 12:00</div>
+        <div>
+          <span class="tag t-pausa">Momento especial</span>
+          <h3>Sorteio e hotseat</h3>
+          <p>Sorteio entre as participantes presentes e primeiras dúvidas abertas antes do almoço.</p>
+        </div>
+      </li>
+      <li class="bloco">
+        <div class="hora">12:00 às 14:00</div>
+        <div>
+          <span class="tag t-pausa">Intervalo</span>
+          <h3>Almoço livre</h3>
+          <p>Sugestões de restaurantes próximos na seção <a href="#onde-comer">Onde comer</a>.</p>
+        </div>
+      </li>
+      <li class="bloco">
+        <div class="hora">14:00 às 14:20</div>
+        <div>
+          <span class="tag t-pausa">Momento especial</span>
+          <h3>Sorteio</h3>
+          <p>Segundo sorteio entre as participantes presentes na volta do almoço.</p>
+        </div>
+      </li>
       <li class="bloco chave">
-        <div class="hora">14:30 às 15:30</div>
+        <div class="hora">14:20 às 15:00</div>
         <div>
           <span class="tag t-pratica">Prática</span>
           <h3>Sessão interventiva na prática</h3>
@@ -292,11 +315,19 @@ footer .cr{font-size:12px;color:rgba(248,242,233,.45)}
         </div>
       </li>
       <li class="bloco">
-        <div class="hora">15:30 às 16:00</div>
+        <div class="hora">15:00 às 15:30</div>
         <div>
           <span class="tag t-pratica">Encerramento</span>
           <h3>Hotseat e encerramento</h3>
           <p>Quando manter, ajustar ou encerrar a intervenção. Dúvidas abertas e entrega dos certificados.</p>
+        </div>
+      </li>
+      <li class="bloco">
+        <div class="hora">17:00 às 18:00</div>
+        <div>
+          <span class="tag t-pausa">Bônus</span>
+          <h3>Fotos individuais</h3>
+          <p>Sessão individual com fotógrafo profissional. Cada participante recebe 5 fotos tratadas depois do evento.</p>
         </div>
       </li>
     </ul>
@@ -509,8 +540,8 @@ footer .cr{font-size:12px;color:rgba(248,242,233,.45)}
     </div>
     <div class="info">
       <div class="info-card"><div class="rot">Data</div><div class="val">18 de outubro</div><small>Domingo</small></div>
-      <div class="info-card"><div class="rot">Horário</div><div class="val">08h às 16h</div><small>Credenciamento a partir das 07h45</small></div>
-      <div class="info-card"><div class="rot">Local</div><div class="val">Porto Velho · RO</div><small>Local e endereço confirmados em breve</small></div>
+      <div class="info-card"><div class="rot">Horário</div><div class="val">08h às 15h30</div><small>Credenciamento a partir das 07h50 · Fotos individuais das 17h às 18h</small></div>
+      <div class="info-card"><div class="rot">Local</div><div class="val">Golden Plaza Hotel</div><small>Av. Gov. Jorge Teixeira, 810 · Nova Porto Velho · Porto Velho/RO<br><a href="https://maps.app.goo.gl/4HUWNsKGZxgudLqz9" target="_blank" rel="noopener">Abrir no Google Maps</a></small></div>
     </div>
 
     <div class="sec-head" style="margin-top:44px">
@@ -521,7 +552,8 @@ footer .cr{font-size:12px;color:rgba(248,242,233,.45)}
       <li>Kit personalizado</li>
       <li>Coffee break</li>
       <li>Estudo de caso real completo</li>
-      <li>Modelos editáveis de PDI e relatórios</li>
+      <li>Modelos editáveis de PDI</li>
+      <li>IA para plano de intervenção</li>
       <li>Materiais digitais de todas as etapas</li>
       <li>Hotseat e networking entre profissionais</li>
       <li>Bônus: sessão individual de fotos profissionais (5 fotos)</li>
@@ -543,10 +575,8 @@ footer .cr{font-size:12px;color:rgba(248,242,233,.45)}
       <h2 style="font-size:1.6rem">O que trazer</h2>
     </div>
     <ul class="leve">
-      <li>Caderno e caneta</li>
       <li>Notebook ou tablet, se preferir os materiais em digital</li>
       <li>Um caso da sua prática, se quiser levá-lo ao hotseat</li>
-      <li>Roupa confortável, porque o dia tem muita prática</li>
     </ul>
   </div>
 </section>
@@ -557,16 +587,78 @@ footer .cr{font-size:12px;color:rgba(248,242,233,.45)}
     <div class="sec-head">
       <span class="sec-num">05 · Almoço</span>
       <h2>Onde comer</h2>
-      <p>O intervalo do almoço é de 1h30, das 12h às 13h30. As sugestões abaixo serão atualizadas
-      assim que o local for confirmado, com distância e tempo de deslocamento a pé.</p>
+      <p>O intervalo é das 12h às 14h. Abaixo, opções a pé ou a poucos minutos do Golden Plaza Hotel, com o endereço e o link do mapa.</p>
     </div>
-    <div class="painel">
-      <p style="margin:0;font-size:14.5px;color:var(--texto-suave)">
-        Estamos finalizando a seleção de restaurantes próximos ao local da oficina. Esta seção será
-        preenchida com opções por tipo de cozinha, distância, horário de funcionamento aos domingos e
-        link direto para o mapa. Volte a esta página na semana do evento.</p>
-      <p class="aviso">Atenção: muitos restaurantes de Porto Velho têm horário reduzido aos domingos. As sugestões listadas aqui serão apenas de casas com funcionamento confirmado no dia.</p>
-    </div>
+
+    <h3 class="comer-tit">Na mesma avenida, a pé ou 2 minutos de carro</h3>
+    <ul class="comer">
+      <li>
+        <div>
+          <b>Restaurante Arasuper</b> · bufê · R$ 20 a 100
+          <small>Av. Gov. Jorge Teixeira, 374 · anexo ao supermercado Nova Era · abre 11h</small>
+        </div>
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=Restaurante+Arasuper+Porto+Velho" target="_blank" rel="noopener">Mapa</a>
+      </li>
+      <li>
+        <div>
+          <b>Texas Grill</b> · grelhados e self-service · R$ 40 a 120
+          <small>Av. Gov. Jorge Teixeira, 1495 · abre 11h30 · opção de quilo no almoço</small>
+        </div>
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=Texas+Grill+Porto+Velho" target="_blank" rel="noopener">Mapa</a>
+      </li>
+      <li>
+        <div>
+          <b>Restaurante Rondon Palace</b> · à la carte · R$ 80 a 100
+          <small>Av. Gov. Jorge Teixeira, 401 · refeição no local</small>
+        </div>
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=Restaurante+Rondon+Palace+Porto+Velho" target="_blank" rel="noopener">Mapa</a>
+      </li>
+      <li>
+        <div>
+          <b>Jataí Restaurante &amp; Lanchonete</b> · comida brasileira
+          <small>Av. Gov. Jorge Teixeira, 1210</small>
+        </div>
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=Jata%C3%AD+Restaurante+Porto+Velho" target="_blank" rel="noopener">Mapa</a>
+      </li>
+      <li>
+        <div>
+          <b>Federal Burger</b> · lanches · R$ 20 a 40 · aberto 24 horas
+          <small>Av. Gov. Jorge Teixeira, 1296 · ao lado da rodoviária · opção rápida</small>
+        </div>
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=Federal+Burger+Rodovi%C3%A1ria+Porto+Velho" target="_blank" rel="noopener">Mapa</a>
+      </li>
+    </ul>
+
+    <h3 class="comer-tit">De 5 a 8 minutos de carro</h3>
+    <ul class="comer">
+      <li>
+        <div>
+          <b>Tucumã Restaurante</b> · comida regional · R$ 40 a 80
+          <small>R. Elias Gorayeb, 1030 · referência em tambaqui · abre 11h</small>
+        </div>
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=Tucum%C3%A3+Restaurante+Porto+Velho" target="_blank" rel="noopener">Mapa</a>
+      </li>
+      <li>
+        <div>
+          <b>Di Minas Churrascaria</b> · self-service e churrasco · R$ 40 a 120
+          <small>R. Rafael Vaz e Silva, 1070 · ambiente familiar climatizado · abre 11h</small>
+        </div>
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=Di+Minas+Churrascaria+Porto+Velho" target="_blank" rel="noopener">Mapa</a>
+      </li>
+    </ul>
+
+    <h3 class="comer-tit">Shopping, se você quiser variedade</h3>
+    <ul class="comer">
+      <li>
+        <div>
+          <b>Porto Velho Shopping</b> · praça de alimentação e restaurantes
+          <small>Av. Rio Madeira, 3288 · 2,9 km do evento, cerca de 7 minutos de carro · funciona aos domingos</small>
+        </div>
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=Porto+Velho+Shopping" target="_blank" rel="noopener">Mapa</a>
+      </li>
+    </ul>
+
+    <p class="aviso">Atenção: muitos restaurantes de Porto Velho têm horário reduzido aos domingos. Confirme por telefone antes de sair, ou escolha a praça de alimentação do Porto Velho Shopping, que é a opção mais segura no domingo.</p>
   </div>
 </section>
 
