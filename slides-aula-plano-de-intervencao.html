@@ -1,0 +1,1703 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head>
+<meta charset="UTF-8">
+<title>Como montar o plano de intervenção — slides</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+
+:root{
+  --creme:#FAF6EF; --creme-2:#F2EEE3;
+  --verde:#1F3324; --verde-2:#2C4632; --verde-claro:#E8EFE7;
+  --dourado:#B08A28; --dourado-2:#C9A94A; --dourado-fraco:#F2E6C8;
+  --texto:#2B2B26; --texto-2:#5E5C53; --borda:#E3DCCB; --branco:#FFFFFF;
+  --sombra:0 1px 2px rgba(31,51,36,.04),0 10px 26px rgba(31,51,36,.055);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--creme);color:var(--texto);font-family:'Inter',system-ui,sans-serif;font-size:17px;line-height:1.72;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:'Playfair Display',Georgia,serif}
+.barra-topo{height:9px;background:var(--verde)}
+.container{max-width:1240px;margin:0 auto;padding:0 40px}
+
+/* HERO */
+.hero{padding:54px 0 6px}
+.hero .kicker{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--dourado);font-weight:700;margin-bottom:14px}
+.hero h1{font-size:clamp(33px,4.6vw,52px);line-height:1.12;margin:0 0 16px;font-weight:700;color:var(--verde);max-width:17ch}
+.hero h1 .mark{background:linear-gradient(transparent 58%,var(--dourado-fraco) 58%);padding:0 2px}
+.hero p.sub{font-size:19px;color:var(--texto-2);max-width:52ch;margin:0 0 24px;font-weight:300}
+
+/* LAYOUT */
+.layout{display:grid;grid-template-columns:238px 1fr;gap:46px;align-items:start;padding-top:28px;padding-bottom:90px}
+.lateral{position:sticky;top:26px}
+.glossario{background:var(--verde-claro);border-radius:12px;padding:20px 20px 16px;margin-bottom:20px}
+.glossario h4{font-size:17px;margin:0 0 12px;color:var(--verde);font-weight:600}
+.glossario p{font-size:13.4px;line-height:1.55;margin:0 0 11px;color:var(--texto-2);font-family:'Inter',sans-serif}
+.glossario p b{color:var(--verde);font-weight:600}
+.indice{padding:0 4px}
+.indice .lab{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--dourado);font-weight:700;margin:0 0 9px;padding-left:10px}
+.indice a{display:block;text-decoration:none;color:var(--texto-2);font-size:13.3px;padding:6px 10px;border-left:2px solid var(--borda);line-height:1.4;transition:.16s}
+.indice a:hover{color:var(--verde);border-left-color:var(--dourado-2)}
+.indice a.active{color:var(--verde);font-weight:600;border-left-color:var(--dourado);background:var(--creme-2)}
+.conteudo{min-width:0}
+
+/* FICHAS DE PROGRAMA */
+.ficha{display:grid;grid-template-columns:1fr 190px;gap:24px;background:var(--branco);border:1px solid var(--borda);border-radius:14px;padding:22px 24px;margin:14px 0;box-shadow:var(--sombra);align-items:start}
+.ficha .fn{font-family:'Playfair Display',serif;font-size:25px;color:var(--verde);font-weight:700;line-height:1.15}
+.ficha .fsub{font-size:14.6px;color:var(--texto-2);margin:3px 0 10px;line-height:1.45}
+.ficha p{font-size:15px;line-height:1.6;margin:12px 0 0}
+.ficha p b{color:var(--verde)}
+.ficha .fmeta{display:flex;gap:30px;flex-wrap:wrap;margin-top:16px;padding-top:14px;border-top:1px solid var(--borda)}
+.ficha .fmeta span{display:block;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--dourado);font-weight:700;margin-bottom:2px}
+.ficha .fmeta div{font-size:14.2px;color:var(--texto-2);line-height:1.45}
+.ficha .fau{margin-top:12px;font-size:13px;color:var(--texto-2);font-style:italic}
+.ficha .capa{background:#FCFAF5;border:1px solid var(--borda);border-radius:10px;padding:10px;display:flex;align-items:center;justify-content:center}
+.ficha .capa img{max-width:100%;height:auto;border-radius:6px;display:block}
+@media(max-width:700px){.ficha{grid-template-columns:1fr}.ficha .capa{order:-1;max-width:190px}}
+@media print{.ficha{page-break-inside:avoid}}
+
+/* CHIPS */
+.bloco-chips{background:var(--verde-claro);border-radius:14px;padding:22px 24px;margin:24px 0}
+.bloco-chips h4{font-family:'Playfair Display',serif;font-size:19px;margin:0 0 14px;color:var(--verde);font-weight:600}
+.linha-chip{display:flex;align-items:baseline;gap:10px;margin-bottom:11px;flex-wrap:wrap}
+.linha-chip .txt{font-size:15px;color:var(--texto-2);line-height:1.5}
+.chip{display:inline-block;border-radius:100px;padding:4px 14px;font-size:13.2px;font-weight:600;white-space:nowrap}
+.chip.mini{font-size:11.8px;padding:3px 10px;font-weight:600}
+.chip.escuro{background:var(--verde);color:#E9EFE6}
+.chip.contorno{background:var(--branco);border:1.5px solid var(--verde);color:var(--verde)}
+.chip.dourado{background:var(--dourado);color:#fff}
+.chip.dourado-claro{background:var(--dourado-fraco);color:#6B5416}
+.chip.cinza{background:#E9E5DA;color:var(--texto-2)}
+
+/* SEÇÕES */
+section{scroll-margin-top:24px;padding-top:48px}
+section>h2{font-size:clamp(27px,3.2vw,36px);line-height:1.15;color:var(--verde);margin:0 0 12px;font-weight:700}
+section>p.intro{font-size:17.5px;color:var(--texto-2);margin-bottom:8px;font-weight:300}
+h3{font-size:23px;color:var(--verde);margin:36px 0 12px;font-weight:600}
+h4{font-size:15px;color:var(--verde);margin:24px 0 8px;font-weight:700;font-family:'Inter',sans-serif}
+p{margin:0 0 16px}
+strong{font-weight:600;color:var(--verde)}
+ul,ol{margin:0 0 16px;padding-left:20px}
+li{margin-bottom:7px}
+li::marker{color:var(--dourado)}
+
+/* BOX VERDE */
+.box-verde{background:var(--verde);color:#E9EFE6;border-radius:14px;padding:22px 24px;margin:22px 0}
+.box-verde h4{font-family:'Playfair Display',serif;font-size:19px;color:var(--dourado-2);margin:0 0 12px;font-weight:600}
+.box-verde p{margin:0 0 9px;font-size:15.5px;line-height:1.62}
+.box-verde p:last-child{margin-bottom:0}
+
+/* CARD BORDA DOURADA */
+.card-borda{background:#FCFAF5;border:1px solid var(--borda);border-left:5px solid var(--dourado);border-radius:0 14px 14px 0;padding:20px 24px;margin:16px 0}
+.card-borda .t{font-family:'Playfair Display',serif;font-size:20px;color:var(--verde);margin-bottom:8px;font-weight:600}
+.card-borda p:last-child{margin-bottom:0}
+
+.alerta{background:#FCF4F0;border:1px solid #EBD8CE;border-left:5px solid #A85A36;border-radius:0 14px 14px 0;padding:19px 24px;margin:22px 0}
+.alerta .t{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#A85A36;font-weight:700;margin-bottom:8px}
+.alerta p:last-child{margin-bottom:0}
+
+/* CARDS */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(232px,1fr));gap:14px;margin:22px 0}
+.card{background:var(--branco);border:1px solid var(--borda);border-top:3px solid var(--verde);border-radius:10px;padding:16px 18px;box-shadow:var(--sombra)}
+.card:nth-child(even){border-top-color:var(--dourado)}
+.card .t{font-family:'Playfair Display',serif;font-size:18px;color:var(--verde);margin-bottom:5px;font-weight:600}
+.card p{font-size:14.6px;margin:0;color:var(--texto-2);line-height:1.58}
+
+/* TABELAS */
+.tw{overflow-x:auto;margin:22px 0}
+table{width:100%;border-collapse:collapse;font-size:14.8px;background:var(--branco);min-width:580px}
+thead th{text-align:left;padding:12px 14px;font-weight:600;font-size:14.2px;color:var(--verde);border-bottom:2px solid var(--verde);vertical-align:bottom;font-family:'Inter',sans-serif}
+tbody td{padding:12px 14px;border-bottom:1px solid var(--borda);vertical-align:top;line-height:1.55}
+tbody tr:nth-child(even){background:#F4F7F3}
+td.k{font-weight:600;color:var(--verde)}
+
+/* FLUXO VERTICAL */
+.fluxo-v{max-width:560px;margin:26px 0}
+.fluxo-v .passo{border-radius:14px;padding:19px 22px;text-align:center}
+.fluxo-v .passo.escuro{background:var(--verde);color:#E9EFE6}
+.fluxo-v .passo.claro{background:var(--branco);border:1px solid var(--dourado-2)}
+.fluxo-v .passo .t{font-family:'Playfair Display',serif;font-size:23px;font-weight:600;line-height:1.2;margin-bottom:4px}
+.fluxo-v .passo.escuro .t{color:var(--dourado-2)}
+.fluxo-v .passo.claro .t{color:var(--verde)}
+.fluxo-v .passo .d{font-size:15.2px;line-height:1.5}
+.fluxo-v .passo.escuro .d{color:#D6E0D3}
+.fluxo-v .passo.claro .d{color:var(--texto-2)}
+.fluxo-v .seta{width:0;height:0;border-left:11px solid transparent;border-right:11px solid transparent;border-top:13px solid var(--dourado);margin:11px auto}
+.fluxo-v .passo .ex{margin-top:11px;padding-top:10px;font-size:14.2px;line-height:1.5;font-style:italic}
+.fluxo-v .passo.escuro .ex{border-top:1px solid rgba(201,169,74,.32);color:#C6D2C3}
+.fluxo-v .passo.claro .ex{border-top:1px solid var(--borda);color:var(--texto-2)}
+
+/* BLOCO HABILIDADE */
+.hab{background:var(--branco);border:1px solid var(--borda);border-radius:12px;margin:14px 0;overflow:hidden;box-shadow:var(--sombra)}
+.hab>.cab{background:var(--creme-2);padding:13px 20px;border-bottom:1px solid var(--borda);display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.hab>.cab .nome{font-family:'Playfair Display',serif;font-size:19px;color:var(--verde);font-weight:600}
+.hab .linhas{padding:6px 20px 16px}
+.hab .linha{display:grid;grid-template-columns:116px 1fr;gap:14px;padding:10px 0;border-bottom:1px dashed var(--borda)}
+.hab .linha:last-child{border-bottom:0}
+.hab .linha .rot{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--dourado);font-weight:700;padding-top:3px}
+.hab .linha .val{font-size:14.9px;line-height:1.6}
+
+/* ROTEIRO */
+.rt{display:flex;gap:14px;margin-bottom:9px}
+.rt .t{flex:0 0 94px;background:var(--verde);color:var(--dourado-2);border-radius:8px;display:flex;align-items:center;justify-content:center;text-align:center;font-size:13px;font-weight:600;padding:8px 6px;line-height:1.25}
+.rt .c{flex:1;background:var(--branco);border:1px solid var(--borda);border-radius:8px;padding:12px 16px}
+.rt .c .tt{font-weight:600;color:var(--verde);font-size:15.2px;margin-bottom:2px}
+.rt .c .dd{font-size:14.2px;color:var(--texto-2);line-height:1.55}
+
+/* CHECK */
+.check{display:flex;gap:11px;align-items:flex-start;background:var(--branco);border:1px solid var(--borda);border-radius:9px;padding:11px 15px;margin-bottom:7px;cursor:pointer}
+.check:hover{border-color:var(--dourado-2)}
+.check input{appearance:none;width:16px;height:16px;min-width:16px;margin-top:4px;background:#fff;border:1.5px solid #B4A991;border-radius:4px;cursor:pointer;position:relative}
+.check input:checked{background:var(--verde);border-color:var(--verde)}
+.check input:checked::after{content:"";position:absolute;left:4.5px;top:1px;width:4px;height:9px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(43deg)}
+.check span{font-size:14.8px;line-height:1.55}
+.check input:checked+span{color:var(--texto-2);text-decoration:line-through}
+
+/* PERGUNTA */
+.pergunta{background:var(--branco);border:1px solid var(--borda);border-radius:12px;margin:26px 0;overflow:hidden;box-shadow:var(--sombra)}
+.pergunta .q{padding:19px 22px 0}
+.pergunta .q .lab{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--dourado);font-weight:700;margin-bottom:8px}
+.pergunta .q p{font-family:'Playfair Display',serif;font-style:italic;font-size:19px;color:var(--verde);margin:0}
+.pergunta button{margin:15px 22px 19px;background:var(--verde);color:#E9EFE6;border:0;padding:9px 19px;border-radius:100px;font-family:'Inter',sans-serif;font-size:13px;font-weight:600;cursor:pointer}
+.pergunta button:hover{background:var(--verde-2)}
+.pergunta .r{display:none;padding:16px 22px 20px;border-top:1px solid var(--borda)}
+.pergunta .r.on{display:block}
+.pergunta .r p:last-child{margin-bottom:0}
+
+/* GRAFICO */
+.grafico{background:var(--branco);border:1px solid var(--borda);border-radius:12px;padding:20px 22px;margin:22px 0;box-shadow:var(--sombra)}
+.grafico .leg{display:flex;gap:18px;flex-wrap:wrap;margin-top:12px;font-size:12.8px;color:var(--texto-2)}
+.grafico .leg i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px}
+
+.frase{background:var(--creme-2);border-radius:12px;padding:20px 24px;margin:22px 0;font-family:'Playfair Display',serif;font-size:18.5px;line-height:1.6;color:var(--verde);font-style:italic}
+
+footer{background:var(--verde);color:#B9C7B6;padding:40px 0;font-size:13.6px;line-height:1.7;margin-top:10px}
+footer .tit{font-family:'Playfair Display',serif;font-size:20px;color:var(--dourado-2);margin-bottom:10px}
+footer p{margin:0 0 10px}
+
+.topo{position:fixed;right:20px;bottom:20px;background:var(--verde);color:var(--dourado-2);border:0;width:42px;height:42px;border-radius:50%;cursor:pointer;font-size:17px;opacity:0;pointer-events:none;transition:.2s;box-shadow:0 6px 18px rgba(31,51,36,.25);z-index:50}
+.topo.on{opacity:1;pointer-events:auto}
+
+@media(max-width:900px){
+  .layout{grid-template-columns:1fr;gap:0;padding-top:16px}
+  .lateral{position:static;margin-bottom:10px}
+  .indice{display:none}
+  .container{padding:0 20px}
+  body{font-size:16.2px}
+  .hero{padding:32px 0 4px}
+  .hab .linha{grid-template-columns:1fr;gap:3px}
+  .rt{flex-direction:column;gap:6px}
+  .rt .t{flex:none;padding:6px 12px}
+}
+@media print{
+  .indice,.topo,.pergunta button{display:none!important}
+  .pergunta .r{display:block!important}
+  body{background:#fff;font-size:11pt}
+  table,.card,.hab,.pergunta,.grafico,.fluxo-v{page-break-inside:avoid}
+  .box-verde,footer,.bloco-chips{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+
+/* ===== SLIDES ===== */
+html,body{margin:0;padding:0;background:#FAF6EF}
+.page{width:1920px;height:1080px;position:relative;overflow:hidden;background:var(--creme);
+  padding:86px 110px;box-sizing:border-box;page-break-after:always;border-bottom:1px solid #e9e2d4}
+.page-in{height:100%;overflow:hidden}
+.page section{padding-top:0}
+.page h2{font-size:58px;line-height:1.1;margin:0 0 18px}
+.page h3{font-size:38px;margin:30px 0 14px}
+.page h4{font-size:24px}
+.page p,.page li,.page td,.page th{font-size:25px;line-height:1.5}
+.page .intro{font-size:29px}
+.page table{font-size:23px}
+.page thead th{font-size:22px;padding:16px 18px}
+.page tbody td{padding:16px 18px}
+.page .box-verde{padding:34px 38px;border-radius:20px}
+.page .box-verde h4{font-size:32px;margin-bottom:16px}
+.page .box-verde p{font-size:26px}
+.page .card .t{font-size:28px}
+.page .card p{font-size:23px}
+.page .card{padding:24px 26px;border-radius:14px}
+.page .card-borda,.page .alerta{padding:28px 34px;border-radius:0 18px 18px 0;border-left-width:7px}
+.page .card-borda .t{font-size:30px}
+.page .alerta .t{font-size:17px}
+.page .fluxo-v{max-width:900px}
+.page .fluxo-v .passo{padding:26px 30px;border-radius:20px}
+.page .fluxo-v .passo .t{font-size:34px}
+.page .fluxo-v .passo .d{font-size:23px}
+.page .fluxo-v .passo .ex{font-size:21px}
+.page .fluxo-v .seta{border-left-width:16px;border-right-width:16px;border-top-width:19px;margin:14px auto}
+.page .hab .cab .nome{font-size:30px}
+.page .hab .linha{grid-template-columns:190px 1fr;padding:14px 0}
+.page .hab .linha .rot{font-size:16px}
+.page .hab .linha .val{font-size:23px}
+.page .rt .t{flex:0 0 150px;font-size:21px}
+.page .rt .c .tt{font-size:25px}
+.page .rt .c .dd{font-size:21px}
+.page .chip{font-size:20px;padding:7px 20px}
+.page .chip.mini{font-size:18px;padding:5px 16px}
+.page .linha-chip .txt{font-size:24px}
+.page .bloco-chips{padding:32px 38px;border-radius:20px}
+.page .bloco-chips h4{font-size:30px}
+.page .check{padding:16px 22px;border-radius:14px}
+.page .check span{font-size:23px}
+.page .check input{width:24px;height:24px;min-width:24px}
+.page .check input:checked::after{left:7px;top:2px;width:6px;height:13px}
+.page .frase{font-size:28px;padding:30px 36px;border-radius:18px}
+.page .pergunta{border-radius:18px}
+.page .pergunta .q{padding:28px 34px 0}
+.page .pergunta .q p{font-size:29px}
+.page .pergunta button{display:none}
+.page .pergunta .r{display:block;padding:22px 34px 28px}
+.page .ficha{grid-template-columns:1fr 260px;gap:34px;padding:30px 34px;border-radius:20px}
+.page .ficha .fn{font-size:38px}
+.page .ficha .fsub{font-size:22px}
+.page .ficha p{font-size:23px}
+.page .ficha .fmeta span{font-size:16px}
+.page .ficha .fmeta div{font-size:21px}
+.page .ficha .fau{font-size:20px}
+.page .grafico{padding:28px 34px;border-radius:18px}
+.page .grafico svg{max-height:520px}
+.page .grafico .leg{font-size:20px}
+.page .tw{margin:20px 0}
+.page .cards{gap:20px}
+
+/* capa */
+.page.capa{background:linear-gradient(145deg,#1F3324 0%,#2C4632 100%);display:flex;flex-direction:column;justify-content:center}
+.page.capa .kicker{font-size:22px;letter-spacing:.3em;text-transform:uppercase;color:var(--dourado-2);font-weight:700;margin-bottom:34px}
+.page.capa h1{font-family:'Playfair Display',serif;font-size:118px;line-height:1.08;color:#fff;margin:0 0 34px;font-weight:700;max-width:22ch}
+.page.capa h1 .mark{background:none;color:var(--dourado-2)}
+.page.capa .sub{font-size:33px;color:#C2D0BE;max-width:40ch;font-weight:300;line-height:1.45}
+</style>
+</head>
+<body>
+<div class="page capa" data-document-role="page" data-label="Capa">
+  <div class="kicker">Oficina Raízes da Intervenção</div>
+  <h1><span class="mark">Como montar</span> o plano de intervenção</h1>
+  <p class="sub">O que decidir, em que ordem, como transformar cada decisão em meta com número e como saber, no meio do caminho, se o plano está funcionando.</p>
+</div>
+<div class="page" data-document-role="page" data-label="Antes de montar o plano">
+<div class="page-in">
+<div class="box-verde">
+<h4>Antes de montar o plano</h4>
+<p>Primeiro vem a hipótese e a habilidade-alvo. Só depois vem o material.</p>
+<p>O recurso é o meio de treinar a habilidade, e não o objetivo da sessão.</p>
+<p>Um plano que não permite dizer "funcionou" ou "não funcionou" organiza a agenda, não o tratamento.</p>
+</div>
+</div>
+</div>
+<div class="page" data-document-role="page" data-label="1. A cadeia que gera o plano">
+<div class="page-in">
+<h2>1. A cadeia que gera o plano</h2>
+<p class="intro">A avaliação terminou e o laudo está pronto. A pergunta que sobra é a mais difícil: o que eu farei na sessão pós-avaliação?</p>
+<div class="box-verde">
+<h4>A regra da cadeia</h4>
+<p>A sessão não nasce do jogo que está na sua estante.</p>
+<p>Ela nasce do plano, que nasce da avaliação.</p>
+<p>Cada elo depende do anterior. Pular um elo é o que produz sessão bonita e resultado indefinido.</p>
+</div>
+<p>A avaliação converge: os dados se juntam até apontar uma hipótese. O plano faz o movimento inverso, de expansão: cada achado precisa virar uma frase sobre o que o paciente não consegue fazer na vida real.</p>
+<p>São sete elos, sempre nesta ordem.</p>
+</div>
+</div>
+<div class="page tight1 tight2 tight3" data-document-role="page" data-label="1. A cadeia que gera o plano ·" data-tight="3" style="font-size: 70%;" data-scale="0.96">
+<div class="page-in" style="transform: scale(0.96); transform-origin: left top; width: 104.167%; height: 104.167%;">
+<div class="fluxo-v">
+<div class="passo escuro">
+<div class="t">Avaliação e hipótese</div>
+<div class="d">o que os testes mostraram</div>
+<div class="ex">ex.: lê devagar, troca letras e erra ortografia. Consciência fonológica preservada.</div>
+</div>
+<div class="seta"></div>
+<div class="passo claro">
+<div class="t">Tradução funcional</div>
+<div class="d">o que ela não consegue fazer no dia a dia</div>
+<div class="ex">ex.: não termina a prova no tempo e não entende o enunciado sozinha.</div>
+</div>
+<div class="seta"></div>
+<div class="passo escuro">
+<div class="t">Priorização</div>
+<div class="d">o que entra agora e o que espera</div>
+<div class="ex">ex.: leitura entra agora. Interpretação fica para a semana 5.</div>
+</div>
+<div class="seta"></div>
+<div class="passo claro">
+<div class="t">Meta geral do plano</div>
+<div class="d">o que o plano promete no fim do período</div>
+<div class="ex">ex.: ler textos do 3º ano com fluência e precisão em 6 meses.</div>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+</div><div class="page" data-document-role="page" data-label="1. A cadeia que gera o plano ·"><div class="page-in"><div class="fluxo-v"><div class="passo escuro">
+<div class="t">Metas por habilidade</div>
+<div class="d">com o número de partida, o de chegada e o prazo</div>
+<div class="ex">ex.: de 52 para 80 palavras corretas por minuto em 12 semanas.</div>
+</div><div class="seta"></div><div class="passo claro">
+<div class="t">Objetivo da sessão</div>
+<div class="d">o pedaço da meta que cabe em 50 minutos</div>
+<div class="ex">ex.: hoje, automatizar a leitura de sílabas com duas consoantes.</div>
+</div><div class="seta"></div><div class="passo escuro">
+<div class="t">Proposta e recurso</div>
+<div class="d">com que atividade e material isso será feito</div>
+<div class="ex">ex.: leitura repetida do mesmo texto, quatro rodadas, com cronômetro à vista.</div>
+</div></div></div></div>
+<div class="page" data-document-role="page" data-label="1. A cadeia que gera o plano ·">
+<div class="page-in">
+<h3>Três perguntas para cada dificuldade que apareceu</h3>
+<div class="cards">
+<div class="card"><div class="t">O que isso impede?</div><p>"Memória de trabalho abaixo do esperado" não serve como alvo. "Perde o ponto ao copiar do quadro" serve.</p></div>
+<div class="card"><div class="t">É causa ou consequência?</div><p>A compreensão pode estar falhando porque a decodificação ainda consome todo o recurso do paciente.</p></div>
+<div class="card"><div class="t">Responde a quê?</div><p>Parte você trabalha na sessão, parte você resolve facilitando a tarefa, parte você encaminha.</p></div>
+</div>
+</div>
+</div>
+<div class="page" data-document-role="page" data-label="2. A estrutura do documento">
+<div class="page-in">
+<h2>2. A estrutura do documento</h2>
+<p class="intro">As nove partes que todo plano precisa ter por escrito. Faltando uma, o documento deixa de ser utilizável por outra pessoa e deixa de proteger você.</p>
+</div>
+</div>
+<div class="page" data-document-role="page" data-label="2. A estrutura do documento ·">
+<div class="page-in">
+<div class="tw">
+<table>
+<thead><tr><th style="width:26%">Parte</th><th style="width:38%">O que entra</th><th>Por que é obrigatória</th></tr></thead>
+<tbody><tr><td class="k">Identificação e período</td><td>Nome, idade, série, data de início, duração do ciclo e frequência dos atendimentos.</td><td>Define o prazo dentro do qual o plano será cobrado de resultado.</td></tr><tr><td class="k">Síntese do perfil</td><td>Achados da avaliação traduzidos em termos funcionais, mais os recursos preservados.</td><td>É o que justifica cada escolha seguinte. Sem isso, o plano vira lista sem origem.</td></tr><tr><td class="k">Achado organizador</td><td>Uma frase que explica o padrão do caso, não apenas o rótulo diagnóstico.</td><td>É o que faz duas crianças com a mesma hipótese terem planos diferentes.</td></tr><tr><td class="k">Alvos priorizados</td><td>Três a quatro alvos diretos. O restante marcado como "fica para depois", "eu facilito" ou "mando para outro profissional".</td><td>Alvo demais significa dose insuficiente em todos.</td></tr><tr><td class="k">Metas</td><td>Linha de base, critério de domínio, prazo e instrumento de medida, para cada alvo.</td><td>É o que permite decidir na revisão se mantém, intensifica ou muda.</td></tr><tr><td class="k">Estratégias e recursos</td><td>O que será ensinado e, só então, com que material.</td><td>Garante que o material sirva ao objetivo, e não o contrário.</td></tr></tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="page" data-document-role="page" data-label="2. A estrutura do documento ·">
+<div class="page-in">
+<div class="tw">
+<table>
+<thead><tr><th style="width:26%">Parte</th><th style="width:38%">O que entra</th><th>Por que é obrigatória</th></tr></thead>
+<tbody><tr><td class="k">Frente escolar</td><td>Orientações observáveis, executáveis em turma cheia, com retorno previsto.</td><td>O paciente passa muito mais tempo na escola do que com você.</td></tr><tr><td class="k">Frente familiar</td><td>Rotina, orientação prática e o que a família fará na semana.</td><td>Família é agente de generalização, não plateia do processo.</td></tr><tr><td class="k">Registro e revisão</td><td>O que será medido, com que frequência, e a data da revisão formal.</td><td>É o mecanismo pelo qual o plano se corrige sozinho.</td></tr></tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="page" data-document-role="page" data-label="3. O que fazer com cada dificuldade">
+<div class="page-in">
+<h2>3. O que fazer com cada dificuldade</h2>
+<p class="intro">A avaliação termina com uma lista de dificuldades. Cinco, oito, às vezes mais. E aí vem a pergunta prática: eu vou trabalhar tudo isso?</p>
+<p>Não. Você pega <strong>uma dificuldade de cada vez</strong> e decide uma coisa entre quatro. É o que toda profissional experiente já faz de cabeça. A diferença é que aqui isso fica escrito no plano, para você não esquecer nenhuma e conseguir explicar a sua escolha depois.</p>
+</div>
+</div>
+<div class="page" data-document-role="page" data-label="3. O que fazer com cada dificuldade ·">
+<div class="page-in">
+<div class="tw">
+<table>
+<thead><tr><th style="width:17%">A decisão</th><th style="width:29%">O que quer dizer</th><th style="width:33%">Na prática</th><th>Quantas cabem</th></tr></thead>
+<tbody><tr>
+<td class="k">Trabalho agora</td>
+<td>Essa dificuldade vira atividade em toda sessão, com meta escrita e um número que você acompanha.</td>
+<td>A criança lê devagar. Todo atendimento tem 15 minutos de leitura e, toda sexta, você mede quantas palavras ela leu em um minuto.</td>
+<td>Três ou quatro, no máximo.</td>
+</tr><tr>
+<td class="k">Fica para depois</td>
+<td>Você vai trabalhar, mas ainda não. Escreve no plano a semana em que começa.</td>
+<td>Interpretação de texto. Só rende depois que a leitura ficar mais automática, então você marca para começar na semana 5.</td>
+<td>Duas ou três, sempre com data.</td>
+</tr><tr>
+<td class="k">Eu facilito</td>
+<td>Não vira exercício. Você muda o jeito como a tarefa chega até a criança, na clínica, em casa e na escola.</td>
+<td>Ela esquece o comando. Em vez de exercício de memória, você dá o comando em partes e deixa um passo a passo visual na mesa dela.</td>
+<td>Quantas precisar.</td>
+</tr><tr>
+<td class="k">Mando para outro profissional</td>
+<td>Não é do seu escopo. Vai escrito no relatório, dizendo para quem e por quê.</td>
+<td>Troca de sons na fala vai para a fonoaudióloga. Avaliação de medicação vai para o médico.</td>
+<td>Quantos precisar.</td>
+</tr></tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="page" data-document-role="page" data-label="3. O que fazer com cada dificuldade ·">
+<div class="page-in">
+<div class="card-borda">
+<div class="t">Por que só três ou quatro de cada vez</div>
+<p>Não é falta de ambição. É conta de tempo.</p>
+<p>Você tem 50 minutos por semana. Se colocar oito dificuldades na sessão, cada uma fica com seis minutos. Seis minutos por semana não mudam nada em nenhuma delas.</p>
+<p>Com três alvos, cada um recebe um bloco de verdade e você consegue ver o resultado no fim do mês. <strong>Trabalhar menos coisas ao mesmo tempo é o que faz a criança avançar mais rápido.</strong></p>
+</div>
+<h3>Como eu decido o que vem primeiro</h3>
+<p>Quatro perguntas, na ordem. A primeira costuma resolver sozinha.</p>
+</div>
+</div>
+<div class="page" data-document-role="page" data-label="3. O que fazer com cada dificuldade ·">
+<div class="page-in">
+<div class="tw">
+<table>
+<thead><tr><th style="width:38%">Pergunta</th><th>Por que ela ajuda</th></tr></thead>
+<tbody><tr><td class="k">Se eu resolver isso, melhora outras coisas junto?</td><td>Quem lê melhor entende melhor, escreve melhor e sofre menos na prova. Já quem só treina interpretação não passa a ler melhor. Comece pela base.</td></tr><tr><td class="k">Isso está atrapalhando a vida dela agora?</td><td>Conteúdo que a turma inteira já domina e ela não vai piorando a cada bimestre. Isso não pode esperar.</td></tr><tr><td class="k">É hora de trabalhar isso?</td><td>Algumas coisas rendem muito mais na idade e no ano escolar em que ela está. Outras rendem mais daqui a um tempo.</td></tr><tr><td class="k">Isso melhora com treino ou só com apoio?</td><td>Leitura, escrita e cálculo melhoram com treino direto. Memória e atenção treinadas soltas melhoram pouco, e por isso entram como "eu facilito".</td></tr></tbody>
+</table>
+</div>
+<div class="card-borda">
+<div class="t">Nenhuma dificuldade pode ficar sem decisão</div>
+<p>Dificuldade que você não classificou volta como cobrança. A mãe pergunta na devolutiva, a professora pergunta na reunião, e você fica sem resposta pronta.</p>
+<p>Escreva todas no plano, mesmo as que você não vai trabalhar. Ao lado de cada uma, qual das quatro decisões você tomou.</p>
+</div>
+</div>
+</div>
+<div class="page" data-document-role="page" data-label="3. O que fazer com cada dificuldade ·">
+<div class="page-in">
+<div class="alerta">
+<div class="t">A decisão que mais gera discussão</div>
+<p>Memória e atenção quase sempre entram em "eu facilito", e não em "trabalho agora". Isso incomoda, porque costuma ser o resultado que mais chama atenção no laudo.</p>
+<p>O motivo é simples: quem treina jogo de memória fica bom em jogo de memória. Isso não faz a criança copiar melhor do quadro nem lembrar do que a professora pediu. <strong>Treinar blocos melhora blocos.</strong></p>
+<p>O que funciona é exigir memória dentro da tarefa que ela precisa fazer de verdade, e ao mesmo tempo diminuir o peso dela na sala: comando em partes, apoio visual na mesa, passo a passo à vista.</p>
+</div>
+
+</div>
+</div><div class="page" data-document-role="page" data-label="3. O que fazer com cada dificuldade ·"><div class="page-in"><div class="pergunta">
+<div class="q">
+<div class="lab">Pergunta de discussão</div>
+<p>Se a mãe perguntar na devolutiva "mas a senhora não vai trabalhar a memória dele?", o que você responde?</p>
+</div>
+<button onclick="rev(this)">Ver direcionamento</button>
+<div class="r">
+<p>O erro é responder falando do teste. A mãe não quer saber do teste, quer saber se o filho vai parar de esquecer as coisas. Responda sobre o dia a dia dele:</p>
+<div class="frase">"Vou, sim, de um jeito bem específico. A memória dele falha quando precisa segurar várias informações de uma vez sem nada para se apoiar. Então, em vez de fazer exercício de memória solto, vamos trabalhar memória dentro do que ele realmente precisa: copiar do quadro, seguir um pedido de três passos, armar uma conta. E, junto com isso, vou pedir para a professora dar o comando em partes e deixar um passo a passo na mesa dele."</div>
+<p>A estrutura é sempre a mesma: confirma que vai trabalhar, explica como, diz o que você não vai fazer e por quê, tudo sem termo técnico.</p>
+</div>
+</div></div></div>
+<div class="page" data-document-role="page" data-label="4. Da habilidade ao recurso">
+<div class="page-in">
+<h2>4. Da habilidade ao recurso</h2>
+<p class="intro">O método que sustenta cada alvo do plano. A ordem não é negociável: o recurso é o último a ser escolhido.</p>
+</div>
+</div>
+<div class="page" data-document-role="page" data-label="4. Da habilidade ao recurso ·">
+<div class="page-in">
+<div class="fluxo-v">
+<div class="passo escuro"><div class="t">Habilidade</div><div class="d">o que precisa avançar</div></div>
+<div class="seta"></div>
+<div class="passo claro"><div class="t">Dificuldade</div><div class="d">onde ele trava</div></div>
+<div class="seta"></div>
+<div class="passo escuro"><div class="t">Estratégia</div><div class="d">o que vou ensinar</div></div>
+<div class="seta"></div>
+<div class="passo claro"><div class="t">Recurso</div><div class="d">o que recruta a habilidade</div></div>
+<div class="seta"></div>
+<div class="passo escuro"><div class="t">Medida</div><div class="d">como vou saber que funcionou</div></div>
+</div>
+
+</div>
+</div><div class="page" data-document-role="page" data-label="4. Da habilidade ao recurso ·"><div class="page-in"><h3>Treinar ou ensinar estratégia?</h3></div></div>
+<div class="page" data-document-role="page" data-label="4. Da habilidade ao recurso ·">
+<div class="page-in">
+<div class="cards">
+<div class="card"><div class="t">Treino</div><p>"Vamos fazer um jogo da memória." Existe enquanto você está do lado. O número melhora e some depois.</p></div>
+<div class="card"><div class="t">Estratégia</div><p>"Para guardar onde está cada carta, diga o nome dela em voz alta ao virar e agrupe na cabeça as que ficam na mesma linha." É o que ele leva para a escola.</p></div>
+</div>
+<p>Treinar é repetir a tarefa até o número subir. Intervir é ensinar uma estratégia que o paciente usa fora da sessão. <strong>O número melhora como consequência.</strong></p>
+<h3>Cinco exemplos da cadeia aplicada</h3>
+<p>Exemplos ilustrativos, para você ver a lógica funcionando. Não são modelos para copiar.</p>
+<div class="hab">
+<div class="cab"><span class="nome">Decodificação</span><span class="chip escuro">Leitura</span></div>
+<div class="linhas">
+<div class="linha"><div class="rot">Dificuldade</div><div class="val">Trava em sílaba com duas consoantes e omite letra ao ler e ao escrever.</div></div>
+<div class="linha"><div class="rot">Estratégia</div><div class="val">Marcar a sílaba difícil, juntar as consoantes antes da vogal, só então ler a palavra inteira.</div></div>
+<div class="linha"><div class="rot">Recurso</div><div class="val">Programa de fluência no módulo de sílabas complexas; cartas de sílabas; caça-palavras com a sílaba-alvo.</div></div>
+<div class="linha"><div class="rot">Medida</div><div class="val">Acertos em lista de 20 pseudopalavras da mesma estrutura, quinzenal.</div></div>
+</div>
+</div>
+</div>
+</div>
+<div class="page" data-document-role="page" data-label="4. Da habilidade ao recurso ·">
+<div class="page-in">
+<div class="hab">
+<div class="cab"><span class="nome">Fluência de leitura</span><span class="chip escuro">Leitura</span></div>
+<div class="linhas">
+<div class="linha"><div class="rot">Dificuldade</div><div class="val">Lê devagar e gasta todo o recurso na decodificação, sem sobrar capacidade para compreender.</div></div>
+<div class="linha"><div class="rot">Estratégia</div><div class="val">Leitura repetida com modelo: você lê primeiro marcando ritmo, ele relê o mesmo texto com um propósito diferente a cada rodada e vê o próprio tempo cair.</div></div>
+<div class="linha"><div class="rot">Recurso</div><div class="val">Texto de 80 a 120 palavras no nível instrucional; cronômetro visível; gráfico de progresso feito por ele.</div></div>
+<div class="linha"><div class="rot">Medida</div><div class="val">Palavras corretas por minuto em texto inédito do mesmo nível, uma vez por semana.</div></div>
+</div>
+</div>
+<div class="hab">
+<div class="cab"><span class="nome">Ortografia de regra contextual</span><span class="chip dourado">Escrita</span></div>
+<div class="linhas">
+<div class="linha"><div class="rot">Dificuldade</div><div class="val">Troca M por N antes de P e B.</div></div>
+<div class="linha"><div class="rot">Estratégia</div><div class="val">Frase de memória que ele repete antes de escrever e usa para conferir depois: "a mamãe só dá a mão para o papai e para o bebê".</div></div>
+<div class="linha"><div class="rot">Recurso</div><div class="val">Ditado de palavras da regra; texto lacunado; fichário de regras construído por ele, um cartão por regra.</div></div>
+<div class="linha"><div class="rot">Medida</div><div class="val">Erros por tipo em ditado de 30 palavras, quinzenal. Conte a categoria, não só o total.</div></div>
+</div>
+</div>
+</div>
+</div>
+<div class="page" data-document-role="page" data-label="4. Da habilidade ao recurso ·">
+<div class="page-in">
+<div class="hab">
+<div class="cab"><span class="nome">Memória operacional</span><span class="chip contorno">Funções executivas</span></div>
+<div class="linhas">
+<div class="linha"><div class="rot">Dificuldade</div><div class="val">Perde a instrução no meio da tarefa e não retoma sozinho.</div></div>
+<div class="linha"><div class="rot">Estratégia</div><div class="val">Repetir a instrução em voz alta e transformá-la em passos numerados antes de começar.</div></div>
+<div class="linha"><div class="rot">Recurso</div><div class="val">Sequências em ordem inversa embutidas na tarefa acadêmica; jogo de comandos; checklist visual de passos.</div></div>
+<div class="linha"><div class="rot">Medida</div><div class="val">Número de ajudas dadas por você para ele concluir a tarefa.</div></div>
+</div>
+</div>
+<div class="hab">
+<div class="cab"><span class="nome">Controle inibitório</span><span class="chip contorno">Funções executivas</span></div>
+<div class="linhas">
+<div class="linha"><div class="rot">Dificuldade</div><div class="val">Responde antes de terminar de ler o enunciado.</div></div>
+<div class="linha"><div class="rot">Estratégia</div><div class="val">Ler o enunciado duas vezes, sublinhar o que ele pede e só então responder. Nas respostas orais: parar, pensar em duas possibilidades, escolher e falar.</div></div>
+<div class="linha"><div class="rot">Recurso</div><div class="val">Cartas de inibição tipo Stroop; jogos com turno e regra de espera; tarefa de "pare e pense".</div></div>
+<div class="linha"><div class="rot">Medida</div><div class="val">Quantas vezes respondeu antes de cumprir a regra, em 10 itens.</div></div>
+</div>
+</div>
+</div>
+</div>
+<div class="page" data-document-role="page" data-label="4. Da habilidade ao recurso ·">
+<div class="page-in">
+<div class="card-borda">
+<div class="t">Onde a maioria erra</div>
+<p>O erro mais comum não é escolher a estratégia errada. É pular a linha "dificuldade" e ir direto da habilidade para o recurso. O resultado é um plano que nomeia o que está ruim e o material que será usado, sem dizer o que, exatamente, será ensinado no meio do caminho.</p>
+</div>
+</div>
+</div>
+<div class="page" data-document-role="page" data-label="5. Metas e linha de base">
+<div class="page-in">
+<h2>5. Metas e linha de base</h2>
+<p class="intro">É aqui que um plano profissional se separa de uma lista de intenções.</p>
+<div class="box-verde">
+<h4>O que é linha de base</h4>
+<p>É a primeira medida, feita <b>antes</b> de você começar a trabalhar aquela habilidade.</p>
+<p>Serve para uma coisa só: ter com o que comparar depois.</p>
+</div>
+<p>Não precisa reservar sessão para isso. A coleta leva poucos minutos e acontece dentro do atendimento normal: você mede no começo, anota o número e já segue com a intervenção no mesmo dia.</p>
+</div>
+</div>
+<div class="page" data-document-role="page" data-label="5. Metas e linha de base ·">
+<div class="page-in">
+<div class="tw">
+<table>
+<thead><tr><th style="width:26%">Exemplo de alvo</th><th style="width:37%">Como colher a linha de base</th><th>Quanto tempo leva</th></tr></thead>
+<tbody><tr><td class="k">Fluência de leitura</td><td>Ela lê um texto em voz alta por 1 minuto. Você conta as palavras corretas.</td><td>1 minuto</td></tr><tr><td class="k">Ortografia</td><td>Ditado de 20 ou 30 palavras da regra que você vai trabalhar. Você conta os erros por tipo.</td><td>5 a 7 minutos</td></tr><tr><td class="k">Cálculo</td><td>Dez continhas do tipo que você vai ensinar. Você anota acertos e quanto apoio ela precisou.</td><td>5 minutos</td></tr><tr><td class="k">Autonomia</td><td>Você conta quantas vezes precisou intervir para ela terminar a tarefa naquela sessão.</td><td>nenhum a mais</td></tr></tbody>
+</table>
+</div>
+<div class="card-borda">
+<div class="t">Quando vale medir mais de uma vez</div>
+<p>Criança rende diferente conforme o dia. Se ela dormiu mal, brigou no recreio ou está doente, a medida sai mais baixa do que a realidade dela.</p>
+<p>Por isso, em alvos que oscilam bastante, como fluência de leitura, o mais seguro é colher a mesma medida nas <strong>duas ou três primeiras sessões</strong> e usar o valor do meio. Sempre dentro do atendimento normal, sem parar de intervir.</p>
+<p>Em alvos estáveis, como uma operação que ela simplesmente ainda não sabe fazer, uma medida só já basta.</p>
+</div>
+
+</div>
+</div><div class="page" data-document-role="page" data-label="5. Metas e linha de base ·"><div class="page-in"><p>Toda meta precisa de número de partida, número de chegada e prazo. Sem linha de base, evolução vira impressão, e impressão não sustenta devolutiva, relatório nem alta.</p></div></div>
+<div class="page" data-document-role="page" data-label="5. Metas e linha de base ·">
+<div class="page-in">
+<div class="cards">
+<div class="card" style="border-top-color:#A85A36"><div class="t">Meta que não funciona</div><p>"Desenvolver a fluência de leitura." Não diz quanto, nem quando, nem como medir. Daqui a três meses, "melhorou?" será opinião.</p></div>
+<div class="card" style="border-top-color:var(--verde)"><div class="t">Meta que funciona</div><p>"De 52 para 80 palavras corretas por minuto em texto inédito do 3º ano, até 4 erros, em 12 semanas, medida semanal."</p></div>
+</div>
+<h3>Exemplo de matriz de metas</h3>
+<p>Modelo ilustrativo de um ciclo de 12 semanas, com revisão formal na semana 6.</p>
+</div>
+</div>
+<div class="page" data-document-role="page" data-label="5. Metas e linha de base ·">
+<div class="page-in">
+<div class="tw">
+<table>
+<thead><tr><th style="width:17%">Alvo</th><th style="width:22%">Meta</th><th style="width:16%">Linha de base</th><th style="width:20%">Critério de domínio</th><th>Como medir</th></tr></thead>
+<tbody><tr><td class="k">Fluência</td><td>Ler texto do ano escolar em voz alta com precisão e ritmo.</td><td>52 palavras corretas por minuto</td><td>80 pcpm em texto inédito, até 4 erros</td><td>Leitura cronometrada de 1 minuto, semanal</td></tr><tr><td class="k">Decodificação</td><td>Ler pseudopalavra com sílaba complexa sem omitir letra.</td><td>9 acertos em 20</td><td>17 em 20 em duas medidas seguidas</td><td>Lista de 20 pseudopalavras, quinzenal</td></tr><tr><td class="k">Ortografia</td><td>Aplicar a regra trabalhada no ciclo em ditado e em texto.</td><td>11 acertos em 30</td><td>26 em 30, mantido por 2 semanas</td><td>Ditado de 30 itens, quinzenal, com erro por tipo</td></tr><tr><td class="k">Cálculo</td><td>Resolver os fatos da operação-alvo com apoio retirado.</td><td>Sem repertório</td><td>8 de 10 fatos sem apoio concreto</td><td>Sondagem de 10 itens, quinzenal, com nível de apoio</td></tr><tr><td class="k">Autonomia</td><td>Concluir a tarefa com menos intervenções da profissional.</td><td>5 ajudas por sessão</td><td>1 ajuda por sessão em 3 sessões seguidas</td><td>Contagem de ajudas na própria sessão</td></tr></tbody>
+</table>
+</div>
+
+</div>
+</div><div class="page" data-document-role="page" data-label="5. Metas e linha de base ·"><div class="page-in"><h3>Uma medida para cada habilidade-alvo</h3></div></div>
+<div class="page" data-document-role="page" data-label="5. Metas e linha de base ·">
+<div class="page-in">
+<div class="tw">
+<table>
+<thead><tr><th style="width:27%">Habilidade-alvo</th><th style="width:31%">O que medir</th><th>Como medir na sessão</th></tr></thead>
+<tbody><tr><td class="k">Nomeação automática rápida</td><td>Itens por minuto e número de erros</td><td>Mesma prancha, cronômetro, anote tempo total e erros</td></tr><tr><td class="k">Fluência de leitura</td><td>Palavras corretas por minuto</td><td>Texto do mesmo nível, 1 minuto em voz alta, desconte os erros</td></tr><tr><td class="k">Decodificação</td><td>Acertos em lista de pseudopalavras</td><td>20 pseudopalavras da mesma estrutura, alternadas a cada medida</td></tr><tr><td class="k">Escrita sob ditado</td><td>Erros por tipo em 20 ou 30 palavras</td><td>Lista da mesma regra, conte a categoria do erro</td></tr><tr><td class="k">Compreensão</td><td>Frases-resumo corretas e acertos em 5 perguntas</td><td>Texto do nível dele, mesma quantidade de perguntas a cada medida</td></tr><tr><td class="k">Cálculo</td><td>Acertos em 10 operações e tempo total</td><td>Mesmo tipo de operação, cronômetro, registre o nível de apoio</td></tr><tr><td class="k">Atenção na tarefa</td><td>Minutos até a primeira quebra</td><td>Tarefa de cancelamento ou cópia, anote quando ele sai da tarefa</td></tr></tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="page" data-document-role="page" data-label="5. Metas e linha de base ·">
+<div class="page-in">
+<div class="tw">
+<table>
+<thead><tr><th style="width:27%">Habilidade-alvo</th><th style="width:31%">O que medir</th><th>Como medir na sessão</th></tr></thead>
+<tbody><tr><td class="k">Autonomia</td><td>Número de ajudas dadas por você</td><td>Conte cada vez que precisou intervir para ele continuar</td></tr></tbody>
+</table>
+</div>
+<div class="card-borda">
+<div class="t">Avanço não é só "acertou mais"</div>
+<p>Menos erros, menos tempo, mais itens, menos ajuda, mais tempo engajado, nível mais difícil, usa a estratégia sozinho, generaliza para a escola, se autocorrige, demora menos para começar, tolera errar e continuar. Qualquer uma dessas mudanças, medida do mesmo jeito em dois momentos, <strong>é evolução e entra no relatório</strong>.</p>
+</div>
+</div>
+</div>
+<div class="page" data-document-role="page" data-label="6. Como escolher o recurso">
+<div class="page-in">
+<h2>6. Como escolher o recurso</h2>
+<p class="intro">Cada programa ou jogo trabalha um conjunto específico de habilidades. O caminho é sempre o mesmo: queixa, hipótese, habilidade-alvo, objetivo mensurável e, por fim, o recurso que treina aquela habilidade.</p>
+<div class="bloco-chips">
+<h4>Tipos de recurso</h4>
+<div class="linha-chip"><span class="chip escuro">Programa estruturado</span><span class="txt">sessões prontas, folhas de resposta e monitoramento</span></div>
+<div class="linha-chip"><span class="chip contorno">Livro de atividades</span><span class="txt">banco de tarefas para você montar as sessões</span></div>
+<div class="linha-chip"><span class="chip dourado">Jogo ou baralho</span><span class="txt">cartas e tabuleiro, o treino acontece no lúdico</span></div>
+<div class="linha-chip"><span class="chip dourado-claro">Avaliação e monitoramento</span><span class="txt">mede e acompanha a evolução</span></div>
+<div class="linha-chip"><span class="chip cinza">Capacitação</span><span class="txt">forma o profissional ou a escola</span></div>
+</div>
+<div class="card-borda">
+<div class="t">Programa estruturado</div>
+<p>Já vem com número de sessões, ordem das tarefas, folhas de resposta e critério de avanço. Você segue a progressão e o registro sai quase pronto.</p>
+<p>Bom quando você precisa de dose garantida, previsibilidade e dado comparável ao longo do ciclo.</p>
+</div>
+</div>
+</div>
+<div class="page" data-document-role="page" data-label="6. Como escolher o recurso ·">
+<div class="page-in">
+<div class="card-borda">
+<div class="t">Livro de atividades e jogos</div>
+<p>Você escolhe as tarefas conforme o objetivo e monta a sessão. Precisa definir sozinha o critério de acerto e a forma de registro.</p>
+<p>Bom para dar variedade, ajustar o nível e manter o engajamento.</p>
+</div>
+<div class="box-verde">
+<h4>Quando o material fala em "camadas"</h4>
+<p>Alguns programas trazem no manual a palavra camada, ou RTI, que quer dizer Resposta à Intervenção.</p>
+<p>É um modelo <b>da escola</b>, não da clínica. Ele organiza a escola em três níveis de intensidade: o que se faz com a turma toda, o que se faz com quem não acompanhou e o que se faz com quem continua sem avançar.</p>
+<p>No consultório não existe isso. O seu atendimento é sempre individual e sempre o nível mais intensivo.</p>
+</div>
+
+
+</div>
+</div><div class="page" data-document-role="page" data-label="6. Como escolher o recurso ·"><div class="page-in"><div class="card-borda">
+<div class="t">O que isso muda para você na prática</div>
+<p>Nada impede você de usar um material escrito para a escola. Só muda a leitura do manual.</p>
+<p>Quando ele diz "camada 1", está dizendo que foi pensado para ser aplicado em grupo, com pouca intensidade. Você provavelmente vai precisar aumentar a dose e reduzir o número de itens por vez.</p>
+<p>Quando ele diz "camada 3", está dizendo que foi feito para atendimento individual e intensivo. Esse é o que chega mais pronto para a sua sessão.</p>
+</div><h3>Três perguntas antes de comprar qualquer coisa</h3></div></div>
+<div class="page" data-document-role="page" data-label="6. Como escolher o recurso ·">
+<div class="page-in">
+<div class="cards">
+<div class="card"><div class="t">Qual meta ele serve?</div><p>Se não houver resposta direta, o material não entra no plano. Vale para jogo, programa e apostila.</p></div>
+<div class="card"><div class="t">Ele gera medida?</div><p>Material que não produz número comparável obriga você a improvisar a medida depois.</p></div>
+<div class="card"><div class="t">Tem progressão?</div><p>Material sem níveis acaba em duas semanas. Progressão é o que sustenta um ciclo inteiro.</p></div>
+</div>
+<div class="box-verde">
+<h4>Um instrumento, várias propostas</h4>
+<p>Uma prancha de nomeação vira: nomear em ordem, nomear só uma cor, nomear pulando a linha, achar um alvo, contar quantos de cada.</p>
+<p>Um baralho de sílabas vira: leitura, ditado, montar palavras, pescar a sílaba que falta, trilha cronometrada.</p>
+<p>Flexibilidade é usar o que você já tem para recrutar a habilidade de jeitos diferentes. Não é comprar material novo a cada sessão.</p>
+</div>
+<div class="alerta">
+<div class="t">Sobre os jogos</div>
+<p>Jogo entra com alvo declarado, nunca como preenchimento de tempo ou prêmio por bom comportamento. Cada jogo na sessão responde a uma pergunta: <strong>qual meta deste plano ele serve?</strong> Se não houver resposta, o jogo sai.</p>
+</div>
+</div>
+</div>
+<div class="page" data-document-role="page" data-label="7. Da queixa ao recurso">
+<div class="page-in">
+<h2>7. Da queixa ao recurso</h2>
+<p class="intro">Tabela de consulta rápida. Use da esquerda para a direita: a queixa aponta a habilidade, a habilidade define o que ensinar, e só então entra o recurso.</p>
+</div>
+</div>
+<div class="page" data-document-role="page" data-label="7. Da queixa ao recurso ·">
+<div class="page-in">
+<div class="tw">
+<table>
+<thead><tr><th style="width:21%">Queixa que chega</th><th style="width:21%">Habilidade-alvo</th><th style="width:30%">O que ensinar</th><th>Como medir</th></tr></thead>
+<tbody><tr>
+<td class="k">Não para quieto, esquece tudo, não termina nada</td>
+<td>Controle inibitório, memória operacional, planejamento</td>
+<td>Parar e pensar antes de agir; transformar a instrução em passos numerados; usar checklist visual</td>
+<td>Número de ajudas por tarefa e minutos até a primeira quebra</td>
+</tr><tr>
+<td class="k">Troca letras, lê devagar e sem ritmo</td>
+<td>Decodificação, nomeação rápida, fluência</td>
+<td>Marcar a sílaba difícil antes de ler a palavra; leitura repetida com propósito diferente a cada rodada</td>
+<td>Palavras corretas por minuto e acertos em pseudopalavras</td>
+</tr><tr>
+<td class="k">Lê mas não entende</td>
+<td>Compreensão de textos</td>
+<td>Parar no fim do parágrafo e dizer em uma frase o que aconteceu; predizer, perguntar, esclarecer, resumir</td>
+<td>Frases-resumo corretas e acertos em 5 perguntas</td>
+</tr><tr>
+<td class="k">Letra ilegível, escreve devagar, erra ortografia</td>
+<td>Percepção viso-motora, caligrafia, regras ortográficas</td>
+<td>Separar erro de regra de erro de omissão; frase de memória para a regra; conferência antes de entregar</td>
+<td>Erros por tipo em ditado de 30 palavras</td>
+</tr></tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="page" data-document-role="page" data-label="7. Da queixa ao recurso ·">
+<div class="page-in">
+<div class="tw">
+<table>
+<thead><tr><th style="width:21%">Queixa que chega</th><th style="width:21%">Habilidade-alvo</th><th style="width:30%">O que ensinar</th><th>Como medir</th></tr></thead>
+<tbody><tr>
+<td class="k">Não compara quantidades, trava em contas</td>
+<td>Senso numérico, fatos e procedimentos</td>
+<td>Estimar antes de contar; sequência concreto, pictórico, abstrato; divisão como inversa da multiplicação</td>
+<td>Acertos em 10 operações e nível de apoio necessário</td>
+</tr><tr>
+<td class="k">Não pede ajuda, não diz que não entendeu</td>
+<td>Autorregulação e autoadvocacia</td>
+<td>Ensinar a frase literalmente e ensaiar; ficha de automonitoramento preenchida por ele</td>
+<td>Sinalizações espontâneas por sessão</td>
+</tr><tr>
+<td class="k">Atraso global em criança pequena</td>
+<td>Cognição, linguagem, motor, sociopessoal, brincar</td>
+<td>Estimulação precoce por eixo, com a família como coagente</td>
+<td>Marcos alcançados por eixo e frequência de uso em casa</td>
+</tr></tbody>
+</table>
+</div>
+<div class="card-borda">
+<div class="t">Como usar esta tabela</div>
+<p>Ela não substitui a avaliação. A queixa é o ponto de partida, não a conclusão: duas crianças com a mesma queixa podem ter habilidades-alvo diferentes. A tabela serve para você <strong>não pular a coluna do meio</strong>, que é onde a intervenção de fato acontece.</p>
+</div>
+</div>
+</div>
+<div class="page" data-document-role="page" data-label="8. Os programas e jogos">
+<div class="page-in">
+<h2>8. Os programas e jogos</h2>
+<p class="intro">Trinta e sete recursos de intervenção, organizados por eixo. Cada programa ou jogo trabalha um conjunto específico de habilidades, então o caminho é sempre o mesmo: queixa, hipótese, habilidade-alvo, objetivo mensurável e, por fim, o recurso que treina aquela habilidade.</p>
+<div class="bloco-chips">
+<h4>Tipos de recurso</h4>
+<div class="linha-chip"><span class="chip escuro">Programa estruturado</span><span class="txt">sessões prontas, folhas de resposta e monitoramento</span></div>
+<div class="linha-chip"><span class="chip contorno">Livro de atividades</span><span class="txt">banco de tarefas para você montar as sessões</span></div>
+<div class="linha-chip"><span class="chip dourado">Jogo ou baralho</span><span class="txt">cartas e tabuleiro, o treino acontece no lúdico</span></div>
+<div class="linha-chip"><span class="chip dourado-claro">Avaliação e monitoramento</span><span class="txt">mede e acompanha a evolução</span></div>
+<div class="linha-chip"><span class="chip cinza">Capacitação</span><span class="txt">forma o profissional ou a escola</span></div>
+</div>
+<h3>Funções executivas, atenção e autorregulação</h3>
+<p>Controle inibitório, memória operacional, flexibilidade cognitiva, atenção e regulação emocional. São a base para a criança aprender qualquer conteúdo escolar.</p>
+</div>
+</div>
+<div class="page" data-document-role="page" data-label="8. Os programas e jogos ·">
+<div class="page-in">
+<div class="box-verde">
+<h4>Quando escolher este grupo</h4>
+<p>A queixa fala de impulsividade, desorganização, esquecimento de instruções ou dificuldade de manter o foco.</p>
+<p>A avaliação mostrou prejuízo em testes de atenção, memória operacional ou planejamento, mesmo com leitura e escrita preservadas.</p>
+</div>
+
+</div>
+</div><div class="page" data-document-role="page" data-label="8. Os programas e jogos ·"><div class="page-in"><article class="ficha">
+<div class="ficha-txt">
+<div class="fn">Piafex</div>
+<div class="fsub">Programa de Intervenção em Autorregulação e Funções Executivas</div>
+<div><span class="chip mini escuro">Programa estruturado</span></div>
+<p><b>O que é.</b> Programa de intervenção com atividades para estimular o engajamento e o desenvolvimento das funções executivas em crianças da pré-escola e do início do Ensino Fundamental.</p>
+<p><b>Para que serve.</b> Trabalha organização, planejamento, inibição de impulsos, atenção, memória de trabalho, metacognição e regulação emocional, tornando a criança mais autônoma.</p>
+<p><b>Como é usado.</b> Dez módulos e uma seção complementar: organização de materiais e do tempo, organização de ideias e metas, atividades motoras, comunicação e conflitos, regulação emocional, trabalho em pares, compreensão semântica, reflexão sobre as atividades e brincadeiras estruturadas. Pode ser usado como intervenção precoce e preventiva ou como apoio à reabilitação.</p>
+<div class="fmeta"><div><span>Faixa etária</span>Pré-escola e início do Fundamental I</div><div><span>Contexto</span>Clínico e escolar, aplicado por profissionais de saúde e educação</div></div>
+<div class="fau">Autoria: Natália Martins Dias e Alessandra Gotuzo Seabra, Memnon</div>
+</div>
+<div class="capa"><img alt="Piafex" loading="lazy" src="https://www.booktoy.com.br/image/cache/catalog/livros/57/6847-600x600.jpg"></div>
+</article></div></div>
+<div class="page" data-document-role="page" data-label="8. Os programas e jogos ·">
+<div class="page-in">
+<article class="ficha">
+<div class="ficha-txt">
+<div class="fn">RTI-FEx</div>
+<div class="fsub">Programa de Remediação para o Desenvolvimento das Funções Executivas</div>
+<div><span class="chip mini escuro">Programa estruturado</span></div>
+<p><b>O que é.</b> Programa pensado para a Camada 2 do Modelo RTI, com escolares do 1º e 2º ano do Fundamental I.</p>
+<p><b>Para que serve.</b> Identificar e intervir precocemente em escolares de risco para dificuldades de aprendizagem, atuando nos três componentes centrais das funções executivas: controle inibitório, memória operacional e flexibilidade cognitiva.</p>
+<p><b>Como é usado.</b> Dez sessões com orientação detalhada de aplicação, folhas de resposta, gráfico de evolução do escolar e instrumento de rastreio universal. Conteúdo complementar para baixar com senha do manual.</p>
+<div class="fmeta"><div><span>Faixa etária</span>1º e 2º ano do Fundamental I</div><div><span>Contexto</span>Clínico e escolar, pequeno grupo ou individual</div></div>
+<div class="fau">Autoria: Graziele Kerges Alcantara e Simone Aparecida Capellini, Book Toy</div>
+</div>
+<div class="capa"><img alt="RTI-FEx" loading="lazy" src="https://www.booktoy.com.br/image/cache/catalog/livros/136/13816-600x600.jpg"></div>
+</article>
+</div>
+</div>
+<div class="page" data-document-role="page" data-label="8. Os programas e jogos ·">
+<div class="page-in">
+<article class="ficha">
+<div class="ficha-txt">
+<div class="fn">Funções Executivas I</div>
+<div class="fsub">Memória operacional, controle inibitório e flexibilidade cognitiva</div>
+<div><span class="chip mini dourado">Jogo ou baralho</span></div>
+<p><b>O que é.</b> Caixa com 90 cartas para estimulação e reabilitação cognitiva das três funções executivas centrais.</p>
+<p><b>Para que serve.</b> Treinar memória operacional, controle inibitório e flexibilidade cognitiva em níveis crescentes de dificuldade, do mais fácil ao mais difícil.</p>
+<p><b>Como é usado.</b> As cartas se dividem em três grupos. Memória operacional: memorizar figuras ou narrativas em tempo definido, responder perguntas distratoras e depois evocar. Controle inibitório: dizer a cor em que a palavra está escrita, e não a palavra. Flexibilidade: cada carta traz uma instrução própria. Recomenda-se cronometrar para acompanhar o ganho com a repetição.</p>
+<div class="fmeta"><div><span>Faixa etária</span>Crianças, adolescentes, adultos e idosos</div><div><span>Contexto</span>Clínico, ótimo para variar a sessão</div></div>
+<div class="fau">Autoria: Danielle Theodoro de Oliveira e Luciana Bertossi, Book Toy</div>
+</div>
+<div class="capa"><img alt="Funções Executivas I" loading="lazy" src="https://www.booktoy.com.br/image/cache/catalog/livros/96/13709-600x600.jpg"></div>
+</article>
+</div>
+</div>
+<div class="page" data-document-role="page" data-label="8. Os programas e jogos ·">
+<div class="page-in">
+<article class="ficha">
+<div class="ficha-txt">
+<div class="fn">Proaten</div>
+<div class="fsub">Programa de Remediação com as Habilidades Atencionais</div>
+<div><span class="chip mini escuro">Programa estruturado</span></div>
+<p><b>O que é.</b> Programa de intervenção estruturado em camadas segundo o Modelo RTI, com sistema integrado de avaliação e intervenção para a dificuldade atencional.</p>
+<p><b>Para que serve.</b> Identificar e intervir precocemente na dificuldade de atenção, com rastreio universal e as três camadas do RTI.</p>
+<p><b>Como é usado.</b> Um manual, três cadernos do aplicador (um por camada), 30 cartões ilustrados com objetos, frutas e animais e 30 cartões para recortar. Você aplica o rastreio, define a camada e segue as sessões do caderno correspondente.</p>
+<div class="fmeta"><div><span>Faixa etária</span>6 anos a 8 anos e 11 meses</div><div><span>Contexto</span>Clínico e escolar</div></div>
+<div class="fau">Autoria: Graziele Kerges-Alcantara, Giseli Donadon Germano, Minna Sillankorva e Simone Capellini, Book Toy</div>
+</div>
+<div class="capa"><img alt="Proaten" loading="lazy" src="https://www.booktoy.com.br/image/cache/catalog/livros/36/12419-600x600.jpg"></div>
+</article>
+</div>
+</div>
+<div class="page" data-document-role="page" data-label="8. Os programas e jogos ·">
+<div class="page-in">
+<article class="ficha">
+<div class="ficha-txt">
+<div class="fn">RePENcE</div>
+<div class="fsub">Regulação emocional, extensão do PENcE</div>
+<div><span class="chip mini escuro">Programa estruturado</span></div>
+<p><b>O que é.</b> Intervenção para estimular a regulação emocional em crianças em idade escolar, com estratégias metacognitivas e estímulos próprios.</p>
+<p><b>Para que serve.</b> Ensinar a criança a nomear e reconhecer emoções em si e nos outros, identificar emoções em situações do dia a dia e melhorar a capacidade de regulá-las.</p>
+<p><b>Como é usado.</b> Funciona como quinto módulo do PENcE ou como intervenção independente. O livro traz a base teórica sobre autorregulação e funções executivas quentes, a estrutura do programa com descrição das atividades e relatos de aplicação em escolas públicas.</p>
+<div class="fmeta"><div><span>Faixa etária</span>7 a 10 anos</div><div><span>Contexto</span>Clínico e escolar</div></div>
+<div class="fau">Autoria: Caroline de Oliveira Cardoso, Rodrigo Giacobo Serra e Rochele Paz Fonseca, Book Toy</div>
+</div>
+<div class="capa"><img alt="RePENcE" loading="lazy" src="https://www.booktoy.com.br/image/cache/catalog/livros/136/11297-600x600.jpg"></div>
+</article>
+</div>
+</div>
+<div class="page" data-document-role="page" data-label="8. Os programas e jogos ·">
+<div class="page-in">
+<article class="ficha">
+<div class="ficha-txt">
+<div class="fn">CENA</div>
+<div class="fsub">Capacitação de Educadores sobre Neuropsicologia da Aprendizagem</div>
+<div><span class="chip mini cinza">Capacitação</span></div>
+<p><b>O que é.</b> Programa de capacitação de educadores para estimular funções executivas em crianças do Ensino Fundamental, com etapa de psicoeducação sobre neuropsicologia na escola.</p>
+<p><b>Para que serve.</b> Dar ao professor estratégias de sala de aula para estimular funções executivas, atenção concentrada, memórias e linguagem. É o material que você usa quando precisa orientar a escola do seu paciente.</p>
+<p><b>Como é usado.</b> Integra a coleção NEUROPSI APRENDE junto com o PENcE. A recomendação dos autores é ler e aplicar o CENA com a escola primeiro e depois implementar o PENcE diretamente com a criança.</p>
+<div class="fmeta"><div><span>Faixa etária</span>Crianças de 7 a 10 anos, via educadores</div><div><span>Contexto</span>Escolar, orientação a professores</div></div>
+<div class="fau">Autoria: Janice R. Pureza e Rochele Paz Fonseca, Book Toy</div>
+</div>
+<div class="capa"><img alt="CENA" loading="lazy" src="https://www.booktoy.com.br/image/cache/catalog/livros/136/9191-600x600.jpg"></div>
+</article>
+</div>
+</div>
+<div class="page" data-document-role="page" data-label="8. Os programas e jogos ·">
+<div class="page-in">
+<article class="ficha">
+<div class="ficha-txt">
+<div class="fn">PENcE</div>
+<div class="fsub">Programa de Estimulação Neuropsicológica da Cognição em Escolares</div>
+<div><span class="chip mini escuro">Programa estruturado</span></div>
+<p><b>O que é.</b> Intervenção precoce-preventiva para estimular as funções executivas e processos cognitivos relacionados em crianças em idade escolar, por meio do ensino de estratégias cognitivas e metacognitivas consolidadas em atividades lúdicas.</p>
+<p><b>Para que serve.</b> Estimular de forma sistemática o que a sala de aula normalmente não estimula: organização, planejamento, controle inibitório, memória de trabalho e flexibilidade cognitiva.</p>
+<p><b>Como é usado.</b> Quatro módulos: organização e planejamento, controle inibitório, memória de trabalho e flexibilidade cognitiva, com protocolos de observação. O RePENcE (regulação emocional) funciona como quinto módulo. Na Booktoy existe o pacote com os quatro títulos da coleção: PENcE, RePENcE, CENA e Pecolefe.</p>
+<div class="fmeta"><div><span>Faixa etária</span>7 a 10 anos</div><div><span>Contexto</span>Clínico e escolar</div></div>
+<div class="fau">Autoria: Caroline de Oliveira Cardoso e Rochele Paz Fonseca, Book Toy (coleção NEUROPSI APRENDE)</div>
+</div>
+</article>
+</div>
+</div>
+<div class="page" data-document-role="page" data-label="8. Os programas e jogos ·">
+<div class="page-in">
+<article class="ficha">
+<div class="ficha-txt">
+<div class="fn">Pare e Pense</div>
+<div class="fsub">Promoção de funções executivas em escolares</div>
+<div><span class="chip mini escuro">Programa estruturado</span></div>
+<p><b>O que é.</b> Programa para o aprimoramento das funções executivas em escolares, baseado em pesquisas e adaptado à realidade brasileira, que combina o currículo regular com estratégias para fortalecer essas funções.</p>
+<p><b>Para que serve.</b> Trabalhar pensar antes de agir, resolver problemas sob diferentes perspectivas, organizar ideias e atividades, lidar com imprevistos, aplicar estratégias de memorização e conectar informações, revisar erros e posições, manter o foco, tomar decisões e ganhar autonomia.</p>
+<p><b>Como é usado.</b> Pensado originalmente para professores do 5º ano aplicarem em sala, mas com adaptação para outros anos e para uso clínico individual por psicopedagogos, psicólogos e neuropsicólogos. Livro de 172 páginas com as atividades do programa.</p>
+<div class="fmeta"><div><span>Faixa etária</span>5º ano, com adaptação para outros níveis</div><div><span>Contexto</span>Escolar e clínico</div></div>
+<div class="fau">Autoria: Cristiane M. Flor, Fernanda T. Orsati e Elizeu C. Macedo, Hogrefe</div>
+</div>
+</article>
+</div>
+</div>
+<div class="page" data-document-role="page" data-label="8. Os programas e jogos ·">
+<div class="page-in">
+<article class="ficha">
+<div class="ficha-txt">
+<div class="fn">Treino de Funções Executivas e Aprendizado</div>
+<div class="fsub">Série Psicologia e Neurociências do IPq-HCFMUSP, 2ª edição</div>
+<div><span class="chip mini escuro">Programa estruturado</span></div>
+<p><b>O que é.</b> Treinos pautados na prática clínica de equipe multidisciplinar, com enfoque cognitivo, socioemocional e comportamental, para guiar o paciente na conquista de maior autonomia, consciência e domínio do ambiente.</p>
+<p><b>Para que serve.</b> Facilitar o processo escolar e a organização cognitiva com esquemas práticos que treinam automonitoramento, planejamento, resolução de problemas, tomada de decisão, flexibilidade mental, autorregulação, controle inibitório e memória operacional.</p>
+<p><b>Como é usado.</b> Dois programas separados, um para crianças e outro para adolescentes, cada um com introdução teórica e 12 sessões práticas, mais slides prontos para as sessões de cada faixa.</p>
+<div class="fmeta"><div><span>Faixa etária</span>Crianças e adolescentes</div><div><span>Contexto</span>Clínico, individual ou em grupo</div></div>
+<div class="fau">Autoria: Ana Paula Pissarra Marques, Alison Vanessa Morroni Amaral e Telma Pantano, Manole</div>
+</div>
+</article>
+</div>
+</div>
+<div class="page" data-document-role="page" data-label="8. Os programas e jogos ·">
+<div class="page-in">
+<article class="ficha">
+<div class="ficha-txt">
+<div class="fn">Estimulação da Atenção de Crianças e Adolescentes</div>
+<div class="fsub">Série Psicologia e Neurociências do IPq-HCFMUSP</div>
+<div><span class="chip mini escuro">Programa estruturado</span></div>
+<p><b>O que é.</b> Programa de treino da atenção que retrata a prática do Serviço de Psicologia e Neuropsicologia do Instituto de Psiquiatria do HC-FMUSP.</p>
+<p><b>Para que serve.</b> Desenvolver a atenção com treino cognitivo e psicoeducação, ensinando estratégias compensatórias que favorecem o rendimento atencional.</p>
+<p><b>Como é usado.</b> Doze sessões pensadas para grupo, com o profissional de saúde ou educação como mediador. Toda sessão tem treino cognitivo e psicoeducação, e a família pode ser orientada para generalizar os novos comportamentos em casa.</p>
+<div class="fmeta"><div><span>Faixa etária</span>Crianças e adolescentes</div><div><span>Contexto</span>Clínico, em grupo ou adaptado ao individual</div></div>
+<div class="fau">Autoria: Priscila Sertori, Antonio de Pádua Serafim e Cristiana Castanho de Almeida Rocca, Manole</div>
+</div>
+<div class="capa"><img alt="Estimulação da Atenção de Crianças e Adolescentes" loading="lazy" src="https://www.booktoy.com.br/image/cache/catalog/livros/42/11558-600x600.jpg"></div>
+</article>
+</div>
+</div>
+<div class="page" data-document-role="page" data-label="8. Os programas e jogos ·">
+<div class="page-in">
+<article class="ficha">
+<div class="ficha-txt">
+<div class="fn">Baralho Funções Executivas</div>
+<div class="fsub">32 cartas e caneta com apagador</div>
+<div><span class="chip mini dourado">Jogo ou baralho</span></div>
+<p><b>O que é.</b> Baralho com tarefas de estímulo selecionadas e desenhadas para promover e fortalecer as funções executivas.</p>
+<p><b>Para que serve.</b> Trabalhar flexibilidade cognitiva, memória (episódica, semântica e prospecção de futuro), controle inibitório, linguagem e associação de imagens.</p>
+<p><b>Como é usado.</b> Cada habilidade tem um jeito de usar as cartas: exploração das imagens em conversa, planejamento de estratégias, diferenças e semelhanças, sequências lógicas e evocação de informações na fala ou na escrita. A caneta apagável permite escrever na carta e reutilizar.</p>
+<div class="fmeta"><div><span>Faixa etária</span>Crianças, adolescentes e adultos</div><div><span>Contexto</span>Clínico, para variar a sessão</div></div>
+<div class="fau">Autoria: Renata Aguilar, Edicon</div>
+</div>
+<div class="capa"><img alt="Baralho Funções Executivas" loading="lazy" src="https://www.booktoy.com.br/image/cache/catalog/livros/96/14167-600x600.jpg"></div>
+</article>
+<h3>Leitura: decodificação, fluência e compreensão</h3>
+<p>A leitura se constrói em etapas: reconhecer letras e sons, nomear rápido, ler palavras com precisão, ganhar fluência e, então, compreender. Cada programa abaixo entra em uma dessas etapas.</p>
+
+</div>
+</div><div class="page" data-document-role="page" data-label="8. Os programas e jogos ·"><div class="page-in"><div class="box-verde">
+<h4>Quando escolher este grupo</h4>
+<p>A queixa é de leitura lenta, silabada, com trocas, ou de ler e não entender o que leu.</p>
+<p>A avaliação mostrou prejuízo em consciência fonológica, nomeação automática rápida, leitura de palavras e pseudopalavras, fluência ou compreensão.</p>
+</div></div></div>
+<div class="page" data-document-role="page" data-label="8. Os programas e jogos ·">
+<div class="page-in">
+<article class="ficha">
+<div class="ficha-txt">
+<div class="fn">Prof-Le</div>
+<div class="fsub">Intervenção Fonológica Associada à Leitura e à Escrita</div>
+<div><span class="chip mini escuro">Programa estruturado</span></div>
+<p><b>O que é.</b> Intervenção baseada no modelo de remediação fonológica associada à leitura e à escrita, para situação clínica e educacional.</p>
+<p><b>Para que serve.</b> Desenvolver leitura e escrita a partir da formação e do acesso ao léxico mental.</p>
+<p><b>Como é usado.</b> Dez sessões com atividades em sequência: identificação do alfabeto, nomeação automática rápida, leitura de palavras e pseudopalavras, ditado, decisão lexical, pareamento de palavras, caça-palavras e cruzadinhas.</p>
+<div class="fmeta"><div><span>Faixa etária</span>9 a 10 anos</div><div><span>Contexto</span>Clínico e escolar</div></div>
+<div class="fau">Autoria: Gabriela Franco dos Santos Liporaci e Simone Aparecida Capellini, Book Toy</div>
+</div>
+<div class="capa"><img alt="Prof-Le" loading="lazy" src="https://www.booktoy.com.br/image/cache/catalog/livros/10/12216-600x600.jpg"></div>
+</article>
+</div>
+</div>
+<div class="page" data-document-role="page" data-label="8. Os programas e jogos ·">
+<div class="page-in">
+<article class="ficha">
+<div class="ficha-txt">
+<div class="fn">PRONAR-LE</div>
+<div class="fsub">Remediação com a Nomeação Automática Rápida e Leitura</div>
+<div><span class="chip mini escuro">Programa estruturado</span></div>
+<p><b>O que é.</b> Instrumento de intervenção para uso clínico e educacional composto por três cadernos: manual de aplicação com folhas de resposta, caderno de pranchas para avaliação e caderno de pranchas para intervenção.</p>
+<p><b>Para que serve.</b> Reduzir as alterações de decodificação, precisão e fluência de leitura de palavras em escolares com dificuldade de aprendizagem, dislexia ou transtorno global da aprendizagem.</p>
+<p><b>Como é usado.</b> A avaliação usa quatro pranchas (letras, dígitos, cores e objetos). A intervenção usa 22 pranchas com figuras, cores, palavras e pseudopalavras, organizada em seis sessões com instruções no manual.</p>
+<div class="fmeta"><div><span>Faixa etária</span>A partir de 8 anos</div><div><span>Contexto</span>Clínico e escolar</div></div>
+<div class="fau">Autoria: Bianca dos Santos e Simone Aparecida Capellini, Book Toy</div>
+</div>
+<div class="capa"><img alt="PRONAR-LE" loading="lazy" src="https://www.booktoy.com.br/image/cache/catalog/livros/67/9870-600x600.jpg"></div>
+</article>
+</div>
+</div>
+<div class="page" data-document-role="page" data-label="8. Os programas e jogos ·">
+<div class="page-in">
+<article class="ficha">
+<div class="ficha-txt">
+<div class="fn">PE-FLU</div>
+<div class="fsub">Estimulação com a Fluência da Leitura Oral</div>
+<div><span class="chip mini escuro">Programa estruturado</span></div>
+<p><b>O que é.</b> Programa que estimula a fluência de leitura oral a partir de palavras com diferentes complexidades silábicas.</p>
+<p><b>Para que serve.</b> Desenvolver o mecanismo de decodificação e ganhar precisão, acurácia, fluência e velocidade na leitura de palavras isoladas.</p>
+<p><b>Como é usado.</b> Três sessões de rastreio e três módulos de quatro sessões cada, um por estrutura silábica: vogal, consoante-vogal, consoante-vogal-consoante e consoante-consoante-vogal. Vem com folhas de resposta e gráfico de monitoramento.</p>
+<div class="fmeta"><div><span>Faixa etária</span>Escolares em fase inicial de alfabetização</div><div><span>Contexto</span>Clínico e escolar</div></div>
+<div class="fau">Autoria: Rebeka Fabri Bonfim Moura e Simone Aparecida Capellini, Book Toy</div>
+</div>
+<div class="capa"><img alt="PE-FLU" loading="lazy" src="https://www.booktoy.com.br/image/cache/catalog/livros/10/13730-600x600.jpg"></div>
+</article>
+</div>
+</div>
+<div class="page" data-document-role="page" data-label="8. Os programas e jogos ·">
+<div class="page-in">
+<article class="ficha">
+<div class="ficha-txt">
+<div class="fn">PR-MOL</div>
+<div class="fsub">Remediação com a Memória Operacional e Leitura</div>
+<div><span class="chip mini dourado">Programa em formato de jogo</span></div>
+<p><b>O que é.</b> Instrumento de intervenção baseado no mecanismo gerativo de memória para o desenvolvimento da leitura, em contexto lúdico e interativo.</p>
+<p><b>Para que serve.</b> Ajudar escolares com dificuldade de decodificação a ter sucesso na leitura, treinando memória operacional fonológica e visuoespacial associadas à leitura.</p>
+<p><b>Como é usado.</b> Dois módulos: memória operacional fonológica (11 tarefas com sequências de palavras em ordem direta e inversa, incluindo pseudopalavras) e memória operacional visuoespacial (observar, memorizar e reconstruir sequências de imagens e palavras). A criança é uma caçadora no tabuleiro Memórilândia, com cartas, peças, baú de moedas e cartões de local. Vem com manual do aplicador, folhas de resposta e gráfico de evolução.</p>
+<div class="fmeta"><div><span>Faixa etária</span>8 anos a 11 anos e 11 meses</div><div><span>Contexto</span>Intervenção clínica individual</div></div>
+<div class="fau">Autoria: Isabella Nicolete Xavier e Simone Aparecida Capellini, Book Toy</div>
+</div>
+<div class="capa"><img alt="PR-MOL" loading="lazy" src="https://www.booktoy.com.br/image/cache/catalog/livros/10/13899-600x600.jpg"></div>
+</article>
+</div>
+</div>
+<div class="page" data-document-role="page" data-label="8. Os programas e jogos ·">
+<div class="page-in">
+<article class="ficha">
+<div class="ficha-txt">
+<div class="fn">PPVM-L</div>
+<div class="fsub">Remediação Percepto-Viso-Motora e Leitura</div>
+<div><span class="chip mini escuro">Programa estruturado</span></div>
+<p><b>O que é.</b> Tarefas sistematizadas de intervenção com habilidades perceptuais visuais e viso-motoras associadas à leitura.</p>
+<p><b>Para que serve.</b> Trabalhar posição espacial, figura-fundo, constância de forma, fechamento visual, análise e síntese, discriminação visual, ordenação espacial e temporal e memória visual, junto com reconhecimento de letras, leitura de palavras, pseudopalavras e texto, e nomeação automática rápida.</p>
+<p><b>Como é usado.</b> Manual do aplicador com fundamentação e manual de aplicação com as sessões. Recurso de intervenção individual, de fácil manuseio clínico e educacional.</p>
+<div class="fmeta"><div><span>Faixa etária</span>Anos iniciais da alfabetização</div><div><span>Contexto</span>Clínico e escolar, individual</div></div>
+<div class="fau">Autoria: Melissa Pinotti Margutti e Simone Aparecida Capellini, Book Toy</div>
+</div>
+<div class="capa"><img alt="PPVM-L" loading="lazy" src="https://www.booktoy.com.br/image/cache/catalog/livros/10/13757-600x600.jpg"></div>
+</article>
+</div>
+</div>
+<div class="page" data-document-role="page" data-label="8. Os programas e jogos ·">
+<div class="page-in">
+<article class="ficha">
+<div class="ficha-txt">
+<div class="fn">IN-CLOZE</div>
+<div class="fsub">Intervenção com a Técnica de Cloze</div>
+<div><span class="chip mini escuro">Programa estruturado</span></div>
+<p><b>O que é.</b> Programa de intervenção com 20 textos (13 narrativos e 7 expositivos) em cinco níveis de dificuldade, usando a técnica de Cloze, em que a criança completa lacunas do texto.</p>
+<p><b>Para que serve.</b> Desenvolver a compreensão de leitura de textos narrativos e expositivos em escolares com dificuldade.</p>
+<p><b>Como é usado.</b> Aplique os textos em ordem de nível e registre nas folhas de resposta para monitorar o desempenho ao longo do programa. Traz fundamentação, objetivos e instruções de aplicação, com conteúdo extra para baixar.</p>
+<div class="fmeta"><div><span>Faixa etária</span>Escolares com dificuldade de compreensão</div><div><span>Contexto</span>Clínico e escolar</div></div>
+<div class="fau">Autoria: Renata Graziele Morini Albrecht e Simone Aparecida Capellini, Book Toy</div>
+</div>
+<div class="capa"><img alt="IN-CLOZE" loading="lazy" src="https://www.booktoy.com.br/image/cache/catalog/livros/11/11286-600x600.jpg"></div>
+</article>
+</div>
+</div>
+<div class="page" data-document-role="page" data-label="8. Os programas e jogos ·">
+<div class="page-in">
+<article class="ficha">
+<div class="ficha-txt">
+<div class="fn">PRINTCOMLE</div>
+<div class="fsub">Intervenção para Compreensão de Leitura de Textos</div>
+<div><span class="chip mini escuro">Programa estruturado</span></div>
+<p><b>O que é.</b> Programa de intervenção com textos narrativos e expositivos, desenvolvido para dar ao escolar estratégias de leitura que levem à compreensão profunda do texto.</p>
+<p><b>Para que serve.</b> Promover leitura crítica e reflexiva, com estratégias antes, durante e depois da leitura.</p>
+<p><b>Como é usado.</b> Dez materiais em três volumes: caderno teórico, conjunto de textos narrativos (livro de textos, guia do profissional e atividades do escolar), conjunto de textos expositivos com a mesma estrutura, mais cartões com figuras, cartões coloridos e tabela de estrelas. Aplicável em contexto clínico e educacional.</p>
+<div class="fmeta"><div><span>Faixa etária</span>3º ao 5º ano do Fundamental</div><div><span>Contexto</span>Clínico e escolar</div></div>
+<div class="fau">Autoria: Vera Lúcia Orlandi Cunha e Simone Aparecida Capellini, Book Toy</div>
+</div>
+<div class="capa"><img alt="PRINTCOMLE" loading="lazy" src="https://www.booktoy.com.br/image/cache/catalog/livros/10/11064-600x600.jpg"></div>
+</article>
+</div>
+</div>
+<div class="page" data-document-role="page" data-label="8. Os programas e jogos ·">
+<div class="page-in">
+<article class="ficha">
+<div class="ficha-txt">
+<div class="fn">Intervenção em Leitura para Adolescentes</div>
+<div class="fsub">Estratégias pelos processos lexical e sintático</div>
+<div><span class="chip mini contorno">Livro de atividades</span></div>
+<p><b>O que é.</b> Livro com estratégias para intervenção nos processos de leitura, organizadas pelos processos lexical e sintático.</p>
+<p><b>Para que serve.</b> Envolver adolescentes no processo de intervenção e desenvolver pensamento crítico-reflexivo pela leitura, com espaço para formular a própria opinião.</p>
+<p><b>Como é usado.</b> Você seleciona as atividades conforme o processo que precisa trabalhar (acesso ao léxico ou estrutura sintática) e monta as sessões. Espiral, 116 páginas.</p>
+<div class="fmeta"><div><span>Faixa etária</span>Adolescentes</div><div><span>Contexto</span>Clínico e escolar</div></div>
+<div class="fau">Autoria: Adriana Marques de Oliveira e Simone Aparecida Capellini, Book Toy</div>
+</div>
+<div class="capa"><img alt="Intervenção em Leitura para Adolescentes" loading="lazy" src="https://www.booktoy.com.br/image/cache/catalog/livros/10/11341-600x600.jpg"></div>
+</article>
+</div>
+</div>
+<div class="page" data-document-role="page" data-label="8. Os programas e jogos ·">
+<div class="page-in">
+<article class="ficha">
+<div class="ficha-txt">
+<div class="fn">ADFLU</div>
+<div class="fsub">Avaliação do Desempenho em Fluência de Leitura</div>
+<div><span class="chip mini dourado-claro">Avaliação e monitoramento</span></div>
+<p><b>O que é.</b> Instrumento para avaliar, monitorar e treinar a fluência de leitura ao longo do ano.</p>
+<p><b>Para que serve.</b> Ler e cronometrar a leitura em voz alta de forma sistemática, acompanhando o progresso em velocidade e precisão. É o recurso que mostra a evolução do seu trabalho com leitura.</p>
+<p><b>Como é usado.</b> Manual revisado e ampliado, 70 cartões de texto para o ano todo, orientações de monitoramento anual, cartões de checklist de habilidades de fluência e de verificação da compreensão, tabelas e gráficos de progresso, e caneta para quadro branco para marcar nos cartões.</p>
+<div class="fmeta"><div><span>Faixa etária</span>A partir de 7 anos</div><div><span>Contexto</span>Clínico e escolar</div></div>
+<div class="fau">Autoria: Maíra Aneli Martins e Simone Aparecida Capellini, Book Toy</div>
+</div>
+<div class="capa"><img alt="ADFLU" loading="lazy" src="https://www.booktoy.com.br/image/cache/catalog/livros/10/14068-600x600.jpg"></div>
+</article>
+</div>
+</div>
+<div class="page" data-document-role="page" data-label="8. Os programas e jogos ·">
+<div class="page-in">
+<article class="ficha">
+<div class="ficha-txt">
+<div class="fn">INELE</div>
+<div class="fsub">Instrução Neuropsicológica da Leitura e da Escrita</div>
+<div><span class="chip mini escuro">Programa estruturado</span></div>
+<p><b>O que é.</b> Programa construído a partir de modelos da neuropsicologia cognitiva e de práticas efetivas de ensino de leitura e escrita para crianças do 1º ao 4º ano.</p>
+<p><b>Para que serve.</b> Estimular componentes da linguagem oral e escrita, memória, aspectos metacognitivos e metalinguísticos.</p>
+<p><b>Como é usado.</b> Trinta encontros de 40 a 60 minutos em dois módulos: consciência fonológica e correspondência grafema-fonema; compreensão e fluência de leitura textual. O kit completo traz livro de instruções, almanaque de histórias, apostila da criança, cartões-estímulo, jogos e duas faixas de áudio.</p>
+<div class="fmeta"><div><span>Faixa etária</span>1º ao 4º ano do Fundamental</div><div><span>Contexto</span>Clínico, escolar e domiciliar</div></div>
+<div class="fau">Autoria: Natália Becker, Mirella Liberatore Prando e Jerusa Fumagalli de Salles, Vetor</div>
+</div>
+<div class="capa"><img alt="INELE" loading="lazy" src="https://www.booktoy.com.br/image/cache/catalog/livros/57/12752-600x600.jpg"></div>
+</article>
+</div>
+</div>
+<div class="page" data-document-role="page" data-label="8. Os programas e jogos ·">
+<div class="page-in">
+<article class="ficha">
+<div class="ficha-txt">
+<div class="fn">Pecolefe</div>
+<div class="fsub">Estimulação da Compreensão Leitora e Funções Executivas</div>
+<div><span class="chip mini escuro">Programa estruturado</span></div>
+<p><b>O que é.</b> Programa de ensino da compreensão leitora à luz de estratégias de funções executivas, partindo da relação estreita entre ler e recrutar FE.</p>
+<p><b>Para que serve.</b> Desenvolver a independência e a segurança do leitor para compreender o que está escrito, mesmo quando ainda há dificuldade no reconhecimento das palavras. Serve para habilitação, reabilitação e intervenção precoce.</p>
+<p><b>Como é usado.</b> Três módulos de atividades: controle inibitório, memória de trabalho e flexibilidade cognitiva, com capítulo de dinâmica de aplicação e materiais de estímulo. Conteúdo extra para baixar com senha do livro. 460 páginas.</p>
+<div class="fmeta"><div><span>Faixa etária</span>Crianças em idade escolar</div><div><span>Contexto</span>Clínico e escolar</div></div>
+<div class="fau">Autoria: Hosana Alves Gonçalves e Rochele Paz Fonseca, Book Toy (coleção NEUROPSI APRENDE)</div>
+</div>
+<div class="capa"><img alt="Pecolefe" loading="lazy" src="https://www.booktoy.com.br/image/cache/catalog/livros/136/13580-600x600.jpg"></div>
+</article>
+</div>
+</div>
+<div class="page" data-document-role="page" data-label="8. Os programas e jogos ·">
+<div class="page-in">
+<article class="ficha">
+<div class="ficha-txt">
+<div class="fn">PRIPROF-T</div>
+<div class="fsub">Resposta à Intervenção Fonológica com tutoria ao professor</div>
+<div><span class="chip mini cinza">Capacitação</span></div>
+<p><b>O que é.</b> Programa da Camada 1 do RTI: intervenção fonológica associada à correspondência grafema-fonema, conduzida pelo professor com tutoria de um fonoaudiólogo ou fonoaudiólogo educacional.</p>
+<p><b>Para que serve.</b> Prevenir e identificar cedo os alunos com problemas de aprendizagem na fase inicial da alfabetização, orientando o trabalho do professor com habilidades de leitura.</p>
+<p><b>Como é usado.</b> Onze materiais: cadernos de tutoria instrucional (pré e pós-aplicação), caderno de aplicação em sala, cartas temáticas (sons, animais, rimas, charadas, personagens, números) e cartões para marcar sons e sílabas. É o material para você conhecer o que a escola pode fazer na Camada 1 antes do encaminhamento.</p>
+<div class="fmeta"><div><span>Faixa etária</span>Fase inicial da alfabetização</div><div><span>Contexto</span>Escolar, via tutoria ao professor</div></div>
+<div class="fau">Autoria: Maryse Tomoko Matsuzawa Fukuda e Simone Aparecida Capellini, Book Toy</div>
+</div>
+<div class="capa"><img alt="PRIPROF-T" loading="lazy" src="https://www.booktoy.com.br/image/cache/catalog/livros/10/9792-600x600.jpg"></div>
+</article>
+</div>
+</div>
+<div class="page" data-document-role="page" data-label="8. Os programas e jogos ·">
+<div class="page-in">
+<article class="ficha">
+<div class="ficha-txt">
+<div class="fn">Estimulando Habilidades de Leitura e Escrita: Dislexia</div>
+<div class="fsub">Livro em caixinha com cartas</div>
+<div><span class="chip mini dourado">Jogo ou baralho</span></div>
+<p><b>O que é.</b> Caixinha de cartas para estimular e ajudar crianças, adolescentes e adultos, de forma divertida e simples, a superar dificuldades de leitura e escrita.</p>
+<p><b>Para que serve.</b> Trabalhar associação visual e auditiva, noções de tempo e espaço, memória, velocidade de pensamento e habilidades básicas de leitura e escrita.</p>
+<p><b>Como é usado.</b> Coloque as cartas na mesa, cada um tira uma carta, lê o que se pede e executa. Use como aquecimento ou fechamento da sessão, sem substituir o programa estruturado.</p>
+<div class="fmeta"><div><span>Faixa etária</span>Crianças, adolescentes e adultos</div><div><span>Contexto</span>Clínico</div></div>
+<div class="fau">Autoria: Linda Kátia Cordesqui, Book Toy</div>
+</div>
+<div class="capa"><img alt="Estimulando Habilidades de Leitura e Escrita: Dislexia" loading="lazy" src="https://www.booktoy.com.br/image/cache/catalog/livros/96/14630-600x600.jpg"></div>
+</article>
+<h3>Escrita, ortografia e alfabetização</h3>
+<p>Do reconhecimento de letras e sons até a regra ortográfica e a caligrafia legível. Aqui entram os recursos para quem ainda não alfabetizou e para quem escreve, mas com erros ou com letra difícil de ler.</p>
+
+</div>
+</div><div class="page" data-document-role="page" data-label="8. Os programas e jogos ·"><div class="page-in"><div class="box-verde">
+<h4>Quando escolher este grupo</h4>
+<p>A queixa é de não alfabetização, erros ortográficos persistentes, frases sem estrutura ou letra ilegível.</p>
+<p>A avaliação mostrou prejuízo em consciência fonológica, escrita sob ditado, produção de texto ou habilidades percepto-viso-motoras.</p>
+</div></div></div>
+<div class="page" data-document-role="page" data-label="8. Os programas e jogos ·">
+<div class="page-in">
+<article class="ficha">
+<div class="ficha-txt">
+<div class="fn">Proalf</div>
+<div class="fsub">Programa de Alfabetização e Estimulação Cognitiva</div>
+<div><span class="chip mini escuro">Programa estruturado</span></div>
+<p><b>O que é.</b> Material de intervenção em alfabetização com base em neurociência, que estimula as habilidades cognitivas envolvidas na leitura e na escrita.</p>
+<p><b>Para que serve.</b> Trabalhar letras e fonemas, consciência fonológica, memória auditiva, percepção visual e atenção, partindo do princípio de que essas habilidades não se desenvolvem sozinhas e precisam de intervenção dirigida e sistematizada.</p>
+<p><b>Como é usado.</b> 212 páginas de atividades em sequência para crianças em processo de alfabetização e para alunos com dificuldade na aquisição da leitura e da escrita. Usado por professores, psicopedagogos e fonoaudiólogos.</p>
+<div class="fmeta"><div><span>Faixa etária</span>Crianças em alfabetização</div><div><span>Contexto</span>Clínico e escolar</div></div>
+<div class="fau">Autoria: Gabriela Guarnieri Mendes, Book Toy</div>
+</div>
+<div class="capa"><img alt="Proalf" loading="lazy" src="https://www.booktoy.com.br/image/cache/catalog/livros/93/10308-600x600.jpg"></div>
+</article>
+</div>
+</div>
+<div class="page" data-document-role="page" data-label="8. Os programas e jogos ·">
+<div class="page-in">
+<article class="ficha">
+<div class="ficha-txt">
+<div class="fn">Iniciando a Comunicação Escrita</div>
+<div class="fsub">Estratégias para desenvolver a estruturação da escrita</div>
+<div><span class="chip mini contorno">Livro de atividades</span></div>
+<p><b>O que é.</b> Livro totalmente ilustrado com estratégias práticas para ajudar a criança com dificuldade de aprendizagem a construir a escrita nos primeiros anos escolares.</p>
+<p><b>Para que serve.</b> Ampliar vocabulário, estruturar frases, interpretar da frase ao texto curto, aplicar conceitos básicos na construção e compreensão de frases, entender enunciados de tarefas e iniciar a produção de pequenas redações.</p>
+<p><b>Como é usado.</b> Você escolhe as atividades pela etapa em que a criança está (vocabulário, frase, texto curto, enunciado, redação) e monta a progressão. Pode ser usado por fonoaudiólogos, pedagogos, neuropsicólogos, professores e pais.</p>
+<div class="fmeta"><div><span>Faixa etária</span>Primeiros anos escolares</div><div><span>Contexto</span>Clínico, escolar e em casa</div></div>
+<div class="fau">Autoria: Valderez A. M. Prass Lemes e Juliana M. Prass Lemes Ferreira, Book Toy</div>
+</div>
+<div class="capa"><img alt="Iniciando a Comunicação Escrita" loading="lazy" src="https://www.booktoy.com.br/image/cache/catalog/livros/93/12594-600x600.jpg"></div>
+</article>
+</div>
+</div>
+<div class="page" data-document-role="page" data-label="8. Os programas e jogos ·">
+<div class="page-in">
+<article class="ficha">
+<div class="ficha-txt">
+<div class="fn">Desafios da Ortografia na Prática Clínica: M/N</div>
+<div class="fsub">Regra contextual do M antes de P e B</div>
+<div><span class="chip mini contorno">Livro de atividades</span></div>
+<p><b>O que é.</b> Conjunto de atividades que envolvem diferentes processos cognitivos para ensinar a regra do M antes de P e B, favorecendo ortografia, leitura e escrita.</p>
+<p><b>Para que serve.</b> Levar a criança da descoberta da regra à reflexão, identificação, memorização e uso, da palavra isolada ao texto, na leitura e na escrita. Constrói um léxico visual com as palavras dessa regra.</p>
+<p><b>Como é usado.</b> Siga a ordem do livro: descobrir a regra, refletir, identificar, memorizar e usar em contextos variados. Indicado para o campo educacional e clínico.</p>
+<div class="fmeta"><div><span>Faixa etária</span>Crianças em fase ortográfica</div><div><span>Contexto</span>Clínico e escolar</div></div>
+<div class="fau">Autoria: Roberta Angelo Monteiro, Book Toy</div>
+</div>
+<div class="capa"><img alt="Desafios da Ortografia na Prática Clínica: M/N" loading="lazy" src="https://www.booktoy.com.br/image/cache/catalog/livros/10/12522-600x600.jpg"></div>
+</article>
+
+</div>
+</div><div class="page" data-document-role="page" data-label="8. Os programas e jogos ·"><div class="page-in"><article class="ficha">
+<div class="ficha-txt">
+<div class="fn">Desafios da Ortografia na Prática Clínica: R/RR</div>
+<div class="fsub">Regra contextual do uso de R ou RR</div>
+<div><span class="chip mini contorno">Livro de atividades</span></div>
+<p><b>O que é.</b> Segundo volume da coleção, com a mesma lógica aplicada à regra contextual do R e do RR.</p>
+<p><b>Para que serve.</b> Trabalhar a descoberta, a reflexão, a identificação, a memorização e o uso da regra em palavras e textos, na leitura e na escrita, criando léxico de input visual para essa regra.</p>
+<p><b>Como é usado.</b> 64 páginas de tarefas em progressão. Indicado para uso educacional e clínico. Existe pacote com os dois volumes (M/N e R/RR).</p>
+<div class="fmeta"><div><span>Faixa etária</span>Crianças em fase ortográfica</div><div><span>Contexto</span>Clínico e escolar</div></div>
+<div class="fau">Autoria: Roberta Angelo Monteiro e Fernanda Elena P. Feitosa, Book Toy</div>
+</div>
+<div class="capa"><img alt="Desafios da Ortografia na Prática Clínica: R/RR" loading="lazy" src="https://www.booktoy.com.br/image/cache/catalog/livros/10/12595-600x600.jpg"></div>
+</article></div></div>
+<div class="page" data-document-role="page" data-label="8. Os programas e jogos ·">
+<div class="page-in">
+<article class="ficha">
+<div class="ficha-txt">
+<div class="fn">PPVM-E</div>
+<div class="fsub">Remediação Percepto-Viso-Motora e Escrita</div>
+<div><span class="chip mini escuro">Programa estruturado</span></div>
+<p><b>O que é.</b> Programa para profissionais de saúde e educação ajudarem escolares com problemas de aprendizagem e de atenção a superar dificuldades na escrita caligráfica.</p>
+<p><b>Para que serve.</b> Diminuir o impacto das alterações caligráficas nas atividades de sala de aula.</p>
+<p><b>Como é usado.</b> Doze sessões estruturadas, cada uma com oito componentes: atividades visomotoras, discriminação visual, memória visual, relações visoespaciais, constância de forma, memória visual sequencial, figura-fundo e fechamento visual. Manual do aplicador com fundamentação e manual de aplicação com o passo a passo.</p>
+<div class="fmeta"><div><span>Faixa etária</span>3º ao 5º ano do Fundamental I</div><div><span>Contexto</span>Clínico e escolar</div></div>
+<div class="fau">Autoria: Simone Aparecida Capellini, Natália Fusco e Giseli Donadon Germano, Book Toy</div>
+</div>
+<div class="capa"><img alt="PPVM-E" loading="lazy" src="https://www.booktoy.com.br/image/cache/catalog/livros/10/13924-600x600.jpg"></div>
+</article>
+</div>
+</div>
+<div class="page" data-document-role="page" data-label="8. Os programas e jogos ·">
+<div class="page-in">
+<article class="ficha">
+<div class="ficha-txt">
+<div class="fn">Atividades Corretivas vol. 2: Leitura e Escrita, Grafia e Ortografia</div>
+<div class="fsub">Leitura e escrita, grafia e ortografia</div>
+<div><span class="chip mini contorno">Livro de atividades</span></div>
+<p><b>O que é.</b> Livro de reabilitação ortográfica que estimula principalmente a rota lexical, geralmente a mais prejudicada, com atividades também para a grafia das letras e para coordenação motora fina.</p>
+<p><b>Para que serve.</b> Atender pessoas com disortografia e disgrafia e também quem ficou com dificuldades por ensino inadequado, em qualquer idade.</p>
+<p><b>Como é usado.</b> As tarefas envolvem leitura, escrita, classificação, orientação temporal e espacial e discriminação visual. Você seleciona pelo erro que a criança apresenta e monta a sequência.</p>
+<div class="fmeta"><div><span>Faixa etária</span>Qualquer idade</div><div><span>Contexto</span>Clínico e escolar</div></div>
+<div class="fau">Autoria: Simaia Sampaio, Wak</div>
+</div>
+<div class="capa"><img alt="Atividades Corretivas vol. 2: Leitura e Escrita, Grafia e Ortografia" loading="lazy" src="https://www.booktoy.com.br/image/cache/catalog/livros/67/8535-600x600.jpg"></div>
+</article>
+<h3>Matemática</h3>
+<p>Senso numérico, contagem, fatos numéricos e operações. Os recursos abaixo cobrem desde o guia de protocolos até programas estruturados em sessões.</p>
+
+</div>
+</div><div class="page" data-document-role="page" data-label="8. Os programas e jogos ·"><div class="page-in"><div class="box-verde">
+<h4>Quando escolher este grupo</h4>
+<p>A queixa é de não conseguir contar, comparar quantidades, entender o valor posicional ou resolver operações.</p>
+<p>A avaliação mostrou prejuízo em senso numérico, transcodificação, cálculo ou resolução de problemas.</p>
+</div></div></div>
+<div class="page" data-document-role="page" data-label="8. Os programas e jogos ·">
+<div class="page-in">
+<article class="ficha">
+<div class="ficha-txt">
+<div class="fn">PROMATEM</div>
+<div class="fsub">Remediação com Habilidades Matemáticas</div>
+<div><span class="chip mini escuro">Programa estruturado</span></div>
+<p><b>O que é.</b> Programa estruturado no Modelo RTI para estimular habilidades matemáticas e identificar precocemente escolares de risco para dificuldade em matemática.</p>
+<p><b>Para que serve.</b> Trabalhar percepção de magnitude, cardinalidade, ordinalidade, comparação, medida e estimativa.</p>
+<p><b>Como é usado.</b> Rastreio inicial com checklist de comportamentos de dificuldade em matemática e três cadernos do aplicador, um por camada do RTI, cada um com seis sessões. Cada sessão tem treino e várias tarefas, com gabarito, folhas de resposta e gráficos de acompanhamento.</p>
+<div class="fmeta"><div><span>Faixa etária</span>6 a 8 anos</div><div><span>Contexto</span>Clínico e escolar</div></div>
+<div class="fau">Autoria: Rita Picinini, Silvia Feldberg, Giseli Donadon Germano e Simone Capellini, Book Toy</div>
+</div>
+<div class="capa"><img alt="PROMATEM" loading="lazy" src="https://www.booktoy.com.br/image/cache/catalog/livros/95/13362-600x600.jpg"></div>
+</article>
+</div>
+</div>
+<div class="page" data-document-role="page" data-label="8. Os programas e jogos ·">
+<div class="page-in">
+<article class="ficha">
+<div class="ficha-txt">
+<div class="fn">PIM-MAT</div>
+<div class="fsub">Intervenção Multissensorial para Habilidades Matemáticas</div>
+<div><span class="chip mini escuro">Programa estruturado</span></div>
+<p><b>O que é.</b> Programa de intervenção com abordagem multissensorial (visual, auditiva e tátil-cinestésica) para escolares com dificuldade em matemática.</p>
+<p><b>Para que serve.</b> Consolidar a aprendizagem matemática por mais de um canal sensorial, criando novas rotas para aprender.</p>
+<p><b>Como é usado.</b> Oito sessões que avançam de habilidades básicas (subitização e transcodificação) para valor posicional, reta numérica mental, composição e decomposição, adição, subtração, multiplicação e divisão. Manual com fundamentação, manual de aplicação, folhas de resposta e gráfico de monitoramento.</p>
+<div class="fmeta"><div><span>Faixa etária</span>6 anos a 10 anos e 11 meses</div><div><span>Contexto</span>Clínico e escolar</div></div>
+<div class="fau">Autoria: Rita Picinini, Silvia Feldberg, Isabella Nicolete e Simone Capellini, Book Toy</div>
+</div>
+<div class="capa"><img alt="PIM-MAT" loading="lazy" src="https://www.booktoy.com.br/image/cache/catalog/livros/95/14581-600x600.jpg"></div>
+</article>
+</div>
+</div>
+<div class="page" data-document-role="page" data-label="8. Os programas e jogos ·">
+<div class="page-in">
+<article class="ficha">
+<div class="ficha-txt">
+<div class="fn">Guia de Atividades Práticas para o Ensino das Habilidades de Matemática</div>
+<div class="fsub">Protocolos para pais, profissionais e professores</div>
+<div><span class="chip mini contorno">Livro de atividades</span></div>
+<p><b>O que é.</b> Compêndio de protocolos com atividades embasadas em evidências sobre cognição numérica.</p>
+<p><b>Para que serve.</b> Potencializar o senso numérico, a habilidade de contar e os fatos e procedimentos numéricos nos anos iniciais.</p>
+<p><b>Como é usado.</b> Traz orientações didáticas, estratégias e intervenções psicopedagógicas, protocolos e monitoramento, com divisões separadas para pais, profissionais e professores. Sem idade específica; você escolhe pelo nível da criança.</p>
+<div class="fmeta"><div><span>Faixa etária</span>Anos iniciais, sem idade fixa</div><div><span>Contexto</span>Clínico, escolar e em casa</div></div>
+<div class="fau">Autoria: Andréa Carla Machado, Suzelei Faria Bello e Elaine Cristina dos Santos, Book Toy</div>
+</div>
+<div class="capa"><img alt="Guia de Atividades Práticas para o Ensino das Habilidades de Matemática" loading="lazy" src="https://www.booktoy.com.br/image/cache/catalog/livros/95/11415-600x600.jpg"></div>
+</article>
+</div>
+</div>
+<div class="page" data-document-role="page" data-label="8. Os programas e jogos ·">
+<div class="page-in">
+<article class="ficha">
+<div class="ficha-txt">
+<div class="fn">Treino de Habilidades Matemáticas para Crianças e Adolescentes</div>
+<div class="fsub">Série Psicologia e Neurociências do IPq-HCFMUSP</div>
+<div><span class="chip mini escuro">Programa estruturado</span></div>
+<p><b>O que é.</b> Livro que une o saber escolar com as neurociências para, de forma lúdica, desenvolver conceitos básicos de matemática, trabalhar educação financeira e facilitar a discussão de ideias e a resolução de problemas.</p>
+<p><b>Para que serve.</b> Permitir que crianças e adolescentes explorem conceitos matemáticos independentemente do conhecimento prévio.</p>
+<p><b>Como é usado.</b> Duas seções de 12 sessões: crianças (construção numérica, operações básicas, multiplicação e divisão) e adolescentes (educação financeira, consumo, orçamento e investimentos).</p>
+<div class="fmeta"><div><span>Faixa etária</span>Crianças e adolescentes</div><div><span>Contexto</span>Clínico, individual ou em grupo</div></div>
+<div class="fau">Autoria: Alison Amaral, Márcia Otsubo, Sílvia Souza e Telma Pantano, Manole</div>
+</div>
+</article>
+</div>
+</div>
+<div class="page" data-document-role="page" data-label="8. Os programas e jogos ·">
+<div class="page-in">
+<article class="ficha">
+<div class="ficha-txt">
+<div class="fn">Estimulando Habilidades de Matemática: Discalculia</div>
+<div class="fsub">Livro em caixinha com 60 cartas</div>
+<div><span class="chip mini dourado">Jogo ou baralho</span></div>
+<p><b>O que é.</b> Caixinha de cartas para estimular e ajudar crianças, adolescentes e adultos a superar dificuldades com a discalculia, seja verbal, practognóstica, léxica, gráfica, ideognóstica ou operacional.</p>
+<p><b>Para que serve.</b> Trabalhar raciocínio lógico, atenção e concentração, cálculo e estratégias, sistema monetário brasileiro e resolução de problemas.</p>
+<p><b>Como é usado.</b> Quatro tipos de atividade: cálculo mental, continuar a sequência oralmente, sistema monetário e raciocínio lógico. Cada um tira uma carta, lê o que se pede e executa.</p>
+<div class="fmeta"><div><span>Faixa etária</span>Crianças, adolescentes e adultos</div><div><span>Contexto</span>Clínico</div></div>
+<div class="fau">Autoria: Linda Kátia Cordesqui, Book Toy</div>
+</div>
+<div class="capa"><img alt="Estimulando Habilidades de Matemática: Discalculia" loading="lazy" src="https://www.booktoy.com.br/image/cache/catalog/livros/96/14052-600x600.jpg"></div>
+</article>
+<h3>Desenvolvimento e intervenção precoce</h3>
+<p>Para a criança que ainda não está em idade escolar e chega com atraso global ou com sinais de risco no desenvolvimento.</p>
+
+</div>
+</div><div class="page" data-document-role="page" data-label="8. Os programas e jogos ·"><div class="page-in"><div class="box-verde">
+<h4>Quando escolher este grupo</h4>
+<p>A criança tem entre 3 e 5 anos e a queixa é de atraso em linguagem, motor, cognição ou interação.</p>
+<p>Você precisa de um roteiro sistemático para montar o plano, mesmo sem diagnóstico fechado.</p>
+</div></div></div>
+<div class="page" data-document-role="page" data-label="8. Os programas e jogos ·">
+<div class="page-in">
+<article class="ficha">
+<div class="ficha-txt">
+<div class="fn">Programa de Intervenção Precoce para Segunda Infância</div>
+<div class="fsub">Planos de intervenção dos 36 aos 60 meses</div>
+<div><span class="chip mini escuro">Programa estruturado</span></div>
+<p><b>O que é.</b> Abordagem sistemática para desenvolver planos de intervenção para crianças da segunda infância, com ou sem atraso no desenvolvimento.</p>
+<p><b>Para que serve.</b> Oferecer uma trajetória sistemática e facilitadora nas áreas de cognição, linguagem, motora, sociopessoal e brincar.</p>
+<p><b>Como é usado.</b> Manual teórico, três cadernos de atividades e manual de apoio com avaliações para o fim da pré-escola. Você avalia, define as áreas prioritárias e segue o caderno correspondente.</p>
+<div class="fmeta"><div><span>Faixa etária</span>36 a 60 meses</div><div><span>Contexto</span>Clínico e escolar</div></div>
+<div class="fau">Autoria: Andréa Carla Machado e Maria Amelia Almeida, Book Toy</div>
+</div>
+<div class="capa"><img alt="Programa de Intervenção Precoce para Segunda Infância" loading="lazy" src="https://www.booktoy.com.br/image/cache/catalog/livros/70/10673-600x600.jpg"></div>
+</article>
+<h3>Estimulação cognitiva ampla</h3>
+<p>Recurso que atravessa várias áreas ao mesmo tempo. Bom para montar sessões variadas quando a criança tem prejuízo em mais de uma habilidade.</p>
+
+</div>
+</div><div class="page" data-document-role="page" data-label="8. Os programas e jogos ·"><div class="page-in"><div class="box-verde">
+<h4>Quando escolher este grupo</h4>
+<p>A avaliação mostrou prejuízo em várias habilidades e você precisa de um banco de atividades para alternar dentro da mesma sessão.</p>
+<p>Você quer complementar um programa estruturado com tarefas extras de raciocínio, memória, atenção e cálculo.</p>
+</div></div></div>
+<div class="page" data-document-role="page" data-label="8. Os programas e jogos ·">
+<div class="page-in">
+<article class="ficha">
+<div class="ficha-txt">
+<div class="fn">Atividades Neuropsicopedagógicas de Intervenção e Reabilitação</div>
+<div class="fsub">Volume vermelho da coleção</div>
+<div><span class="chip mini contorno">Livro de atividades</span></div>
+<p><b>O que é.</b> Atividades desenvolvidas pela autora na intervenção psicopedagógica, como recurso clínico complementar para estimular áreas deficitárias.</p>
+<p><b>Para que serve.</b> Estimular raciocínio lógico, linguagem, atenção auditiva e visual, memória auditiva e visual, rastreamento visual, estratégias e planejamento, orientação temporal e espacial, controle inibitório, coordenação visomotora, lateralidade, sequência, classificação e cálculo.</p>
+<p><b>Como é usado.</b> Indicado para crianças com dificuldade de aprendizagem sem transtorno específico, com dislexia ou discalculia, e com TDAH que tenham prejuízo em um ou mais desses componentes. Você escolhe as tarefas pela habilidade-alvo e monta a sessão.</p>
+<div class="fmeta"><div><span>Faixa etária</span>Crianças e adolescentes</div><div><span>Contexto</span>Clínico, complementar ao programa principal</div></div>
+<div class="fau">Autoria: Simaia Sampaio, Wak</div>
+</div>
+</article>
+
+</div>
+</div><div class="page" data-document-role="page" data-label="8. Os programas e jogos ·"><div class="page-in"><div class="card-borda">
+<div class="t">Como usar esta lista</div>
+<p>Ninguém precisa ter tudo. Comece pelos eixos que mais aparecem na sua agenda e escolha um recurso por eixo, de preferência com progressão em níveis.</p>
+<p>Antes de comprar, passe pelas três perguntas da seção anterior: a que meta ele serve, se gera medida e se tem progressão.</p>
+</div></div></div>
+<div class="page" data-document-role="page" data-label="9. A sessão de 50 minutos">
+<div class="page-in">
+<h2>9. A sessão de 50 minutos</h2>
+<p class="intro">O plano só existe de verdade quando vira tempo. Exemplo de roteiro, não modelo fixo: os tempos mudam conforme o paciente e o objetivo do dia.</p>
+
+
+</div>
+</div><div class="page tight1 tight2 tight3" data-document-role="page" data-label="9. A sessão de 50 minutos ·" data-tight="3" style="font-size: 70%;" data-scale="0.96"><div class="page-in" style="transform: scale(0.96); transform-origin: left top; width: 104.167%; height: 104.167%;"><div>
+<div class="rt"><div class="t">0 a 7 min</div><div class="c"><div class="tt">Entrada, quadro do dia e fichas</div><div class="dd">Conversa curta sobre a semana, quadro com as etapas da sessão e combinado do que vale ficha hoje. Vínculo e previsibilidade: ele sabe o que vem e quanto falta.</div></div></div>
+<div class="rt"><div class="t">7 a 17 min</div><div class="c"><div class="tt">Aquecimento</div><div class="dd">Tarefa curta, já dominada, que ativa a habilidade-alvo do dia: nomeação rápida, sequência, contagem regressiva, jogo de cartas. Prepara a rede que a proposta vai usar.</div></div></div>
+<div class="rt"><div class="t">17 a 32 min</div><div class="c"><div class="tt">Proposta 1 · ensino da estratégia</div><div class="dd">Você modela, faz junto, ele faz com apoio. É o núcleo da sessão e onde entra o programa estruturado. Registro: tempo, acertos, erros e quantas vezes precisou ser lembrado.</div></div></div>
+<div class="rt"><div class="t">32 a 35 min</div><div class="c"><div class="tt">Descanso combinado</div><div class="dd">Água, alongar, um minuto de jogo livre. Sem tela.</div></div></div>
+<div class="rt"><div class="t">35 a 45 min</div><div class="c"><div class="tt">Proposta 2 · generalização</div><div class="dd">Outra habilidade-alvo, ou a mesma em outro formato. Ele aplica a estratégia com menos apoio, em material diferente do usado no ensino.</div></div></div>
+<div class="rt"><div class="t">45 a 50 min</div><div class="c"><div class="tt">Metacognição</div><div class="dd">Três perguntas: o que aprendi hoje, qual estratégia usei, quando vou usar na escola. Ele responde, você anota. Consolida a estratégia e já gera o seu registro.</div></div></div>
+<div class="rt"><div class="t">+5 min</div><div class="c"><div class="tt">Devolutiva à família</div><div class="dd">Uma frase do que foi trabalhado, uma da evolução e uma orientação prática para a semana. Troca das fichas.</div></div></div>
+</div></div></div><div class="page" data-document-role="page" data-label="9. A sessão de 50 minutos ·"><div class="page-in"><h3>Quantos alvos por sessão</h3></div></div>
+<div class="page" data-document-role="page" data-label="9. A sessão de 50 minutos ·">
+<div class="page-in">
+<div class="tw">
+<table>
+<thead><tr><th style="width:24%">Cenário</th><th style="width:36%">O que acontece</th><th>Efeito</th></tr></thead>
+<tbody><tr><td class="k">Coisas demais</td><td>Cinco habilidades em 50 minutos.</td><td>Nenhuma com tempo de consolidar. Registro impossível.</td></tr><tr><td class="k">Uma coisa só</td><td>A mesma tarefa a sessão inteira.</td><td>Cansa, derruba o engajamento e não generaliza.</td></tr><tr><td class="k">O ponto certo</td><td>Duas ou três habilidades-alvo, cada uma com uma proposta diferente, mais um momento de generalização.</td><td>Variedade sem sobrecarga, e cada alvo com dose suficiente.</td></tr></tbody>
+</table>
+</div>
+<h3>Três princípios que organizam os blocos</h3>
+<div class="cards">
+<div class="card"><div class="t">Alvo duro primeiro</div><p>O bloco que exige mais precisão fica na primeira metade, quando o recurso atencional ainda está inteiro.</p></div>
+<div class="card"><div class="t">Alternância de demanda</div><p>Nunca dois blocos seguidos com o mesmo tipo de exigência. A troca de formato é o que segura o engajamento.</p></div>
+<div class="card"><div class="t">Fechamento com registro</div><p>Os últimos minutos não são sobra. São intervenção em automonitoramento e a melhor fonte de dado sobre como ele percebe o próprio desempenho.</p></div>
+</div>
+</div>
+</div>
+<div class="page" data-document-role="page" data-label="9. A sessão de 50 minutos ·">
+<div class="page-in">
+<div class="pergunta">
+<div class="q">
+<div class="lab">Pergunta de discussão</div>
+<p>Na sua sessão típica, quanto tempo vai para o alvo do plano e quanto vai para atividades que não estão ligadas a nenhuma meta?</p>
+</div>
+<button onclick="rev(this)">Ver direcionamento</button>
+<div class="r">
+<p>A referência prática é que ao menos <strong>70% do tempo</strong> esteja ligado a uma meta escrita. Isso não elimina o acolhimento, que é condição do vínculo e, portanto, da intervenção. Elimina o acolhimento como padrão, ocupando trinta minutos porque a criança chegou falante e a sessão foi por onde deu.</p>
+<p>Exercício de supervisão: cronometre uma sessão sua e classifique cada minuto por alvo. A maioria se surpreende com a proporção real. Não é falha de competência, é o efeito previsível de conduzir sessão sem blocos definidos antes de começar.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="page" data-document-role="page" data-label="10. Registro e evolução">
+<div class="page-in">
+<h2>10. Registro e evolução</h2>
+<p class="intro">Plano sem registro é plano que não pode ser corrigido.</p>
+<div class="box-verde">
+<h4>Como medir</h4>
+<p>Uma medida por habilidade-alvo.</p>
+<p>Linha de base antes de intervir.</p>
+<p>Mesma tarefa, mesmo jeito, a cada 3 ou 4 sessões.</p>
+<p>Mostre em tabela ou gráfico.</p>
+</div>
+<p>São três camadas de registro, com finalidades diferentes. Confundi-las é o que faz o caderno de sessão virar diário sem utilidade clínica.</p>
+
+</div>
+</div><div class="page" data-document-role="page" data-label="10. Registro e evolução ·"><div class="page-in"><div class="tw">
+<table>
+<thead><tr><th style="width:20%">Camada</th><th style="width:17%">Quando</th><th style="width:31%">O que registra</th><th>Para que serve</th></tr></thead>
+<tbody><tr><td class="k">Registro de sessão</td><td>Toda sessão</td><td>Data e número da sessão, objetivo, o que foi aplicado, dado objetivo, observação de comportamento e próximo passo.</td><td>Continuidade. Outra profissional consegue conduzir a sessão seguinte.</td></tr><tr><td class="k">Medida de progresso</td><td>Semanal ou quinzenal</td><td>Os números das metas, sempre da mesma forma.</td><td>Constrói a curva. É o que responde se está funcionando.</td></tr><tr><td class="k">Revisão formal</td><td>Metade e fim do ciclo</td><td>Leitura da curva de cada meta, decisão e revisão da hipótese.</td><td>Correção de rota e base da devolutiva.</td></tr></tbody>
+</table>
+</div></div></div>
+<div class="page" data-document-role="page" data-label="10. Registro e evolução ·">
+<div class="page-in">
+<h3>Exemplo de curva de progresso</h3>
+<p>Fluência de leitura ao longo de um ciclo de 12 semanas, comparada com a trajetória necessária para atingir a meta no prazo.</p>
+<div class="grafico">
+<svg aria-label="Exemplo de curva de fluência de leitura em palavras corretas por minuto ao longo de doze semanas, comparada com a linha-alvo" height="auto" role="img" viewBox="0 0 640 250" width="100%">
+<g stroke="#E3DCCB" stroke-width="1">
+<line x1="52" x2="612" y1="30" y2="30"></line><line x1="52" x2="612" y1="73" y2="73"></line>
+<line x1="52" x2="612" y1="116" y2="116"></line><line x1="52" x2="612" y1="159" y2="159"></line>
+<line x1="52" x2="612" y1="202" y2="202"></line>
+</g>
+<g fill="#5E5C53" font-family="Inter,sans-serif" font-size="10.5" text-anchor="end">
+<text x="44" y="34">90</text><text x="44" y="77">80</text><text x="44" y="120">70</text>
+<text x="44" y="163">60</text><text x="44" y="206">50</text>
+</g>
+<g fill="#5E5C53" font-family="Inter,sans-serif" font-size="10.5" text-anchor="middle">
+<text x="52" y="224">base</text><text x="145" y="224">s2</text><text x="239" y="224">s4</text>
+<text x="332" y="224">s6</text><text x="425" y="224">s8</text><text x="519" y="224">s10</text><text x="612" y="224">s12</text>
+</g>
+<line stroke="#B08A28" stroke-dasharray="6 5" stroke-width="2" x1="52" x2="612" y1="193" y2="73"></line>
+<polyline fill="none" points="52,193 145,185 239,168 332,151 425,125 519,103 612,77" stroke="#1F3324" stroke-linejoin="round" stroke-width="2.6"></polyline>
+<g fill="#1F3324">
+<circle cx="52" cy="193" r="4"></circle><circle cx="145" cy="185" r="4"></circle><circle cx="239" cy="168" r="4"></circle>
+<circle cx="332" cy="151" r="4"></circle><circle cx="425" cy="125" r="4"></circle><circle cx="519" cy="103" r="4"></circle><circle cx="612" cy="77" r="4"></circle>
+</g>
+<line stroke="#A85A36" stroke-dasharray="3 4" stroke-width="1.3" x1="332" x2="332" y1="22" y2="205"></line>
+<text fill="#A85A36" font-family="Inter,sans-serif" font-size="10" font-weight="600" x="337" y="20">revisão da semana 6</text>
+<text fill="#5E5C53" font-family="Inter,sans-serif" font-size="10" x="55" y="20">palavras corretas por minuto</text>
+</svg>
+<div class="leg">
+<span><i style="background:#B08A28"></i>Linha-alvo: trajetória necessária para chegar aos 80 pcpm em 12 semanas</span>
+<span><i style="background:#1F3324"></i>Desempenho observado</span>
+</div>
+</div>
+
+</div>
+</div><div class="page" data-document-role="page" data-label="10. Registro e evolução ·"><div class="page-in"><p>Nas quatro primeiras semanas o desempenho está <strong>abaixo da linha-alvo</strong>: o ganho é real, mas insuficiente para o prazo. Esse é exatamente o cenário que exige decisão na revisão da semana 6, e não na semana 12, quando já não há tempo de corrigir.</p></div></div>
+<div class="page" data-document-role="page" data-label="10. Registro e evolução ·">
+<div class="page-in">
+<h3>Como ler a curva</h3>
+<div class="tw">
+<table>
+<thead><tr><th style="width:30%">O que a curva mostra</th><th style="width:26%">Leitura</th><th>Decisão</th></tr></thead>
+<tbody><tr><td class="k">Sobre ou acima da linha-alvo</td><td>A conduta funciona na dose atual.</td><td>Manter. Considerar antecipar o que ficou para depois.</td></tr><tr><td class="k">Abaixo, mas subindo</td><td>Conduta adequada, dose insuficiente.</td><td>Intensificar: mais tempo de bloco, mais frequência ou tarefa distribuída em casa.</td></tr><tr><td class="k">Estável, sem inclinação</td><td>A conduta não produz efeito neste alvo.</td><td>Mudar o procedimento, não só o material. Conferir se o nível está correto.</td></tr><tr><td class="k">Oscilação sem tendência</td><td>Problema de medida ou variável não controlada.</td><td>Revisar as condições de coleta antes de mudar o plano. Investigar sono e horário.</td></tr><tr><td class="k">Queda sustentada</td><td>Sinal de alerta.</td><td>Rever hipótese, investigar fatores emocionais ou de saúde, retomar contato com a equipe médica.</td></tr></tbody>
+</table>
+</div>
+<h3>A frase que vai para o relatório</h3>
+</div>
+</div>
+<div class="page" data-document-role="page" data-label="10. Registro e evolução ·">
+<div class="page-in">
+<div class="frase">"Na linha de base, lia 52 palavras corretas por minuto com 9 erros. Após 12 semanas, lê 80 palavras corretas por minuto com 3 erros, indicando ganho de automatização na decodificação." O dado, a comparação e a hipótese, nessa ordem.</div>
+<div class="card-borda">
+<div class="t">O que muda na devolutiva</div>
+<p>Deixa de ser "está evoluindo bem, mais seguro". Passa a ser: <em>"saiu de 52 para 61 palavras corretas por minuto e de 11 para 19 acertos no ditado. O ganho está abaixo do necessário para o prazo, então vamos aumentar o bloco de fluência de 15 para 20 minutos e incluir leitura pareada em casa três vezes por semana."</em> Essa é a diferença entre parecer competente e demonstrar competência.</p>
+</div>
+</div>
+</div>
+<div class="page" data-document-role="page" data-label="11. Escola e família">
+<div class="page-in">
+<h2>11. Escola e família</h2>
+<p class="intro">Uma criança passa 50 minutos por semana com você e cerca de 25 horas na escola. Plano que vive só no consultório abre mão da maior parte do tempo de aprendizagem.</p>
+<h3>O que faz uma orientação escolar ser cumprida</h3>
+<div class="cards">
+<div class="card"><div class="t">Custo de execução</div><p>"Confirmar que ele começou, nos primeiros 60 segundos" cabe na rotina. "Acompanhar individualmente durante as atividades" é inexequível em turma de trinta e será descartado em silêncio.</p></div>
+<div class="card"><div class="t">Especificidade</div><p>"Dar suporte" não é instrução. "Sentar nas duas primeiras fileiras, longe da janela, e confirmar o início da tarefa" é.</p></div>
+<div class="card"><div class="t">Retorno</div><p>A professora que recebe retorno em duas semanas mantém a estratégia. Orientação entregue e nunca mais mencionada se dissolve em um mês.</p></div>
+</div>
+<h3>Acomodações escolares mais usadas</h3>
+</div>
+</div>
+<div class="page" data-document-role="page" data-label="11. Escola e família ·">
+<div class="page-in">
+<div class="tw">
+<table>
+<thead><tr><th style="width:34%">Dificuldade observada</th><th style="width:34%">Acomodação</th><th>Mecanismo</th></tr></thead>
+<tbody><tr><td class="k">Inicia a tarefa e se perde no meio</td><td>Checagem de início nos primeiros 60 segundos após a instrução.</td><td>O ponto de quebra costuma ser a retomada, não a capacidade de sustentar.</td></tr><tr><td class="k">Perde o ponto ao copiar do quadro</td><td>Cópia fracionada com marcação de linha, ou material impresso parcial com lacunas.</td><td>Reduz a carga de memória visuoespacial sem rebaixar o conteúdo.</td></tr><tr><td class="k">Não verbaliza que não entendeu</td><td>Sinal combinado e discreto com a professora, com resposta garantida.</td><td>Autoadvocacia precisa de via de baixo custo social.</td></tr><tr><td class="k">Rende pouco em tarefa longa e repetitiva</td><td>Reduzir o número de itens mantendo a dificuldade.</td><td>Menos itens difíceis costuma render mais do que muitos itens fáceis.</td></tr><tr><td class="k">Falta dado do dia a dia</td><td>Cartão diário com três comportamentos-alvo, avaliados pela professora e enviados à família.</td><td>Gera medida contínua e divide o monitoramento, com custo baixo.</td></tr></tbody>
+</table>
+</div>
+<h3>Frente familiar</h3>
+<p>Quando o cuidador já está sobrecarregado, orientação que aumenta a carga dele não se sustenta. A regra é <strong>trocar tarefa por estrutura</strong>, não acrescentar tarefa.</p>
+</div>
+</div>
+<div class="page" data-document-role="page" data-label="11. Escola e família ·">
+<div class="page-in">
+<div class="cards">
+<div class="card"><div class="t">Sono e telas</div><p>Antecipar o horário de dormir e retirar a tela na hora que antecede o sono. Alto impacto potencial sobre a regulação atencional, custo baixo.</p></div>
+<div class="card"><div class="t">Lição de casa</div><p>Local fixo, blocos curtos com pausa programada, checklist visual de etapas e retirada gradual da presença do adulto ao longo do ciclo.</p></div>
+<div class="card"><div class="t">A frase da devolutiva</div><p>A família precisa sair entendendo que o desempenho depende do tipo de demanda da tarefa, e não de esforço ou vontade. Isso muda a atribuição e o clima da casa.</p></div>
+<div class="card"><div class="t">O próprio cuidador</div><p>Sobrecarga emocional é preditor de adesão e de resultado. Nomear isso sem culpabilizar e considerar suporte próprio é conduta clínica.</p></div>
+</div>
+</div>
+</div>
+<div class="page" data-document-role="page" data-label="12. Armadilhas do plano">
+<div class="page-in">
+<h2>12. Armadilhas do plano</h2>
+<p class="intro">Os seis erros que mais aparecem em supervisão. Marque os que você reconhece.</p>
+<label class="check"><input type="checkbox"><span><strong>Plano por diagnóstico, não por perfil.</strong> O rótulo não define a conduta. Duas crianças com a mesma hipótese podem exigir planos quase opostos.</span></label>
+<label class="check"><input type="checkbox"><span><strong>Lista de atividades disfarçada de plano.</strong> Doze atividades, nenhuma meta, nenhum indicador.</span></label>
+<label class="check"><input type="checkbox"><span><strong>Alvos demais.</strong> Oito alvos simultâneos significam dose insuficiente em todos.</span></label>
+<label class="check"><input type="checkbox"><span><strong>Treino de função cognitiva isolada.</strong> Exercício de memória ou atenção descolado do conteúdo acadêmico melhora o próprio exercício, com transferência limitada.</span></label>
+<label class="check"><input type="checkbox"><span><strong>Ausência de linha de base.</strong> A evolução acaba narrada em adjetivos: "está mais atento", "está mais seguro".</span></label>
+<label class="check"><input type="checkbox"><span><strong>Plano que vive só no consultório.</strong> Sem frente escolar e familiar, você abre mão da maior parte do tempo de aprendizagem.</span></label>
+<div class="alerta">
+<div class="t">Erro de origem</div>
+<p>Os seis têm a mesma raiz: o plano foi escrito a partir do <strong>material disponível</strong> ou do <strong>rótulo diagnóstico</strong>, e não da cadeia que abre esta aula. Quando a ordem se inverte, o documento até fica bonito, mas não sustenta decisão nenhuma na revisão.</p>
+</div>
+</div>
+</div>
+<div class="page" data-document-role="page" data-label="13. Prática guiada">
+<div class="page-in">
+<h2>13. Prática guiada</h2>
+<p class="intro">Em duplas, 20 minutos, com um caso da sua própria clínica.</p>
+<div class="card-borda">
+<div class="t">Tarefa 1 · Aplicar a cadeia a um alvo · 6 min</div>
+<p>Escolha uma habilidade que precisa avançar e preencha as cinco linhas: dificuldade, estratégia, recurso e medida. Regra: a linha "estratégia" precisa ser uma frase que o paciente conseguiria repetir sozinho.</p>
+</div>
+<div class="card-borda">
+<div class="t">Tarefa 2 · Escrever uma meta completa · 6 min</div>
+<p>Transforme esse alvo em meta, com linha de base, critério de domínio, prazo e instrumento. Troque com a dupla ao lado e verifique: dá para dizer com um número se a meta foi atingida?</p>
+</div>
+<div class="card-borda">
+<div class="t">Tarefa 3 · Montar a sessão · 8 min</div>
+<p>Distribua os 50 minutos em blocos com tempo declarado. Regra: nenhum bloco sem meta vinculada e nunca dois blocos seguidos com o mesmo tipo de demanda.</p>
+</div>
+<h3>Checklist do plano</h3>
+
+
+
+</div>
+</div><div class="page" data-document-role="page" data-label="13. Prática guiada ·"><div class="page-in"><p>Use em qualquer plano que você escrever depois da oficina.</p><label class="check"><input type="checkbox"><span>O plano nomeia o <strong>achado que organiza o caso</strong> em uma frase, logo na abertura.</span></label><label class="check"><input type="checkbox"><span>Cada achado aparece traduzido em <strong>termos funcionais</strong>, não só como resultado de teste.</span></label></div></div>
+<div class="page" data-document-role="page" data-label="13. Prática guiada ·">
+<div class="page-in">
+<label class="check"><input type="checkbox"><span>Toda dificuldade da avaliação recebeu <strong>uma das quatro decisões</strong>, sem sobras.</span></label>
+<label class="check"><input type="checkbox"><span>Há no máximo <strong>três a quatro alvos diretos</strong> por ciclo.</span></label>
+<label class="check"><input type="checkbox"><span>Toda meta tem <strong>linha de base, critério de domínio, prazo e instrumento</strong>.</span></label>
+<label class="check"><input type="checkbox"><span>A <strong>estratégia vem antes do recurso</strong> em cada alvo, e não o contrário.</span></label>
+<label class="check"><input type="checkbox"><span>Cada recurso escolhido <strong>serve a uma meta escrita</strong> e gera medida.</span></label>
+<label class="check"><input type="checkbox"><span>Existe <strong>frente escolar</strong> e <strong>frente familiar</strong>, com ações executáveis.</span></label>
+<label class="check"><input type="checkbox"><span>Há <strong>data de revisão</strong> e critérios definidos antes para manter, intensificar ou mudar.</span></label>
+<label class="check"><input type="checkbox"><span>Outra profissional conseguiria <strong>conduzir a próxima sessão</strong> só lendo o documento.</span></label>
+<div class="box-verde" style="margin-top:28px">
+<h4>Fechamento</h4>
+<p>O que separa a psicopedagoga que aplica testes da que conduz um processo não é o número de instrumentos que ela domina.</p>
+<p>É saber sustentar, com critério, por que este alvo e não aquele, por que agora e não depois, e como ela vai saber que funcionou.</p>
+</div>
+</div>
+</div>
+<div class="page" data-document-role="page" data-label="14. Referências">
+<div class="page-in">
+<h2>14. Referências</h2>
+<h4>Leitura, escrita e ortografia</h4>
+<ul style="font-size:14.8px">
+<li>Ehri, L. C. (2005). Learning to read words: theory, findings and issues. <em>Scientific Studies of Reading</em>, 9(2), 167-188.</li>
+<li>Gough, P. B., &amp; Tunmer, W. E. (1986). Decoding, reading and reading disability. <em>Remedial and Special Education</em>, 7(1), 6-10.</li>
+<li>National Reading Panel (2000). <em>Teaching children to read.</em> NICHD.</li>
+<li>Samuels, S. J. (1979). The method of repeated readings. <em>The Reading Teacher</em>, 32(4), 403-408.</li>
+<li>Scarborough, H. S. (2001). Connecting early language and literacy to later reading (dis)abilities.</li>
+<li>Palincsar, A. S., &amp; Brown, A. L. (1984). Reciprocal teaching. <em>Cognition and Instruction</em>, 1(2), 117-175.</li>
+<li>Zorzi, J. L. (1998). <em>Aprender a escrever: a apropriação do sistema ortográfico.</em> Artmed.</li>
+<li>Moojen, S. M. P. (2011). <em>A escrita ortográfica na escola e na clínica.</em> Casa do Psicólogo.</li>
+</ul>
+<h4>Matemática</h4>
+<ul style="font-size:14.8px">
+<li>Bruner, J. S. (1966). <em>Toward a theory of instruction.</em> Harvard University Press.</li>
+<li>Gersten, R. et al. (2009). Mathematics instruction for students with learning disabilities. <em>Review of Educational Research</em>, 79(3), 1202-1242.</li>
+</ul>
+<h4>Funções executivas e autorregulação</h4>
+</div>
+</div>
+<div class="page" data-document-role="page" data-label="14. Referências ·">
+<div class="page-in">
+<ul style="font-size:14.8px">
+<li>Diamond, A. (2013). Executive functions. <em>Annual Review of Psychology</em>, 64, 135-168.</li>
+<li>Melby-Lervåg, M., &amp; Hulme, C. (2013). Is working memory training effective? <em>Developmental Psychology</em>, 49(2), 270-291.</li>
+<li>Simons, D. J. et al. (2016). Do "brain-training" programs work? <em>Psychological Science in the Public Interest</em>, 17(3), 103-186.</li>
+<li>Reid, R., Trout, A. L., &amp; Schartz, M. (2005). Self-regulation interventions for children with ADHD. <em>Exceptional Children</em>, 71(4), 361-377.</li>
+<li>Bjork, R. A. (1994). Memory and metamemory considerations in the training of human beings.</li>
+</ul>
+<h4>Monitoramento, escola e família</h4>
+<ul style="font-size:14.8px">
+<li>Deno, S. L. (1985). Curriculum-based measurement. <em>Exceptional Children</em>, 52(3), 219-232.</li>
+<li>Fuchs, L. S., &amp; Fuchs, D. (1986). Effects of systematic formative evaluation: a meta-analysis. <em>Exceptional Children</em>, 53(3), 199-208.</li>
+<li>Fuchs, D., &amp; Fuchs, L. S. (2006). Introduction to Response to Intervention. <em>Reading Research Quarterly</em>, 41(1), 93-99.</li>
+<li>DuPaul, G. J., &amp; Stoner, G. (2014). <em>ADHD in the schools.</em> 3. ed. Guilford Press.</li>
+<li>Pelham, W. E., &amp; Fabiano, G. A. (2008). Evidence-based psychosocial treatments for ADHD. <em>JCCAP</em>, 37(1), 184-214.</li>
+<li>Evans, S. W., Owens, J. S., &amp; Bunford, N. (2014). Evidence-based psychosocial treatments for children and adolescents with ADHD. <em>JCCAP</em>, 43(4), 527-551.</li>
+</ul>
+</div>
+</div>
+
+
+</body></html>
