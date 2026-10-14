@@ -719,11 +719,6 @@ footer .cr{font-size:12px;color:rgba(248,242,233,.45)}
       <button class="btn" onclick="enviarPergunta()">Enviar pelo WhatsApp</button>
     </div>
 
-    <div class="cta-box" style="margin-top:40px">
-      <h2>Ainda não garantiu sua vaga?</h2>
-      <p>A turma é reduzida por decisão pedagógica e a oficina acontece uma única vez, em 18 de outubro. Não haverá segunda turma.</p>
-      <a class="btn" id="cta-vaga" href="#">Falar com a Ariana</a>
-    </div>
   </div>
 </section>
 
@@ -746,7 +741,6 @@ var WHATS = "5569984064921";
 
 function wa(msg){ return "https://wa.me/" + WHATS + "?text=" + encodeURIComponent(msg); }
 
-document.getElementById('cta-vaga').href = wa("Olá, Ariana! Quero garantir minha vaga na oficina Raízes da Intervenção, dia 18 de outubro.");
 document.getElementById('link-wa').href = wa("Olá, Ariana!");
 
 var nota = 0;
