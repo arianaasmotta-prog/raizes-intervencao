@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR"><head>
 <meta charset="UTF-8">
+<meta name="referrer" content="no-referrer">
 <title>Como montar o plano de intervenção — slides</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
 <style>
@@ -52,6 +53,11 @@ h1,h2,h3,h4{font-family:'Playfair Display',Georgia,serif}
 .ficha .fau{margin-top:12px;font-size:13px;color:var(--texto-2);font-style:italic}
 .ficha .capa{background:#FCFAF5;border:1px solid var(--borda);border-radius:10px;padding:10px;display:flex;align-items:center;justify-content:center}
 .ficha .capa img{max-width:100%;height:auto;border-radius:6px;display:block}
+
+.ficha.sem-capa{grid-template-columns:1fr}
+.capa-alt{display:flex;align-items:center;justify-content:center;text-align:center;min-height:150px;
+  padding:16px;border-radius:8px;background:var(--verde-claro);color:var(--verde);
+  font-family:'Playfair Display',serif;font-size:17px;line-height:1.25;font-weight:600}
 @media(max-width:700px){.ficha{grid-template-columns:1fr}.ficha .capa{order:-1;max-width:190px}}
 @media print{.ficha{page-break-inside:avoid}}
 
@@ -796,7 +802,7 @@ html,body{margin:0;padding:0;background:#FAF6EF}
 <div class="fmeta"><div><span>Faixa etária</span>Pré-escola e início do Fundamental I</div><div><span>Contexto</span>Clínico e escolar, aplicado por profissionais de saúde e educação</div></div>
 <div class="fau">Autoria: Natália Martins Dias e Alessandra Gotuzo Seabra, Memnon</div>
 </div>
-<div class="capa"><img alt="Piafex" loading="lazy" src="https://www.booktoy.com.br/image/cache/catalog/livros/57/6847-600x600.jpg"></div>
+<div class="capa"><img alt="Piafex" loading="lazy" onerror="semCapa(this)" referrerpolicy="no-referrer" src="https://www.booktoy.com.br/image/cache/catalog/livros/57/6847-600x600.jpg"></div>
 </article></div></div>
 <div class="page" data-document-role="page" data-label="8. Os programas e jogos ·">
 <div class="page-in">
@@ -811,7 +817,7 @@ html,body{margin:0;padding:0;background:#FAF6EF}
 <div class="fmeta"><div><span>Faixa etária</span>1º e 2º ano do Fundamental I</div><div><span>Contexto</span>Clínico e escolar, pequeno grupo ou individual</div></div>
 <div class="fau">Autoria: Graziele Kerges Alcantara e Simone Aparecida Capellini, Book Toy</div>
 </div>
-<div class="capa"><img alt="RTI-FEx" loading="lazy" src="https://www.booktoy.com.br/image/cache/catalog/livros/136/13816-600x600.jpg"></div>
+<div class="capa"><img alt="RTI-FEx" loading="lazy" onerror="semCapa(this)" referrerpolicy="no-referrer" src="https://www.booktoy.com.br/image/cache/catalog/livros/136/13816-600x600.jpg"></div>
 </article>
 </div>
 </div>
@@ -828,7 +834,7 @@ html,body{margin:0;padding:0;background:#FAF6EF}
 <div class="fmeta"><div><span>Faixa etária</span>Crianças, adolescentes, adultos e idosos</div><div><span>Contexto</span>Clínico, ótimo para variar a sessão</div></div>
 <div class="fau">Autoria: Danielle Theodoro de Oliveira e Luciana Bertossi, Book Toy</div>
 </div>
-<div class="capa"><img alt="Funções Executivas I" loading="lazy" src="https://www.booktoy.com.br/image/cache/catalog/livros/96/13709-600x600.jpg"></div>
+<div class="capa"><img alt="Funções Executivas I" loading="lazy" onerror="semCapa(this)" referrerpolicy="no-referrer" src="https://www.booktoy.com.br/image/cache/catalog/livros/96/13709-600x600.jpg"></div>
 </article>
 </div>
 </div>
@@ -845,7 +851,7 @@ html,body{margin:0;padding:0;background:#FAF6EF}
 <div class="fmeta"><div><span>Faixa etária</span>6 anos a 8 anos e 11 meses</div><div><span>Contexto</span>Clínico e escolar</div></div>
 <div class="fau">Autoria: Graziele Kerges-Alcantara, Giseli Donadon Germano, Minna Sillankorva e Simone Capellini, Book Toy</div>
 </div>
-<div class="capa"><img alt="Proaten" loading="lazy" src="https://www.booktoy.com.br/image/cache/catalog/livros/36/12419-600x600.jpg"></div>
+<div class="capa"><img alt="Proaten" loading="lazy" onerror="semCapa(this)" referrerpolicy="no-referrer" src="https://www.booktoy.com.br/image/cache/catalog/livros/36/12419-600x600.jpg"></div>
 </article>
 </div>
 </div>
@@ -862,7 +868,7 @@ html,body{margin:0;padding:0;background:#FAF6EF}
 <div class="fmeta"><div><span>Faixa etária</span>7 a 10 anos</div><div><span>Contexto</span>Clínico e escolar</div></div>
 <div class="fau">Autoria: Caroline de Oliveira Cardoso, Rodrigo Giacobo Serra e Rochele Paz Fonseca, Book Toy</div>
 </div>
-<div class="capa"><img alt="RePENcE" loading="lazy" src="https://www.booktoy.com.br/image/cache/catalog/livros/136/11297-600x600.jpg"></div>
+<div class="capa"><img alt="RePENcE" loading="lazy" onerror="semCapa(this)" referrerpolicy="no-referrer" src="https://www.booktoy.com.br/image/cache/catalog/livros/136/11297-600x600.jpg"></div>
 </article>
 </div>
 </div>
@@ -879,13 +885,13 @@ html,body{margin:0;padding:0;background:#FAF6EF}
 <div class="fmeta"><div><span>Faixa etária</span>Crianças de 7 a 10 anos, via educadores</div><div><span>Contexto</span>Escolar, orientação a professores</div></div>
 <div class="fau">Autoria: Janice R. Pureza e Rochele Paz Fonseca, Book Toy</div>
 </div>
-<div class="capa"><img alt="CENA" loading="lazy" src="https://www.booktoy.com.br/image/cache/catalog/livros/136/9191-600x600.jpg"></div>
+<div class="capa"><img alt="CENA" loading="lazy" onerror="semCapa(this)" referrerpolicy="no-referrer" src="https://www.booktoy.com.br/image/cache/catalog/livros/136/9191-600x600.jpg"></div>
 </article>
 </div>
 </div>
 <div class="page" data-document-role="page" data-label="8. Os programas e jogos ·">
 <div class="page-in">
-<article class="ficha">
+<article class="ficha sem-capa">
 <div class="ficha-txt">
 <div class="fn">PENcE</div>
 <div class="fsub">Programa de Estimulação Neuropsicológica da Cognição em Escolares</div>
@@ -901,7 +907,7 @@ html,body{margin:0;padding:0;background:#FAF6EF}
 </div>
 <div class="page" data-document-role="page" data-label="8. Os programas e jogos ·">
 <div class="page-in">
-<article class="ficha">
+<article class="ficha sem-capa">
 <div class="ficha-txt">
 <div class="fn">Pare e Pense</div>
 <div class="fsub">Promoção de funções executivas em escolares</div>
@@ -917,7 +923,7 @@ html,body{margin:0;padding:0;background:#FAF6EF}
 </div>
 <div class="page" data-document-role="page" data-label="8. Os programas e jogos ·">
 <div class="page-in">
-<article class="ficha">
+<article class="ficha sem-capa">
 <div class="ficha-txt">
 <div class="fn">Treino de Funções Executivas e Aprendizado</div>
 <div class="fsub">Série Psicologia e Neurociências do IPq-HCFMUSP, 2ª edição</div>
@@ -944,7 +950,7 @@ html,body{margin:0;padding:0;background:#FAF6EF}
 <div class="fmeta"><div><span>Faixa etária</span>Crianças e adolescentes</div><div><span>Contexto</span>Clínico, em grupo ou adaptado ao individual</div></div>
 <div class="fau">Autoria: Priscila Sertori, Antonio de Pádua Serafim e Cristiana Castanho de Almeida Rocca, Manole</div>
 </div>
-<div class="capa"><img alt="Estimulação da Atenção de Crianças e Adolescentes" loading="lazy" src="https://www.booktoy.com.br/image/cache/catalog/livros/42/11558-600x600.jpg"></div>
+<div class="capa"><img alt="Estimulação da Atenção de Crianças e Adolescentes" loading="lazy" onerror="semCapa(this)" referrerpolicy="no-referrer" src="https://www.booktoy.com.br/image/cache/catalog/livros/42/11558-600x600.jpg"></div>
 </article>
 </div>
 </div>
@@ -961,7 +967,7 @@ html,body{margin:0;padding:0;background:#FAF6EF}
 <div class="fmeta"><div><span>Faixa etária</span>Crianças, adolescentes e adultos</div><div><span>Contexto</span>Clínico, para variar a sessão</div></div>
 <div class="fau">Autoria: Renata Aguilar, Edicon</div>
 </div>
-<div class="capa"><img alt="Baralho Funções Executivas" loading="lazy" src="https://www.booktoy.com.br/image/cache/catalog/livros/96/14167-600x600.jpg"></div>
+<div class="capa"><img alt="Baralho Funções Executivas" loading="lazy" onerror="semCapa(this)" referrerpolicy="no-referrer" src="https://www.booktoy.com.br/image/cache/catalog/livros/96/14167-600x600.jpg"></div>
 </article>
 <h3>Leitura: decodificação, fluência e compreensão</h3>
 <p>A leitura se constrói em etapas: reconhecer letras e sons, nomear rápido, ler palavras com precisão, ganhar fluência e, então, compreender. Cada programa abaixo entra em uma dessas etapas.</p>
@@ -985,7 +991,7 @@ html,body{margin:0;padding:0;background:#FAF6EF}
 <div class="fmeta"><div><span>Faixa etária</span>9 a 10 anos</div><div><span>Contexto</span>Clínico e escolar</div></div>
 <div class="fau">Autoria: Gabriela Franco dos Santos Liporaci e Simone Aparecida Capellini, Book Toy</div>
 </div>
-<div class="capa"><img alt="Prof-Le" loading="lazy" src="https://www.booktoy.com.br/image/cache/catalog/livros/10/12216-600x600.jpg"></div>
+<div class="capa"><img alt="Prof-Le" loading="lazy" onerror="semCapa(this)" referrerpolicy="no-referrer" src="https://www.booktoy.com.br/image/cache/catalog/livros/10/12216-600x600.jpg"></div>
 </article>
 </div>
 </div>
@@ -1002,7 +1008,7 @@ html,body{margin:0;padding:0;background:#FAF6EF}
 <div class="fmeta"><div><span>Faixa etária</span>A partir de 8 anos</div><div><span>Contexto</span>Clínico e escolar</div></div>
 <div class="fau">Autoria: Bianca dos Santos e Simone Aparecida Capellini, Book Toy</div>
 </div>
-<div class="capa"><img alt="PRONAR-LE" loading="lazy" src="https://www.booktoy.com.br/image/cache/catalog/livros/67/9870-600x600.jpg"></div>
+<div class="capa"><img alt="PRONAR-LE" loading="lazy" onerror="semCapa(this)" referrerpolicy="no-referrer" src="https://www.booktoy.com.br/image/cache/catalog/livros/67/9870-600x600.jpg"></div>
 </article>
 </div>
 </div>
@@ -1019,7 +1025,7 @@ html,body{margin:0;padding:0;background:#FAF6EF}
 <div class="fmeta"><div><span>Faixa etária</span>Escolares em fase inicial de alfabetização</div><div><span>Contexto</span>Clínico e escolar</div></div>
 <div class="fau">Autoria: Rebeka Fabri Bonfim Moura e Simone Aparecida Capellini, Book Toy</div>
 </div>
-<div class="capa"><img alt="PE-FLU" loading="lazy" src="https://www.booktoy.com.br/image/cache/catalog/livros/10/13730-600x600.jpg"></div>
+<div class="capa"><img alt="PE-FLU" loading="lazy" onerror="semCapa(this)" referrerpolicy="no-referrer" src="https://www.booktoy.com.br/image/cache/catalog/livros/10/13730-600x600.jpg"></div>
 </article>
 </div>
 </div>
@@ -1036,7 +1042,7 @@ html,body{margin:0;padding:0;background:#FAF6EF}
 <div class="fmeta"><div><span>Faixa etária</span>8 anos a 11 anos e 11 meses</div><div><span>Contexto</span>Intervenção clínica individual</div></div>
 <div class="fau">Autoria: Isabella Nicolete Xavier e Simone Aparecida Capellini, Book Toy</div>
 </div>
-<div class="capa"><img alt="PR-MOL" loading="lazy" src="https://www.booktoy.com.br/image/cache/catalog/livros/10/13899-600x600.jpg"></div>
+<div class="capa"><img alt="PR-MOL" loading="lazy" onerror="semCapa(this)" referrerpolicy="no-referrer" src="https://www.booktoy.com.br/image/cache/catalog/livros/10/13899-600x600.jpg"></div>
 </article>
 </div>
 </div>
@@ -1053,7 +1059,7 @@ html,body{margin:0;padding:0;background:#FAF6EF}
 <div class="fmeta"><div><span>Faixa etária</span>Anos iniciais da alfabetização</div><div><span>Contexto</span>Clínico e escolar, individual</div></div>
 <div class="fau">Autoria: Melissa Pinotti Margutti e Simone Aparecida Capellini, Book Toy</div>
 </div>
-<div class="capa"><img alt="PPVM-L" loading="lazy" src="https://www.booktoy.com.br/image/cache/catalog/livros/10/13757-600x600.jpg"></div>
+<div class="capa"><img alt="PPVM-L" loading="lazy" onerror="semCapa(this)" referrerpolicy="no-referrer" src="https://www.booktoy.com.br/image/cache/catalog/livros/10/13757-600x600.jpg"></div>
 </article>
 </div>
 </div>
@@ -1070,7 +1076,7 @@ html,body{margin:0;padding:0;background:#FAF6EF}
 <div class="fmeta"><div><span>Faixa etária</span>Escolares com dificuldade de compreensão</div><div><span>Contexto</span>Clínico e escolar</div></div>
 <div class="fau">Autoria: Renata Graziele Morini Albrecht e Simone Aparecida Capellini, Book Toy</div>
 </div>
-<div class="capa"><img alt="IN-CLOZE" loading="lazy" src="https://www.booktoy.com.br/image/cache/catalog/livros/11/11286-600x600.jpg"></div>
+<div class="capa"><img alt="IN-CLOZE" loading="lazy" onerror="semCapa(this)" referrerpolicy="no-referrer" src="https://www.booktoy.com.br/image/cache/catalog/livros/11/11286-600x600.jpg"></div>
 </article>
 </div>
 </div>
@@ -1087,7 +1093,7 @@ html,body{margin:0;padding:0;background:#FAF6EF}
 <div class="fmeta"><div><span>Faixa etária</span>3º ao 5º ano do Fundamental</div><div><span>Contexto</span>Clínico e escolar</div></div>
 <div class="fau">Autoria: Vera Lúcia Orlandi Cunha e Simone Aparecida Capellini, Book Toy</div>
 </div>
-<div class="capa"><img alt="PRINTCOMLE" loading="lazy" src="https://www.booktoy.com.br/image/cache/catalog/livros/10/11064-600x600.jpg"></div>
+<div class="capa"><img alt="PRINTCOMLE" loading="lazy" onerror="semCapa(this)" referrerpolicy="no-referrer" src="https://www.booktoy.com.br/image/cache/catalog/livros/10/11064-600x600.jpg"></div>
 </article>
 </div>
 </div>
@@ -1104,7 +1110,7 @@ html,body{margin:0;padding:0;background:#FAF6EF}
 <div class="fmeta"><div><span>Faixa etária</span>Adolescentes</div><div><span>Contexto</span>Clínico e escolar</div></div>
 <div class="fau">Autoria: Adriana Marques de Oliveira e Simone Aparecida Capellini, Book Toy</div>
 </div>
-<div class="capa"><img alt="Intervenção em Leitura para Adolescentes" loading="lazy" src="https://www.booktoy.com.br/image/cache/catalog/livros/10/11341-600x600.jpg"></div>
+<div class="capa"><img alt="Intervenção em Leitura para Adolescentes" loading="lazy" onerror="semCapa(this)" referrerpolicy="no-referrer" src="https://www.booktoy.com.br/image/cache/catalog/livros/10/11341-600x600.jpg"></div>
 </article>
 </div>
 </div>
@@ -1121,7 +1127,7 @@ html,body{margin:0;padding:0;background:#FAF6EF}
 <div class="fmeta"><div><span>Faixa etária</span>A partir de 7 anos</div><div><span>Contexto</span>Clínico e escolar</div></div>
 <div class="fau">Autoria: Maíra Aneli Martins e Simone Aparecida Capellini, Book Toy</div>
 </div>
-<div class="capa"><img alt="ADFLU" loading="lazy" src="https://www.booktoy.com.br/image/cache/catalog/livros/10/14068-600x600.jpg"></div>
+<div class="capa"><img alt="ADFLU" loading="lazy" onerror="semCapa(this)" referrerpolicy="no-referrer" src="https://www.booktoy.com.br/image/cache/catalog/livros/10/14068-600x600.jpg"></div>
 </article>
 </div>
 </div>
@@ -1138,7 +1144,7 @@ html,body{margin:0;padding:0;background:#FAF6EF}
 <div class="fmeta"><div><span>Faixa etária</span>1º ao 4º ano do Fundamental</div><div><span>Contexto</span>Clínico, escolar e domiciliar</div></div>
 <div class="fau">Autoria: Natália Becker, Mirella Liberatore Prando e Jerusa Fumagalli de Salles, Vetor</div>
 </div>
-<div class="capa"><img alt="INELE" loading="lazy" src="https://www.booktoy.com.br/image/cache/catalog/livros/57/12752-600x600.jpg"></div>
+<div class="capa"><img alt="INELE" loading="lazy" onerror="semCapa(this)" referrerpolicy="no-referrer" src="https://www.booktoy.com.br/image/cache/catalog/livros/57/12752-600x600.jpg"></div>
 </article>
 </div>
 </div>
@@ -1155,7 +1161,7 @@ html,body{margin:0;padding:0;background:#FAF6EF}
 <div class="fmeta"><div><span>Faixa etária</span>Crianças em idade escolar</div><div><span>Contexto</span>Clínico e escolar</div></div>
 <div class="fau">Autoria: Hosana Alves Gonçalves e Rochele Paz Fonseca, Book Toy (coleção NEUROPSI APRENDE)</div>
 </div>
-<div class="capa"><img alt="Pecolefe" loading="lazy" src="https://www.booktoy.com.br/image/cache/catalog/livros/136/13580-600x600.jpg"></div>
+<div class="capa"><img alt="Pecolefe" loading="lazy" onerror="semCapa(this)" referrerpolicy="no-referrer" src="https://www.booktoy.com.br/image/cache/catalog/livros/136/13580-600x600.jpg"></div>
 </article>
 </div>
 </div>
@@ -1172,7 +1178,7 @@ html,body{margin:0;padding:0;background:#FAF6EF}
 <div class="fmeta"><div><span>Faixa etária</span>Fase inicial da alfabetização</div><div><span>Contexto</span>Escolar, via tutoria ao professor</div></div>
 <div class="fau">Autoria: Maryse Tomoko Matsuzawa Fukuda e Simone Aparecida Capellini, Book Toy</div>
 </div>
-<div class="capa"><img alt="PRIPROF-T" loading="lazy" src="https://www.booktoy.com.br/image/cache/catalog/livros/10/9792-600x600.jpg"></div>
+<div class="capa"><img alt="PRIPROF-T" loading="lazy" onerror="semCapa(this)" referrerpolicy="no-referrer" src="https://www.booktoy.com.br/image/cache/catalog/livros/10/9792-600x600.jpg"></div>
 </article>
 </div>
 </div>
@@ -1189,7 +1195,7 @@ html,body{margin:0;padding:0;background:#FAF6EF}
 <div class="fmeta"><div><span>Faixa etária</span>Crianças, adolescentes e adultos</div><div><span>Contexto</span>Clínico</div></div>
 <div class="fau">Autoria: Linda Kátia Cordesqui, Book Toy</div>
 </div>
-<div class="capa"><img alt="Estimulando Habilidades de Leitura e Escrita: Dislexia" loading="lazy" src="https://www.booktoy.com.br/image/cache/catalog/livros/96/14630-600x600.jpg"></div>
+<div class="capa"><img alt="Estimulando Habilidades de Leitura e Escrita: Dislexia" loading="lazy" onerror="semCapa(this)" referrerpolicy="no-referrer" src="https://www.booktoy.com.br/image/cache/catalog/livros/96/14630-600x600.jpg"></div>
 </article>
 <h3>Escrita, ortografia e alfabetização</h3>
 <p>Do reconhecimento de letras e sons até a regra ortográfica e a caligrafia legível. Aqui entram os recursos para quem ainda não alfabetizou e para quem escreve, mas com erros ou com letra difícil de ler.</p>
@@ -1213,7 +1219,7 @@ html,body{margin:0;padding:0;background:#FAF6EF}
 <div class="fmeta"><div><span>Faixa etária</span>Crianças em alfabetização</div><div><span>Contexto</span>Clínico e escolar</div></div>
 <div class="fau">Autoria: Gabriela Guarnieri Mendes, Book Toy</div>
 </div>
-<div class="capa"><img alt="Proalf" loading="lazy" src="https://www.booktoy.com.br/image/cache/catalog/livros/93/10308-600x600.jpg"></div>
+<div class="capa"><img alt="Proalf" loading="lazy" onerror="semCapa(this)" referrerpolicy="no-referrer" src="https://www.booktoy.com.br/image/cache/catalog/livros/93/10308-600x600.jpg"></div>
 </article>
 </div>
 </div>
@@ -1230,7 +1236,7 @@ html,body{margin:0;padding:0;background:#FAF6EF}
 <div class="fmeta"><div><span>Faixa etária</span>Primeiros anos escolares</div><div><span>Contexto</span>Clínico, escolar e em casa</div></div>
 <div class="fau">Autoria: Valderez A. M. Prass Lemes e Juliana M. Prass Lemes Ferreira, Book Toy</div>
 </div>
-<div class="capa"><img alt="Iniciando a Comunicação Escrita" loading="lazy" src="https://www.booktoy.com.br/image/cache/catalog/livros/93/12594-600x600.jpg"></div>
+<div class="capa"><img alt="Iniciando a Comunicação Escrita" loading="lazy" onerror="semCapa(this)" referrerpolicy="no-referrer" src="https://www.booktoy.com.br/image/cache/catalog/livros/93/12594-600x600.jpg"></div>
 </article>
 </div>
 </div>
@@ -1247,7 +1253,7 @@ html,body{margin:0;padding:0;background:#FAF6EF}
 <div class="fmeta"><div><span>Faixa etária</span>Crianças em fase ortográfica</div><div><span>Contexto</span>Clínico e escolar</div></div>
 <div class="fau">Autoria: Roberta Angelo Monteiro, Book Toy</div>
 </div>
-<div class="capa"><img alt="Desafios da Ortografia na Prática Clínica: M/N" loading="lazy" src="https://www.booktoy.com.br/image/cache/catalog/livros/10/12522-600x600.jpg"></div>
+<div class="capa"><img alt="Desafios da Ortografia na Prática Clínica: M/N" loading="lazy" onerror="semCapa(this)" referrerpolicy="no-referrer" src="https://www.booktoy.com.br/image/cache/catalog/livros/10/12522-600x600.jpg"></div>
 </article>
 
 </div>
@@ -1262,7 +1268,7 @@ html,body{margin:0;padding:0;background:#FAF6EF}
 <div class="fmeta"><div><span>Faixa etária</span>Crianças em fase ortográfica</div><div><span>Contexto</span>Clínico e escolar</div></div>
 <div class="fau">Autoria: Roberta Angelo Monteiro e Fernanda Elena P. Feitosa, Book Toy</div>
 </div>
-<div class="capa"><img alt="Desafios da Ortografia na Prática Clínica: R/RR" loading="lazy" src="https://www.booktoy.com.br/image/cache/catalog/livros/10/12595-600x600.jpg"></div>
+<div class="capa"><img alt="Desafios da Ortografia na Prática Clínica: R/RR" loading="lazy" onerror="semCapa(this)" referrerpolicy="no-referrer" src="https://www.booktoy.com.br/image/cache/catalog/livros/10/12595-600x600.jpg"></div>
 </article></div></div>
 <div class="page" data-document-role="page" data-label="8. Os programas e jogos ·">
 <div class="page-in">
@@ -1277,7 +1283,7 @@ html,body{margin:0;padding:0;background:#FAF6EF}
 <div class="fmeta"><div><span>Faixa etária</span>3º ao 5º ano do Fundamental I</div><div><span>Contexto</span>Clínico e escolar</div></div>
 <div class="fau">Autoria: Simone Aparecida Capellini, Natália Fusco e Giseli Donadon Germano, Book Toy</div>
 </div>
-<div class="capa"><img alt="PPVM-E" loading="lazy" src="https://www.booktoy.com.br/image/cache/catalog/livros/10/13924-600x600.jpg"></div>
+<div class="capa"><img alt="PPVM-E" loading="lazy" onerror="semCapa(this)" referrerpolicy="no-referrer" src="https://www.booktoy.com.br/image/cache/catalog/livros/10/13924-600x600.jpg"></div>
 </article>
 </div>
 </div>
@@ -1294,7 +1300,7 @@ html,body{margin:0;padding:0;background:#FAF6EF}
 <div class="fmeta"><div><span>Faixa etária</span>Qualquer idade</div><div><span>Contexto</span>Clínico e escolar</div></div>
 <div class="fau">Autoria: Simaia Sampaio, Wak</div>
 </div>
-<div class="capa"><img alt="Atividades Corretivas vol. 2: Leitura e Escrita, Grafia e Ortografia" loading="lazy" src="https://www.booktoy.com.br/image/cache/catalog/livros/67/8535-600x600.jpg"></div>
+<div class="capa"><img alt="Atividades Corretivas vol. 2: Leitura e Escrita, Grafia e Ortografia" loading="lazy" onerror="semCapa(this)" referrerpolicy="no-referrer" src="https://www.booktoy.com.br/image/cache/catalog/livros/67/8535-600x600.jpg"></div>
 </article>
 <h3>Matemática</h3>
 <p>Senso numérico, contagem, fatos numéricos e operações. Os recursos abaixo cobrem desde o guia de protocolos até programas estruturados em sessões.</p>
@@ -1318,7 +1324,7 @@ html,body{margin:0;padding:0;background:#FAF6EF}
 <div class="fmeta"><div><span>Faixa etária</span>6 a 8 anos</div><div><span>Contexto</span>Clínico e escolar</div></div>
 <div class="fau">Autoria: Rita Picinini, Silvia Feldberg, Giseli Donadon Germano e Simone Capellini, Book Toy</div>
 </div>
-<div class="capa"><img alt="PROMATEM" loading="lazy" src="https://www.booktoy.com.br/image/cache/catalog/livros/95/13362-600x600.jpg"></div>
+<div class="capa"><img alt="PROMATEM" loading="lazy" onerror="semCapa(this)" referrerpolicy="no-referrer" src="https://www.booktoy.com.br/image/cache/catalog/livros/95/13362-600x600.jpg"></div>
 </article>
 </div>
 </div>
@@ -1335,7 +1341,7 @@ html,body{margin:0;padding:0;background:#FAF6EF}
 <div class="fmeta"><div><span>Faixa etária</span>6 anos a 10 anos e 11 meses</div><div><span>Contexto</span>Clínico e escolar</div></div>
 <div class="fau">Autoria: Rita Picinini, Silvia Feldberg, Isabella Nicolete e Simone Capellini, Book Toy</div>
 </div>
-<div class="capa"><img alt="PIM-MAT" loading="lazy" src="https://www.booktoy.com.br/image/cache/catalog/livros/95/14581-600x600.jpg"></div>
+<div class="capa"><img alt="PIM-MAT" loading="lazy" onerror="semCapa(this)" referrerpolicy="no-referrer" src="https://www.booktoy.com.br/image/cache/catalog/livros/95/14581-600x600.jpg"></div>
 </article>
 </div>
 </div>
@@ -1352,13 +1358,13 @@ html,body{margin:0;padding:0;background:#FAF6EF}
 <div class="fmeta"><div><span>Faixa etária</span>Anos iniciais, sem idade fixa</div><div><span>Contexto</span>Clínico, escolar e em casa</div></div>
 <div class="fau">Autoria: Andréa Carla Machado, Suzelei Faria Bello e Elaine Cristina dos Santos, Book Toy</div>
 </div>
-<div class="capa"><img alt="Guia de Atividades Práticas para o Ensino das Habilidades de Matemática" loading="lazy" src="https://www.booktoy.com.br/image/cache/catalog/livros/95/11415-600x600.jpg"></div>
+<div class="capa"><img alt="Guia de Atividades Práticas para o Ensino das Habilidades de Matemática" loading="lazy" onerror="semCapa(this)" referrerpolicy="no-referrer" src="https://www.booktoy.com.br/image/cache/catalog/livros/95/11415-600x600.jpg"></div>
 </article>
 </div>
 </div>
 <div class="page" data-document-role="page" data-label="8. Os programas e jogos ·">
 <div class="page-in">
-<article class="ficha">
+<article class="ficha sem-capa">
 <div class="ficha-txt">
 <div class="fn">Treino de Habilidades Matemáticas para Crianças e Adolescentes</div>
 <div class="fsub">Série Psicologia e Neurociências do IPq-HCFMUSP</div>
@@ -1385,7 +1391,7 @@ html,body{margin:0;padding:0;background:#FAF6EF}
 <div class="fmeta"><div><span>Faixa etária</span>Crianças, adolescentes e adultos</div><div><span>Contexto</span>Clínico</div></div>
 <div class="fau">Autoria: Linda Kátia Cordesqui, Book Toy</div>
 </div>
-<div class="capa"><img alt="Estimulando Habilidades de Matemática: Discalculia" loading="lazy" src="https://www.booktoy.com.br/image/cache/catalog/livros/96/14052-600x600.jpg"></div>
+<div class="capa"><img alt="Estimulando Habilidades de Matemática: Discalculia" loading="lazy" onerror="semCapa(this)" referrerpolicy="no-referrer" src="https://www.booktoy.com.br/image/cache/catalog/livros/96/14052-600x600.jpg"></div>
 </article>
 <h3>Desenvolvimento e intervenção precoce</h3>
 <p>Para a criança que ainda não está em idade escolar e chega com atraso global ou com sinais de risco no desenvolvimento.</p>
@@ -1409,7 +1415,7 @@ html,body{margin:0;padding:0;background:#FAF6EF}
 <div class="fmeta"><div><span>Faixa etária</span>36 a 60 meses</div><div><span>Contexto</span>Clínico e escolar</div></div>
 <div class="fau">Autoria: Andréa Carla Machado e Maria Amelia Almeida, Book Toy</div>
 </div>
-<div class="capa"><img alt="Programa de Intervenção Precoce para Segunda Infância" loading="lazy" src="https://www.booktoy.com.br/image/cache/catalog/livros/70/10673-600x600.jpg"></div>
+<div class="capa"><img alt="Programa de Intervenção Precoce para Segunda Infância" loading="lazy" onerror="semCapa(this)" referrerpolicy="no-referrer" src="https://www.booktoy.com.br/image/cache/catalog/livros/70/10673-600x600.jpg"></div>
 </article>
 <h3>Estimulação cognitiva ampla</h3>
 <p>Recurso que atravessa várias áreas ao mesmo tempo. Bom para montar sessões variadas quando a criança tem prejuízo em mais de uma habilidade.</p>
@@ -1422,7 +1428,7 @@ html,body{margin:0;padding:0;background:#FAF6EF}
 </div></div></div>
 <div class="page" data-document-role="page" data-label="8. Os programas e jogos ·">
 <div class="page-in">
-<article class="ficha">
+<article class="ficha sem-capa">
 <div class="ficha-txt">
 <div class="fn">Atividades Neuropsicopedagógicas de Intervenção e Reabilitação</div>
 <div class="fsub">Volume vermelho da coleção</div>
@@ -1700,4 +1706,7 @@ html,body{margin:0;padding:0;background:#FAF6EF}
 </div>
 
 
+<script>
+function semCapa(img){var c=img.closest('.capa');if(!c)return;var d=document.createElement('div');d.className='capa-alt';d.textContent=img.getAttribute('alt')||'';c.innerHTML='';c.appendChild(d);}
+</script>
 </body></html>
